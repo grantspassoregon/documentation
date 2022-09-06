@@ -4,4 +4,6 @@ Check the inbox located adjacent to the entry door of the GIS office regularly f
 
 ## Location of the Template Form
 
-The template Address Request Form is located on the O drive at *"O:/GISUserProjects/Departments/GIS_General/Addressing/Address Request and Notification Forms/Address Request Form.pdf"*.
+The template Address Request Form is located on the O drive at *"O:/GISUserProjects/Departments/GIS_General/Addressing/Address Request and Notification Forms/Address Request Form.pdf"*. Front desk staff keep copies of the Address Request Form in a file cabinet behind the service desk, including a clean copy used to print more copies.  If you update or change the Address Request Form, bring a new copy to the service desk and remove outdated copies from the file cabinet, so staff distribute the correct version to the public.
+
+
