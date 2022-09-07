@@ -9,12 +9,14 @@ The template Address Request Form is located on the O drive at *"O:/GISUserProje
 ## Checking Incoming Forms
 
 Before processing an Address Request Form, check to ensure the form is complete, including:
+
     - A date stamp showing when we received the document.
     - A payment stamp showing that we have received the addressing fee.  
     - Contact information, including the name of the developer, their address, phone number and email.  Do not confuse the contact address of the developer with the site address under development, they are not always the same.
     - A signature from the site owner.
 
 Additional form information:
+
     - Minor or Major Address Request
         _ This field indicates whether the developer is partitioning the existing lot (dividing the lot into three smaller lots or fewer), or subdividing (splitting the lot into four or more smaller lots).
     - Reason for Change 
