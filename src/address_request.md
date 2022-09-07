@@ -27,4 +27,8 @@ Additional form information:
         _ Extensions of existing roadways do not need to be listed on this field.
         _ This field may remain blank if the development includes no new street construction.
     - The Site Plan Attached field indicates whether the attached map is a site plan.  Subdivisions require a site plan, but partitions may substitute less formal maps indicating where the developer desires new addresses (such as a re-vegetation plan map).
+
+## Site Plan Map
+
+Attached to the Address Request Form is a map showing the tax parcel under development.  This map is typically a site plan, and will show the full boundary of the original tax lot, with additional lines showing the proposed partition or subdivision with numbered lots.  Each new lot will need an unique address corresponding to the primary access road serving the parcel.
     
