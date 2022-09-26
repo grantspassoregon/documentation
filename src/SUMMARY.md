@@ -2,4 +2,5 @@
 
 - [Addressing Manual](./addressing.md)
     - [The Address Request Form](./address_request.md)
-    - [Adding New Addresses](./addressing_layer.md)
+    - [The Addressing Layer](./addressing_layer.md)
+    - [Addressing Rules](./addressing_rules.md)
