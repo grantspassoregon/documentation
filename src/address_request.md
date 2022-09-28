@@ -18,16 +18,16 @@ Before processing an Address Request Form, check to ensure the form is complete,
 Additional form information:
 
 - Minor or Major Address Request
-    _ This field indicates whether the developer is partitioning the existing lot (dividing the lot into three smaller lots or fewer), or subdividing (splitting the lot into four or more smaller lots).
+    + This field indicates whether the developer is partitioning the existing lot (dividing the lot into three smaller lots or fewer), or subdividing (splitting the lot into four or more smaller lots).
 - Reason for Change 
-    _ The primary reason for new addressing is for new construction.  Development inside the Urban Growth Boundary occurs on pre-existing lots recorded by the county assessor's office, but previously undeveloped lots may not have address assigned, and the form provides an "Other" field for unanticipated circumstances.
+    + The primary reason for new addressing is for new construction.  Development inside the Urban Growth Boundary occurs on pre-existing lots recorded by the county assessor's office, but previously undeveloped lots may not have address assigned, and the form provides an "Other" field for unanticipated circumstances.
 - The Assessor's Map Number field specifies the map tax lot number assigned by the county assessor's office.  This field may be left empty when the form lists an existing site address in the City records.
 - The Existing Address field lists the address assigned to the lot under development.
 - The Lot(s) Located field records whether the lot under development is within the Urban Growth Boundary or the City Limits.
 - The New Street Name Proposal field indicates whether the development includes the construction of a new street.
-    _ New street names require approval of the public safety team.
-    _ Extensions of existing roadways do not need to be listed on this field.
-    _ This field may remain blank if the development includes no new street construction.
+    + New street names require approval of the public safety team.
+    + Extensions of existing roadways do not need to be listed on this field.
+    + This field may remain blank if the development includes no new street construction.
 - The Site Plan Attached field indicates whether the attached map is a site plan.  Subdivisions require a site plan, but partitions may substitute less formal maps indicating where the developer desires new addresses (such as a re-vegetation plan map).
 
 ## Site Plan Map
