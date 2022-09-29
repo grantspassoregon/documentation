@@ -53,3 +53,31 @@ exec(open('missing_sidewalks.py').read())
 ```
 
 Important note:  Do not set the location of the file geodatabase on a virtual drive.  Use the primary (C:) drive on your machine.  The IT department discourages employees from storing information on the local (C:) drive, and consequently employees are in the habit of storing personal files on the P: drive, and GIS project files on the O: drive.  However, this script performs many heavy computations in ArcGIS.  If you store the geodatabase in a remote drive (P: or O:), this will substantially decrease the speed of operations by requiring ArcGIS to transmit the information over the network to the remote drive.  This may also cause internal congestion on the city network.  Once the script has finished running, you can move the resulting geodatabase to a permanent storage location on the O: drive, but while the script is generating the geodatabase you want the work to occur on your local (C:) drive.  This will improve processing time as ArcGIS will be limited by the speed on your processor (CPU-bound) and not by the speed of the network (I/O-bound).
+
+## Overwriting the Web Layer
+
+The *missing_sidewalks.py* automates construction of the layers for exporting into the missing sidewalks feature class service hosted by the City on ArcGIS Online.  Once the script is done running, several manual steps remain to export the service.  Partially this is due to lack of *arcpy* expertise on behalf of the script author, but this is also the point where you exert your authority to inspect and approve of the layers before overwriting the service layer.  By the time is the *missing_sidewalks.py* script is finished running, there will be several open layers in the open ArcGIS project, many of which are computational artifacts, or intermediary steps that are not intended for inclusion in the final map.  Feel free to either remove the unnecessary layers from the current project, or open a fresh new project for hosting the configuration of the web service layer.
+
+For each street classification type (Local, Local Collector, Collector, Arterial, State, Private and Park), there is an export layer labeled *<street_type>_sidewalks_export*.  To create the service layer map, include each of these layers twice, as well as the layers called *streets*, *sidewalks*, *addresses*, *hillslopes* and *taxlots*.  The order of the layers should be as follows:
+ - *local_street_sidewalks_export* (first time)
+ - *local_collector_sidewalks_export*
+ - *collector_sidewalks_export*
+ - *arterial_sidewalks_export*
+ - *state_street_sidewalks_export*
+ - *private_street_sidewalks_export*
+ - *park_street_sidewalks_export*
+ - *local_street_sidewalks_export* (second time)
+ - *local_collector_sidewalks_export*
+ - *collector_sidewalks_export*
+ - *arterial_sidewalks_export*
+ - *state_street_sidewalks_export*
+ - *private_street_sidewalks_export*
+ - *park_street_sidewalks_export*
+ - *streets*
+ - *sidewalks*
+ - *addresses*
+ - *hillslopes*
+ - *taxlots*
+
+On the Missing Sidewalks web map, we use the first sidewalks export layer to indicate the number of missing sidewalks, with green indicating none missing, yellow one, and red two missing. The second sidewalks export layer indicates whether the street fronts an undeveloped lot, with a thick blue indicating undeveloped, which is visible underneath the missing sidewalk symbology.  Since we needs to display different colors based on the number of sidewalks, as well as whether the street fronts developed property, we simply include the layers twice and give each version a different symbology.  The template web map should have the required symbology already stored, so customizing the style of each layer is not necessary.  But in order to overwrite the service layer correctly, the layer order has to match the original.
+
