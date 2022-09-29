@@ -8,6 +8,6 @@ Currently a number of city streets lack the required number of sidewalks.  Older
 
 To produce the Missing Sidewalks Map, first clone the *scripts* repository from the GIS Github account:
 
-'''{shell}
+``````{shell}
 git clone git@github.com:grantspassoregon/scripts
-'''
+``````
