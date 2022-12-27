@@ -5,7 +5,7 @@
   - [The Addressing Layer](./addressing_layer.md)
   - [Addressing Rules](./addressing_rules.md)
 - Packages
-  - [Using Virtual Environments](./virtual_env.md)
+  - [Using a Virtual Environment](./virtual_env.md)
 - Scripts
   - [Missing Sidewalks](./missing_sidewalks.md)
 
