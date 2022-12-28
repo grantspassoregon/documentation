@@ -9,6 +9,8 @@ Virtual environments are a common tool in Python development for dependency mana
 - Dependency Conflicts
   - Packages installed for unrelated projects can rely on different versions of third-party packages as dependencies.  There may not be a single version of the required library that can support and run both packages, creating a dependency conflict.
 
+The `arcgis` package for Python caused a particularly problematic system pollution problem for me at my previous job in county government.  I had tried and failed to install the package on my machine, where the error message informed me there was a problem with the `ca-certificates` package.  The problem is that the system used `ca-certificates` to perform any and all Python operations, and this package had become corrupted by my attempted install of `arcgis`.  I could not longer use Python at all on this machine.  I did not have administrative privileges to install programs on this machine, and so IT had to send staff over to my building to help me uninstall and reinstall Python, which did not resolve the issue, much to our surprise.  At the county, our IT staff did not have experience developing in Python, and the situation is no different here at Grants Pass.  I ended up having to switch to a different (and less performant) machine.  With a virtual environment, the problem is contained to the virtual environment, so when I encountered this problem again on my new machine (and I did), I could simply delete the corrupted environment and start again.  Take a lesson from my hard-earned experience and use virtual environments for Python development like you would a crash helmet on a motorcycle.
+
 ## Creating a Virtual Environment
 
 The use of virtual environments in Python is so ubiquitous that Python now includes virtual environment support in its standard library through the `venv` package.  While there are third-party libraries such as `virtualenv` and `conda` that can create virtual environments, and may be desirable for certain use applications, we recommend using the built-in support of the `venv` package, and this is the method we have used in developing the Python packages in the Grants Pass code repository.
@@ -32,7 +34,7 @@ python -m venv my_project
 python -m venv technician
 ```
 
-If you wish to overwrite an old test environment (deleting any packages installed into it), add the flag '--clear':
+If you wish to overwrite an old virtual environment (deleting any packages installed into it), add the flag '--clear':
 
 ```{PS}
 python -m venv test --clear
@@ -46,3 +48,76 @@ Note that the system path needs to include the location of the Python executable
 C:\Users\erose\AppData\Local\Programs\Python\Python310\python -m venv test
 ```
 
+## Activating the Virtual Environment
+
+You can create multiple virtual environments on your machine, but before you begin installing packages, you have to direct processor to spool up the virtual environment that you want to use.  Inside the folder named after your environment, there is a sub-folder called `Scripts` that contain a number of executables, and a pair of files called `activate` and `deactivate`.  To start up a virtual environment, you call the activate script.  If your working directory contains the virtual environment folder, you can use the relative path to call this script, using the command:
+
+```{PS}
+{name}/Scripts/activate
+```
+
+So if the virtual environment is called 'test', and your working directory contains the folder 'test' where the virtual environment is stored on your machine, then you can run the command:
+
+```{PS}
+test/Scripts/activate
+```
+
+I keep my repository code in a 'repos' folder, and my virtual environments in an 'envs' folder, so I can activate the environment from my home directory and navigate to the repo of interest:
+
+```{PS}
+cd c:/users/erose
+envs/test/Scripts/activate
+cd repos/webmap
+```
+
+Or I can activate the environment from within the code directory using a relative path:
+
+```{PS}
+cd c:/users/erose/repos/webmap
+../../envs/test/Scripts/activate
+```
+
+Declaring the full path does not work on my Windows machine from Powershell.  I could not say why.
+
+```{PS}
+# does not work
+cd p:/repos/webmap
+c:/users/erose/envs/test/Scripts/activate
+```
+
+Note that many online tutorials will direct you to use the `source` keyword to call the activation script, but this only applies to Linux and MacOS development environments.  Using Powershell on Windows, this will not work:
+
+```{PS}
+# does not work
+cd c:/users/erose/envs
+source test/Scripts/activate
+```
+
+Calling `source` on Windows in Powershell produces the following error: "The term 'source' is not recognized as the name of a cmdlet, function, script file, or operable program. Check the spelling of the name, or if a path was included, verify that the path is correct and try again."
+
+When the virtual environment is active, the name of the environment will appear in parenthesis before the `PS` in the prompt:
+
+```{PS}
+# virtual environment not active
+PS c:\> cd c:/users/erose/envs
+PS c:\users\erose\envs> test/Scripts/activate
+# virtual environment active
+(test) PS c:\users\erose\envs>
+```
+
+To leave the virtual environment, you can call the deactivate script:
+
+```{PS}
+{name}/Scripts/deactivate
+```
+
+Using the previous example:
+
+```{PS}
+# virtual environment active
+(test) PS c:\users\erose\envs> test/Scripts/deactivate
+# virtual environment not active
+PS c:\users\erose\envs>
+```
+
+The virtual environment will also deactivate if you close the terminal, stopping the running instance of Powershell.  So feel free to simply exit or shutdown when you are done.
