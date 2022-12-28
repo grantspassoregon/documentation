@@ -50,7 +50,7 @@ C:\Users\erose\AppData\Local\Programs\Python\Python310\python -m venv test
 
 ## Activating the Virtual Environment
 
-You can create multiple virtual environments on your machine, but before you begin installing packages, you have to direct processor to spool up the virtual environment that you want to use.  Inside the folder named after your environment, there is a sub-folder called `Scripts` that contain a number of executables, and a pair of files called `activate` and `deactivate`.  To start up a virtual environment, you call the activate script.  If your working directory contains the virtual environment folder, you can use the relative path to call this script, using the command:
+You can create multiple virtual environments on your machine, but before you begin installing packages, you have to direct the processor to spool up the virtual environment that you want to use.  Inside the folder named after your environment, there is a sub-folder called `Scripts` that contain a number of executables, and a pair of files called `activate` and `deactivate`.  To start up a virtual environment, you call the activate script.  If your working directory contains the virtual environment folder, you can use the relative path to call this script, using the command:
 
 ```{PS}
 {name}/Scripts/activate
@@ -93,11 +93,11 @@ cd c:/users/erose/envs
 source test/Scripts/activate
 ```
 
-Calling `source` on Windows in Powershell produces the following error: "The term 'source' is not recognized as the name of a cmdlet, function, script file, or operable program. Check the spelling of the name, or if a path was included, verify that the path is correct and try again."
+Calling `source` on Windows in Powershell produces the following error: *"The term 'source' is not recognized as the name of a cmdlet, function, script file, or operable program. Check the spelling of the name, or if a path was included, verify that the path is correct and try again."*
 
 When the virtual environment is active, the name of the environment will appear in parenthesis before the `PS` in the prompt:
 
-```{PS}
+```{powershell}
 # virtual environment not active
 PS c:\> cd c:/users/erose/envs
 PS c:\users\erose\envs> test/Scripts/activate
