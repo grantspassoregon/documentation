@@ -58,3 +58,62 @@ Enter passphrase (empty for no passphrase): [Type a passphrase]
 Enter same passphrase again: [Type passphrase again]
 ```
 
+### Adding the SSH key to the ssh-agent
+
+1. Open Git Bash.
+2. Manually start the ssh-agent.
+```{bash}
+# start the ssh-agent in the background
+$ eval "$(ssh-agent -s)"
+> Agent pid 59566
+```
+- The `eval` command is not valid in Powershell, but will work in Git Bash.
+3. Add the SSH private key to the ssh-agent.
+- If your key has a unique name, replace _id_ed25519_ in the command with the unique key name.
+```{bash}
+ssh-add ~/.ssh/id_ed25519
+```
+
+### Add the SSH key to the Grants Pass GitHub account
+
+Adding the public key to GitHub.com enables SSH access to the Grants Pass repository.
+
+1. Copy the SSH key to the clipboard.
+```{bash}
+# copies the contents of the id_ed25519.pub file to the clipboard
+clip < ~/.ssh/id_ed25519.pub
+```
+- The `<` operator is not valid in Powershell, but will work in Git Bash.
+- If `clip` is not working, open the file _id_ed25519.pub_ in a text editor and copy it into the clipboard manually.
+2. In a web browser, log into GitHub.com as the user _grantspassoregon_, click the profile photo, then click **Settings**.
+3. In the "Access" section of the sidebar, click **SSH and GPG keys**.
+4. Click **New SSH key** or **Add SSH key**.
+5. In the "Title" field, add a descriptive label for the new key, for instance a job role ("Technician").
+6. Select "authentication" as the type of key.
+7. Paste the public key from the clipboard into the "Key" field.
+8. Click **Add SSH key**.
+  - If prompted, confirm access to the account on GitHub.
+
+### Test the SSH connection
+
+This step confirms that the SSH key has been successfully added to GitHub.
+
+1. Open Git Bash.
+2. Connect to GitHub using the following command:
+```{bash}
+# Attempts to open ssh connection to GitHub
+ssh -T git@github.com
+```
+  - The first time running, this command should return a warning:
+```{bash}
+> The authenticity of host 'github.com (IP ADDRESS) can't be established.
+> ED25519 key fingerprint is SHA256:+DiY3wvvV6TuJJhbpZisF/zLDA0zPMSvHdkr4UvCOqU.
+> Are you sure you want to continue connecting (yes/no)?
+```
+  - Type `yes` to accept the connection.  The fingerprint should match GitHub's <a href='https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/githubs-ssh-key-fingerprints'>public key fingerprint</a>.
+  - The remote command should exit with code 1.
+  - The resulting message should contain the username _grantspassoregon_:
+```{bash}
+> Hi grantspassoregon!  You've successfully authenticated, but GitHub does not provide shell access.
+```
+
