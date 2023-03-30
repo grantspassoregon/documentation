@@ -168,6 +168,6 @@ $ ssh -T git@github.com
   - Type "Services" and select the Services app.
   ![the Services app](../images/services_app.png)
   - Scroll to locate the OpenSSH Authentication Agent service.
-  ![the OpenSSH Authentication Agent service](./images/services_openssh.png)
+  ![the OpenSSH Authentication Agent service](../images/services_openssh.png)
   - If the service is disabled, enable it by double-clicking on the services, and selecting "Automatic" from the _Startup type_ field.
   ![set _Startup type_ to Automatic](../images/openssh_enable.png)
