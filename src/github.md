@@ -118,15 +118,18 @@ ssh -T git@github.com
 > provide shell access.
 ```
 
-### Troubleshooting GitHub Authentication
+## Troubleshooting GitHub Authentication
 
 If the authentication process fails, it may result in the following error:
+
 ```{bash}
 > Permission denied (publickey).
 ```
+
 In this case, the GitHub [docs](https://docs.github.com/en/authentication/troubleshooting-ssh/error-permission-denied-publickey) provides the following guidance:
 - Make sure you are not logged into Git Bash as an administrator.  Git is not designed to be used with elevated privileges.  You should be logged in with your user account both to create the SSH key and when logging into GitHub.
 - Confirming that you are connecting to port 22 (the SSH port) on GitHub:
+
 ```{bash}
 # test GitHub connection with verbose output
 $ ssh -vT git@github.com
@@ -134,8 +137,10 @@ $ ssh -vT git@github.com
 > debug1: Connecting to github.com [IP ADDRESS] port 22.
 > debug1: Connection established.
 ```
-   - If you have mistyped "git@github.com" the connection will fail.
+
+- If you have mistyped "git@github.com" the connection will fail.
 - Make sure you are opening a connection to the "git" user.  If you try to connect with your GitHub username, it will fail:
+
 ```{bash}
 # will not work
 $ ssh -T grantspassoregon@github.com
@@ -145,3 +150,24 @@ $ ssh -T git@github.com
 > Hi grantspassoregon!  You've successfully authenticated...
 ```
 
+- Check that your key is loaded into SSH:
+  - Using Git Bash, turn on the ssh-agent using the following command:
+  ```{bash}
+  # start the ssh-agent in the background
+  $ eval "$(ssh-agent -s)"
+  > Agent pid 1445
+  ```
+  - Verify the private key is generated and loaded:
+  ```{bash}
+  ssh-add -l -E sha256
+  > 256 SHA256:aVWpUNY8xC0f+0wLBLA3mJ1JWRNjIVaXZhTdX4ONO2Q GIS@grantspassoregon.gov (ED25519)
+  ```
+  If the ssh-add command does not print out a long string of numbers and letters, this indicates you either need to generate a new key or associate an existing key with GitHub.
+- Check that the OpenSSH Authentication Agent service is running:
+  - Open the Windows start menu by pressing the Windows key or clicking on the desktop search bar.
+  - Type "Services" and select the Services app.
+  ![the Services app](/images/services_app.png)
+  - Scroll to locate the OpenSSH Authentication Agent service.
+  ![the OpenSSH Authentication Agent service](/images/services_openssh.png)
+  - If the service is disabled, enable it by double-clicking on the services, and selecting "Automatic" from the _Startup type_ field.
+  ![set _Startup type_ to Automatic](/images/openssh_enable.png)
