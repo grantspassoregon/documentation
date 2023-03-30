@@ -166,8 +166,8 @@ $ ssh -T git@github.com
 - Check that the OpenSSH Authentication Agent service is running:
   - Open the Windows start menu by pressing the Windows key or clicking on the desktop search bar.
   - Type "Services" and select the Services app.
-  ![the Services app](/images/services_app.png)
+  ![the Services app](../images/services_app.png)
   - Scroll to locate the OpenSSH Authentication Agent service.
-  ![the OpenSSH Authentication Agent service](/images/services_openssh.png)
+  ![the OpenSSH Authentication Agent service](./images/services_openssh.png)
   - If the service is disabled, enable it by double-clicking on the services, and selecting "Automatic" from the _Startup type_ field.
-  ![set _Startup type_ to Automatic](/images/openssh_enable.png)
+  ![set _Startup type_ to Automatic](../images/openssh_enable.png)
