@@ -27,13 +27,13 @@ ls -al ~/.ssh
 # Lists the files in your .ssh directory, if they exist
 ```
 3. Check the directory listing to see if you already have a public SSH key.  GitHub supports the following filenames for public keys:
-  - id_rsa.pub
-  - id_ecdsa.pub
-  - id_ed25519.pub
+- id_rsa.pub
+- id_ecdsa.pub
+- id_ed25519.pub
 4. Either generate a new SSH key or upload an existing key.
-  - If one or more keys already exist, you do not have to use them and can generate a new key.
-  - You can elect to add an existing key to the ssh-agent and use it to connect to GitHub as well.
-  - If an existing key is not present, follow the instructions below to create a new key.
+- If one or more keys already exist, you do not have to use them and can generate a new key.
+- You can elect to add an existing key to the ssh-agent and use it to connect to GitHub as well.
+- If an existing key is not present, follow the instructions below to create a new key.
 
 ### Generating a new SSH key
 
@@ -92,7 +92,7 @@ clip < ~/.ssh/id_ed25519.pub
 6. Select "authentication" as the type of key.
 7. Paste the public key from the clipboard into the "Key" field.
 8. Click **Add SSH key**.
-  - If prompted, confirm access to the account on GitHub.
+- If prompted, confirm access to the account on GitHub.
 
 ### Test the SSH connection
 
@@ -104,16 +104,44 @@ This step confirms that the SSH key has been successfully added to GitHub.
 # Attempts to open ssh connection to GitHub
 ssh -T git@github.com
 ```
-  - The first time running, this command should return a warning:
+- The first time running, this command should return a warning:
 ```{bash}
 > The authenticity of host 'github.com (IP ADDRESS) can't be established.
-> ED25519 key fingerprint is SHA256:+DiY3wvvV6TuJJhbpZisF/zLDA0zPMSvHdkr4UvCOqU.
+> ECDSA key fingerprint is SHA256:p2QAMXNIC1TJYWeIOttrVc98/R1BUFWu3/LiyKgUfQM.
 > Are you sure you want to continue connecting (yes/no)?
 ```
-  - Type `yes` to accept the connection.  The fingerprint should match GitHub's <a href='https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/githubs-ssh-key-fingerprints'>public key fingerprint</a>.
-  - The remote command should exit with code 1.
-  - The resulting message should contain the username _grantspassoregon_:
+- Type `yes` to accept the connection.  The fingerprint should match GitHub's <a href='https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/githubs-ssh-key-fingerprints'>public key fingerprint</a>.
+- The remote command should exit with code 1.
+- The resulting message should contain the username _grantspassoregon_:
 ```{bash}
-> Hi grantspassoregon!  You've successfully authenticated, but GitHub does not provide shell access.
+> Hi grantspassoregon!  You've successfully authenticated, but GitHub does not 
+> provide shell access.
+```
+
+### Troubleshooting GitHub Authentication
+
+If the authentication process fails, it may result in the following error:
+```{bash}
+> Permission denied (publickey).
+```
+In this case, the GitHub [docs](https://docs.github.com/en/authentication/troubleshooting-ssh/error-permission-denied-publickey) provides the following guidance:
+- Make sure you are not logged into Git Bash as an administrator.  Git is not designed to be used with elevated privileges.  You should be logged in with your user account both to create the SSH key and when logging into GitHub.
+- Confirming that you are connecting to port 22 (the SSH port) on GitHub:
+```{bash}
+# test GitHub connection with verbose output
+$ ssh -vT git@github.com
+> OpenSSH_for_Windows_8.1p1, LibreSSL 3.0.2
+> debug1: Connecting to github.com [IP ADDRESS] port 22.
+> debug1: Connection established.
+```
+   - If you have mistyped "git@github.com" the connection will fail.
+- Make sure you are opening a connection to the "git" user.  If you try to connect with your GitHub username, it will fail:
+```{bash}
+# will not work
+$ ssh -T grantspassoregon@github.com
+> Permission denied (publickey).
+# will work
+$ ssh -T git@github.com
+> Hi grantspassoregon!  You've successfully authenticated...
 ```
 
