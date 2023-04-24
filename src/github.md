@@ -5,6 +5,12 @@ This section describes the steps necessary to set up GitHub integration on your 
 
 `git` is the software that manages version control on your local machine, and so to integrate with GitHub online, `git` must be installed locally.  The `winget` and `chocolatey` package managers can both help you install `git`, but it is also available as a [stand-alone package installer](https://git-scm.com/download/win). Feel free to use the default installation directory and other settings on the install wizard. `git` is a fully-featured software designed to handle much more complex code bases than the GIS packages developed at the City, and so we will we only be using a subset of its available functionality, but if you are curious you can read more about it in the [Pro Git](https://git-scm.com/book/en/v2) book.
 
+To ensure that git is installed correctly on your machine, use the command:
+```
+  git --version
+  # output: git version X.Y.Z
+```
+
 From the chapter on [First-Time Git Setup](https://git-scm.com/book/en/v2/Getting-Started-First-Time-Git-Setup), there are a couple setup commands that we need to run on a fresh install to register the user account that we will be using to interact with the Grants Pass code repository on GitHub.  From the terminal, run the following commands:
 
 ```{PS}
@@ -126,7 +132,7 @@ If the authentication process fails, it may result in the following error:
 > Permission denied (publickey).
 ```
 
-In this case, the GitHub [docs](https://docs.github.com/en/authentication/troubleshooting-ssh/error-permission-denied-publickey) provides the following guidance:
+In this case, the GitHub [docs](https://docs.github.com/en/authentication/troubleshooting-ssh/error-permission-denied-publickey) provide the following guidance:
 - Make sure you are not logged into Git Bash as an administrator.  Git is not designed to be used with elevated privileges.  You should be logged in with your user account both to create the SSH key and when logging into GitHub.
 - Confirming that you are connecting to port 22 (the SSH port) on GitHub:
 
