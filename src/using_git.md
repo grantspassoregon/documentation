@@ -2,7 +2,7 @@
 
 This section describes how to use `git` commands to download code from the GitHub repository onto your local machine, make changes to this code and then upload these changes back onto the repository, as well as how to make a new repository and associate it with the GitHub account.  We introduce the most common commands that you will use to manage the code base.  Although `git` offers many additional features, and you are welcome to use these features to improve your productivity, the following commands should be sufficient for a new user to set up a basic workflow.
 
-## Cloning a Repository
+## Cloning a Repository (git clone)
 
 GitHub offers centralized cloud-based code storage that allows users of an organization to collaborate across multiple locations.  Changes made to the code from an individual computer synchronize the with the centrally-stored code database, ensuring that all users are able to access a shared version.  The first step in gaining access to the shared code is to make a local copy of the relevant GitHub project onto your local machine, a process called "Cloning a Repository."
 
@@ -23,3 +23,6 @@ git clone git@github.com:grantspassoregon/documentation.git
 ```
 
 This command will create a folder with the same name as the project in the working directory.  You can view the downloaded files by navigating into the directory (e.g. `cd documentation`) or by opening the files directly into your favorite code editor.
+
+## Updating Your Local Version (git pull)
+
