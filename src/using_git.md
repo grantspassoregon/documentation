@@ -26,3 +26,34 @@ This command will create a folder with the same name as the project in the worki
 
 ## Updating Your Local Version (git pull)
 
+
+## Adding Locally-Hosted Code to a New Repository
+
+As the scope and duties of the GIS Division change over time, we create new projects to meet the changing needs of the City government. The easiest method to add a new project to the GitHub account is to begin with code hosted on your own machine, and then to push this code into an empty repository on GitHub using the CLI.
+Referring to the [docs](https://docs.github.com/en/migrations/importing-source-code/using-the-command-line-to-import-source-code/adding-locally-hosted-code-to-github):
+
+* Create a new repository on GitHub.com.
+  * Click the new repository button:
+  ![New Repository Button](./images/new_repository_button.png)
+  * Enter the name of the new project:
+  ![Create New Repository](./images/create_new_repository.png)
+  * Unless there are overriding privacy concerns, a Public repository is standard.
+  * Do not initialize the new repository with a README, license, or gitignore files.  Leave it empty.
+  * An empty repository prevents merge errors when uploading the code hosted on the local machine.
+* At the top of the new Quick Setup page for the new repository, copy the remote repository URL.
+  ![Remote Repository URL](./images/remote_repository_url.png)
+* Open Git Bash or the Alacritty terminal and navigate to the local project directory.
+  * Ensure that the local repository is committed and ready to push.
+    * If the code is not set up as a git repository, run `git init`.
+    * Run `git status` and add any outstanding changes using `git add .`.
+    * Commit the changes using `git commit -m "descriptive message"`.
+* Link the local directory to the remote repository:
+  ```{bash}
+  # replate <remote-URL> with the URL copied from the Quick Setup page on GitHub.com
+  git remote add origin <remote-URL>
+  # change the default branch name to "main"
+  git branch -M main
+  # push the contents of the local directory to the remote repository
+  git push -u origin main
+  ```
+
