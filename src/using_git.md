@@ -26,6 +26,48 @@ This command will create a folder with the same name as the project in the worki
 
 ## Updating Your Local Version (git pull)
 
+The command `git pull` is a way to sync the copy of the code base on a local machine with the latest changes made to the remote repository.  If some time has passed since you cloned a repository on your local machine, or if the project is in active development by a colleague, then you may need to run `git pull` in order to update your local copy to the most recent version.  When executed from the working directory of a git project, `git pull` will download the latest changes on the remote repository and update the local copy. If you plan on making changes to a code base that is actively under development by multiple people, it is wise to `git pull` before you begin editing, to prevent potential merge conflicts.
+
+A typical use pattern for this command looks like this:
+```{PS}
+> cd path\to\project
+> git pull
+```
+
+## Examining the Project Directory (git status)
+
+The `git status` commands tracks changes made to files tracked by git.  When you edit a local file in the repository, `git status` will show the file to be changed but not "staged".  Staged changes are edits that you explicitly want to push up into the remote branch.  You can stage changes for committing to the remote branch using the `git add` command.  Running `git status` is a good way to ensure that all changes made during an editing sessions are properly staged before attempting to commit to a remote repository.
+![Git Status](./images/git_status_unstaged.png)
+
+
+## Staging Changes to Commit to a Remote Repository (git add)
+
+The `git add` command promotes changes in your local files to the staging area.  Only staged files are pushed to the remote repository during a commit.  If you only want to stage a single file from your local machine, you can specify the file name:
+```{PS}
+# stage a single file
+> git add address.rs
+```
+
+If you want to add all changes made to the staging area, you can use to dot operator "." or the -p flag, short for "patch":
+```{PS}
+# stage all changes
+> git add .
+# or, alternatively
+> git add -p
+```
+
+When you create a new file name that is not stored on the remote repository, this file begins as "untracked".  When you add the file to the staging area, it becomes "tracked".  If you want to ignore new files (maybe they are not ready yet) and only stage changes made to files that are already tracked, use the -u flag, short for "update", which will only stage files that have a matching entry in the remote repository:
+```{PS}
+# stage tracked changes
+> git add -u
+```
+
+After staging changes, it is helpful to run `git status` to ensure the staging area is correct before committing changes to the remote repository:
+![Git Status Staged](./images/git_status_staged.png)
+
+## Commit Staged Changes to a Remote Repository (git commit)
+
+
 
 ## Adding Locally-Hosted Code to a New Repository
 
