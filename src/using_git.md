@@ -73,6 +73,9 @@ When you are ready to commit staged changes to a remote repository, use the `git
 ```
 ![Git Commit](./images/git_commit.png)
 
+## Pushing Committed Changes to a Remote Repository (git push)
+
+The `git push` command is the final step in moving changes from your local machine to a remote repository.  You can edit and revise your work, and make multiple calls to `git commit`, but until you run `git push`, these changes will remain confined to your local machine.
 
 
 ## Adding Locally-Hosted Code to a New Repository
