@@ -77,9 +77,12 @@ When you are ready to commit staged changes to a remote repository, use the `git
 
 The `git push` command is the final step in moving changes from your local machine to a remote repository.  You can edit and revise your work, and make multiple calls to `git commit`, but until you run `git push`, these changes will remain confined to your local machine.  Generally, it is good practice to commit stable changes regularly to the remote repository, to serve as a backup if something happens to your local machine.  In addition, the more commits stack up on your local machine, the greater the risk of merge errors when you finally do run `git push`, and the best way to handle merge errors is to avoid having them occur in the first place, so push often.
 
+Here is an example of `git push` in action:
+![Git Push](./images/git_push.png)
+
+And here is an example of pushing multiple commits at once:
 ![Git Push Commits](./images/git_push_commits.png)
 
-![Git Push](./images/git_push.png)
 
 
 ## Adding Locally-Hosted Code to a New Repository
