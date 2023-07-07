@@ -79,6 +79,7 @@ The `git push` command is the final step in moving changes from your local machi
 
 
 
+
 ## Adding Locally-Hosted Code to a New Repository
 
 As the scope and duties of the GIS Division change over time, we create new projects to meet the changing needs of the City government. The easiest method to add a new project to the GitHub account is to begin with code hosted on your own machine, and then to push this code into an empty repository on GitHub using the CLI.
