@@ -67,6 +67,11 @@ After staging changes, it is helpful to run `git status` to ensure the staging a
 
 ## Commit Staged Changes to a Remote Repository (git commit)
 
+When you are ready to commit staged changes to a remote repository, use the `git commit` command.  Industry best practice includes attaching a short descriptive message to a commit.  This message makes it easier to understand the purpose of the committed code without wading through it line by line.  When searching through the past history of commits, a good message can make it easier to find the change you are looking for.  To include a message, using the -m flag and pass the message inside quotes, so the format of the command looks like this:
+```{PS}
+> git commit -m "descriptive message"
+```
+
 
 
 ## Adding Locally-Hosted Code to a New Repository
