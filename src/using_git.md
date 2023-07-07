@@ -71,6 +71,7 @@ When you are ready to commit staged changes to a remote repository, use the `git
 ```{PS}
 > git commit -m "descriptive message"
 ```
+![Git Commit](./images/git_commit.png)
 
 
 
