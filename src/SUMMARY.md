@@ -4,6 +4,8 @@
   - [The Address Request Form](./address_request.md)
   - [The Addressing Layer](./addressing_layer.md)
   - [Addressing Rules](./addressing_rules.md)
+  - [Addressing Policies](./addressing_policies.md)
+- [Address Strategic Plan](./address_strategic_plan.md)
 - [Packages](./packages_intro.md)
   - [Github Integration](./github.md)
   - [Using git](./using_git.md)
