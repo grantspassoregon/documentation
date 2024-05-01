@@ -148,6 +148,32 @@ A second concern is prioritization.  First-come/first-serve is an appropriate bu
 
 The resolution process also raises questions.  What should the documentation of an address issue look like?  If the address presents a potential safety concern, do we require a statement from emergency dispatch identifying the safety concern?  The municipal code requires us to contact the resident in writing both 30 days prior to any change and after the change has occurred.  The intent was to provide residents with a minimum assurance that they would be informed in a timely manner during the process, but we did not intend for it to be the whole of the process.
 
+### The Address Strategic Plan
+
+The [Address Strategic Plan](./address_strategic_plan.md) is a document designed to organize, prioritize and focus on address issues.  When you encounter a new address issue, record the issue in the appropriate section of the strategic plan.  As a companion to the strategic plan, we keep a map layer showing the location of address issues, with links back to the appropriate sections of the strategic plan.  The intent is to publish the strategic plan map within a web app, so that users who click on a particular feature can follow the link to the strategic plan and become informed on the issues affecting an address.  Updating the strategic plan involves recording the address issue in the planning document, and then adding the points at issue to the strategic plan map.
+
+Each address issue identified in the plan should include:
+
+* An issue category.
+* The address(es) at issue.
+* A description of the issue.
+
+If the issue does not fit into an existing category (access, suffixed, sequencing, or directional), then create a new category to hold issues of this type.  For an existing issue, you will want to add the address of interest to the list of affected addresses, but you may not need to update the issue description, if it describes the issue sufficiently for the new address.
+
+The project file for the strategic plan map is at `O:/GISUserProjects/Departments/GIS_General/strategic_plan/addressing_strategic_plan/addressing_strategic_plan.aprx`.  The schema for the addresses in this layer is identical to the addresses in our normal addressing layer, with the addition of some extra fields.  This design is an intentional choice, to make appending new issues straightforward.  Because all the fields in the address site points layer are present in the strategic plan layer, we can append rows from the former onto the latter.  So when I have identified an address issue, I select the points of interest and export them to the project geodatabase.  Then I merge the exported layer with the strategic plan layer, producing a new layer with the merged contents, including the new addresses.  I then have to follow up by filling in the three missing fields that are not present on the original layer.  These fields are:
+
+* Current address
+* Issue type
+* Issue link
+
+The *current address* field contains the current state of the address, or the address at issue, and not the proposed change that would resolve the issue.  When I merge new addresses into this layer, I copy the *address label* field into the *current address* field.  The reason we copy the active address into this field is so that we can replace the values in the normal address component fields with a proposed new address that would resolve the existing issues.  Once we have changed these fields to propose a new address, the *current address* field becomes the only field referencing the original address.
+
+The *issue type* field is a domain with values corresponding to the four issue categories identified in the strategic plan.  We use this layer to drive symbology and labeling in the strategic plan map.  The *issue link* contains a link to the strategic plan document hosted in the documentation repo on the City's GitHub repository.
+
+Why not just use an *MS Word* document?  Isn't that how governments do it?  The first motivation is to facilitate sharing.  As a web book, we can link to each subheading in the document, so we can link to a subsection within a larger document and send readers to this exact section.  We could potentially link to a Word document stored on one of our network drives, but we cannot link to individual sections within a Word document, and this makes it harder for users to find the content related to a specific issue.  If staff are not on the city intranet, they will not even have access to the Word file, and if we decide to share the map with residents, the solution does not work at all.  Sometimes agencies prefer using Word format because of the shared editing tools, but typically only a single member of the GIS division will be preparing and editing the strategic plan, so shared editing is not a motivating factor.
+
+
+
 * When assigning multiple units to a single tax parcel:
   * Use unique address numbers when the units are detached from each other.
   * Use unique unit identifiers when the units are attached.
