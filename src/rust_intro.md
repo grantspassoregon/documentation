@@ -37,3 +37,6 @@ Quoting Lars Bergstrom from [The Register](https://www.theregister.com/2024/03/3
 "We've seen a decrease by more than 2x in the amount of effort required to build the services in Rust [compared to C++] as well as maintain and update those services written in Rust, and so that's a really huge thing for us because C++ code is very expensive."
 
 "Eight-five percent of [our developers] believe that their Rust code is more likely to be correct than the other code within their system. … I've been through more than one language survey in my life and I've never seen those kinds of numbers before."
+
+---
+
