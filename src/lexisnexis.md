@@ -105,7 +105,7 @@ cargo install prettydiff
 
 The diff report will look something like this:
 
-!Pretty Diff Report](./images/prettydiff.png)
+![Pretty Diff Report](./images/prettydiff.png)
 
 ```
 
