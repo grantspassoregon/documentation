@@ -5,6 +5,7 @@
   - [The Addressing Layer](./addressing_layer.md)
   - [Addressing Rules](./addressing_rules.md)
   - [Addressing Policies](./addressing_policies.md)
+  - [LexisNexis Tables](./lexisnexis.md)
 - [Address Strategic Plan](./address_strategic_plan.md)
 - [Packages](./packages_intro.md)
   - [Github Integration](./github.md)
@@ -13,4 +14,3 @@
 - [Utility Editing](./utility_editing.md)
 - [Stand-Alone Scripts](./scripts_intro.md)
   - [Missing Sidewalks](./missing_sidewalks.md)
-
