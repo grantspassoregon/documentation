@@ -5,6 +5,7 @@
   - [The Addressing Layer](./addressing_layer.md)
   - [Addressing Rules](./addressing_rules.md)
   - [Addressing Policies](./addressing_policies.md)
+  - [Address Verification](./address_verification.md)
   - [LexisNexis Tables](./lexisnexis.md)
 - [Address Strategic Plan](./address_strategic_plan.md)
 - [Packages](./packages_intro.md)

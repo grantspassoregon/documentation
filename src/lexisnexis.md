@@ -80,28 +80,30 @@ Note that these functions update two saved files within the repo: "addresses.dat
 
 Now you can start the AMS by navigating the AMS repo on your machine and entering:
 
-```
+```{cargo}
 cargo run --release
 ```
 
 1. Load the address targets into the system:
 
-- Click the Load button.
-- Navigate to the target file and click Open.
+   - Click the Load button.
+   - Navigate to the target file and click Open.
 
 2. Click the LexisNexis button.
 
-- Check to ensure the correct layer is selected as the address source.
-- Click Run.
-- When the table completes building, click Save to export as a .csv.
+   - Check to ensure the correct layer is selected as the address source.
+   - Click Run.
+   - When the table completes building, click Save to export as a .csv.
 
-Navigate to the [lexisnexis](https://github.com/grantspassoregon/lexisnexis) repo. Observe the current version level of the most recent lexisnexis table. Version numbers consist of three levels: MAJOR.MINOR.PATCH. Bump the patch version number by 1 for normal table updates. If you change the scheme of the table, bump the minor version. If LexisNexis changes their format and you have to redo everything, bump the major version. Save the new version in the repo with the bumped version number. For instance, if the previous version was "lexisnexis_1.0.9.csv", the new version would be "lexisnexis_1.0.10.csv".
+Navigate to the [lexisnexis](https://github.com/grantspassoregon/lexisnexis) repo. Observe the current version level of the most recent lexisnexis table. Version numbers consist of three levels: MAJOR.MINOR.PATCH.
+Bump the patch version number by 1 for normal table updates. If you change the scheme of the table, bump the minor version. If LexisNexis changes their format and you have to redo everything, bump the major version.
+Save the new version in the repo with the bumped version number. For instance, if the previous version was "lexisnexis_1.0.9.csv", the new version would be "lexisnexis_1.0.10.csv".
 
 ## Create a diff report
 
 From the terminal, use `prettydiff` to produce a diff report. From the root of the lexisnexis repo, enter the command:
 
-```
+```{bash}
 prettydiff lexisnexis_1.0.OLD.csv lexisnexis_1.0.NEW.csv
 ```
 
@@ -109,7 +111,7 @@ Note you will need to replace the file path names with the appropriate version n
 
 If you do not have this program installed, you can obtain it from cargo by running:
 
-```
+```{cargo}
 cargo install prettydiff
 ```
 
@@ -117,6 +119,11 @@ The diff report will look something like this:
 
 ![Pretty Diff Report](./images/prettydiff.png)
 
-The header indicates the parent file. The line numbers indicate the corresponding row affected on the resulting spreadsheet. Data highlighted in red indicates information that was present in the old version that has been removed from the newer, while white text remains unchanged. Data highlighted in green indicates additions to the newer file that are not present in the older. For instance, this diff report indicates that the range 130-1991 SW Bridge St has been removed. The entry formerly containing the range 2015-2248 SW Bridge St has been amended to read 201-2248 SW Bridge St. The green values indicate new addresses on Leonard, Hillcrest, and Allen Creek Road. There has also been a shift in range along Carnahan Dr.
+The header indicates the parent file. The line numbers indicate the corresponding row affected on the resulting spreadsheet.
+Data highlighted in red indicates information that was present in the old version that has been removed from the newer, while white text remains unchanged.
+Data highlighted in green indicates additions to the newer file that are not present in the older.
+For instance, this diff report indicates that the range 130-1991 SW Bridge St has been removed.
+The entry formerly containing the range 2015-2248 SW Bridge St has been amended to read 201-2248 SW Bridge St.
+The green values indicate new addresses on Leonard, Hillcrest, and Allen Creek Road. There has also been a shift in range along Carnahan Dr.
 
 Email a link to the new lexisnexis file and a copy of the diff report to the 911 Operations Manager, who will review the diff report and may ask a few questions in follow-up, depending on how much has changed.
