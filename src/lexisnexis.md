@@ -78,7 +78,7 @@ Note that these functions update two saved files within the repo: "addresses.dat
 
 ## Generate the LexisNexis Table
 
-Now you can start the AMS by navigating the AMS repo on your machine and entering:
+Now you can start the AMS by navigating to the AMS repo on your machine and entering:
 
 ```{cargo}
 cargo run --release

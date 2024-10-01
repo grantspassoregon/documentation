@@ -1,3 +1,4 @@
 ## Granite Overview
+
 - Test
-  + Second Test
+  - Second Test

@@ -80,6 +80,8 @@ When you create a new feature, the Edit window for the feature will open, allowi
 - The _Attachments_ field permits adding photographs of address identification as attachments to their corresponding address points.
   - While photos are the most time-consuming element to collect in the field, they are often invaluable when returning to examine the data at a later time, and thus are the preferred means of recording address verification.
 
+The additional fields present (id, latitude, longitude) were used to create the initial layer from a spreadsheet.
+
 To change the field values of an existing verification point, use the Select tool. When the Select tool is active, a blue bar will appear on the left side:
 
 ![Edit Select](./images/edit_select.png)
