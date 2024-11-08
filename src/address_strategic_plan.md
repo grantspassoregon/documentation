@@ -85,6 +85,10 @@ There being no even numbers between 545 and 547, either one or the other could a
 
 ### Issue: Inaccurate Directional Designations
 
+Description: From 1950-2023, GPMC 6.40.030 (B) specified that new streets shall receive a directional designation of NE, NW, SE or SW, but historically this standard was not consistently applied.
+In some cases, the City failed to apply a directional designation, but the assessor’s office assumed one was in place, resulting in parcel situs addresses that do not match the addresses assigned by the City.
+In other cases, the City has consistently applied a directional designation but the assessor’s office has not followed suit.
+
 Affected Streets:
 
 - NW MORGAN LN -> MORGAN LN
@@ -94,6 +98,7 @@ Affected Streets:
 - NW TAMARA CIR -> TAMARA CIR
 - NW STARLITE PL -> STARLITE PL
 - NW LAWNRIDGE AVE -> LAWNRIDGE AVE
+- NW WILLIAMSBURG DR -> ?
 - W SCHUTZWOHL LN -> SCHUTZWOHL LN
 - NE SCOVILLE RD -> SCOVILLE RD
 - NE TOKAY HTS -> TOKAY HTS
@@ -101,6 +106,22 @@ Affected Streets:
 - NE FAIRVIEW AVE -> FAIRVIEW AVE
 - NE DUANE DR -> DUANE DR
 - NE JOSEPHINE ST -> JOSEPHINE ST
+- NE INDUSTRY DR -> ?
+- SW FOUNDRY ST -> FOUNDRY ST
+- SW HUMANITY WAY -> HUMANITY WAY
+- SW GREENWOOD AVE -> GREENWOOD ?
+- SW MARION LN -> MARION LN
+- SW HENDERSON LN -> HENDERSON LN
+- SW WEST HARBECK RD -> W HARBECK RD
+- SW GRANDVIEW AVE -> GRANDVIEW AVE
+- SE OAKVIEW DR -> OAKVIEW DR
+- SE HILLTOP VW -> HILLTOP VW
+- SE SOUTHRIDGE WAY -> SOUTHRIDGE WAY
+- SE VISTA DR -> VISTA DR
+- SE JERRINE ST -> JERRINE ST
+- SE GRANDVIEW AVE -> GRANDVIEW AVE
+- SE HAVILAND DR -> HAVILAND DR
+- ACACIA LN -> SE ACACIA LN
 
 #### NW MORGAN LN -> MORGAN LN
 
@@ -118,8 +139,12 @@ Evidence:
 
 Options:
 
-- Change addresses to match the official street name. Affected addresses: 85. Affected titles: 83.
-- Add "NW" to the official street name per GPMC 6.40.020(D). Affected addresses: 0. Affected titles: 2.
+- Change addresses to match the official street name.
+  - Addresses affected: 85
+  - Titles affected: 51
+- Add "NW" to the official street name per GPMC 6.40.020(D).
+  - Addresses affected: 0
+  - Titles affected: 2
 
 Recommendation: Add "NW" to the official street name. The majority of parcel situs addresses already match the city-assigned address, so changing the street name minimizes disruption to only two titles.
 
@@ -140,10 +165,11 @@ Options:
 
 - Change addresses to match the official street name.
   - Addresses affected: 59
-  - Titles affected: 0
+  - Titles affected: 52
+    - 3 with situs "\* NW VALLEY VIEW DR"
 - Add "NW" to the official street name per GPMC 6.40.020(D).
   - Addresses affected: 0
-  - Titles affected: 59
+  - Titles affected: 7
 
 Recommendation: Add "NW" to the official street name.
 
@@ -205,7 +231,8 @@ Options:
 
 - Change the addresses to match the official street name.
   - Addresses affected: 70
-  - Titles affected: 70
+  - Titles affected: 73
+    - 5 with situs "\* NW STARLITE PL"
 - Add the "NW" directional designation to the official street name per GPMC 6.40.020(D).
   - Addresses affected: 0
   - Titles affected: 0
@@ -227,12 +254,35 @@ Options:
 
 - Change the addresses to match the official street name.
   - Addresses affected: 72
-  - Titles affected: 71
+  - Titles affected: 72
+    - 1 with situs "\* NW LAWNRIDGE AVE"
 - Add the "NW" directional designation to the official street name per GPMC 6.40.020(D).
   - Addresses affected: 0
   - Titles affected: 1
 
-Recommendation: Add the "NW" directional to the official street name. This option minimizes disruption to residents.
+Recommendation: Add "NW" to the official street name. This option minimizes disruption to residents and matches city preference for using directional designations.
+
+#### NE WILLIAMSBURG DR -> ?
+
+Addresses Affected: 10
+
+Finding: The final plats are contradictory for this street. In 1997 the street was platted as "WILLIAMSBURG DRIVE" in the Williamsburg Subdivision, but in 2023 the street was platted as "NORTHWEST WILLIAMSBURG DRIVE" in the Southview Subdivision Phase 2.
+
+Evidence:
+
+- Final Plat: [Williamsburg Subdivision](https://www.grantspassoregon.gov/DocumentCenter/View/31822/WILLIAMSBURG-SUBDIVISION?bidId=)
+- Final Plat: [Southview Subdivision Phase 2](https://www.grantspassoregon.gov/DocumentCenter/View/31877/SOUTHVIEW-SUBDIVISION-PHASE-2?bidId=)
+
+Options:
+
+- Declare the official street name to be "WILLIAMSBURG DR".
+  - Addresses affected: 10
+  - Titles affected: 5
+- Declare the official street name to be "NW WILLIAMSBURG DR".
+  - Addresses affected: 0
+  - Titles affected: 5
+
+Recommendation: Add "NW" to the official street name. This option minimizes disruption to residents and matches city preference for using directional designations.
 
 #### NE SCOVILLE RD -> SCOVILLE RD
 
@@ -251,7 +301,7 @@ Options:
   - Titles affected: 6
 - Add the "NE" directional designation to the official street name, per GPMC 6.40.020(D).
   - Addresses affected: 33
-  - Titles affected: 27
+  - Titles affected: 30 (including three with situs "\* SCOVILLE RD")
 
 Recommendation: Change the parcel situs addresses to match the official street name. This approach minimizes disruption to residents.
 
@@ -269,7 +319,8 @@ Options:
 
 - Change the addresses to match the official street name.
   - Addresses affected: 25
-  - Titles affected: 24
+  - Titles affected: 30
+    - 10 with situs "\* NE TOKAY HTS"
 - Add the "NE" directional designation to the official street name per GPMC 6.40.020(D).
   - Addresses affected: 0
   - Titles affected: 1
@@ -292,7 +343,7 @@ Options:
 
 - Change the addresses to match the official street name.
   - Addresses affected: 107
-  - Titles affected: 101
+  - Titles affected: 53
 - Add the "NE" directional designation to the official street name per GPMC 6.40.020(D).
   - Addresses affected: 0
   - Titles affected: 6
@@ -315,7 +366,7 @@ Options:
 
 - Change the address to match the official street name.
   - Addresses affected: 173
-  - Titles affected: 173
+  - Titles affected: 48
 - Add the "NE" directional designation to the official street name per GPMC 6.40.020(D)
   - Addresses affected: 0
   - Titles affected: 1 (Situs: 2084 FAIRVIEW)
@@ -364,13 +415,352 @@ Options:
 
 Recommendation: Add the "NE" directional designation to the official street name. This option minimizes disruption to residents and matches city preference for using directional designations.
 
----
+#### NE INDUSTRY DR -> ?
+
+Addresses Affected: 30
+
+Finding: The street was platted as "NE INDUSTRY DR" as part of the Spalding Commerce Park Phase 2 in 2004, but the plat for Spalding Commerce Park Phase 3 shows "INDUSTRY DRIVE" in 2007.
+
+Evidence:
+
+- [Spalding Commerce Park Phase 2](https://www.grantspassoregon.gov/DocumentCenter/View/31547/SPALDING-COMMERCE-PARK-PHASE-2?bidId=) - "NE INDUSTRY DRIVE" 2004
+- [Spalding Commerce Park Phase 3](https://www.grantspassoregon.gov/DocumentCenter/View/32041/SPALDING-COMMERCE-PARK-PHASE-3?bidId=) - "INDUSTRY DRIVE" 2007
+
+Options:
+
+- NE INDUSTRY DRIVE
+  - Addresses affected: 0
+  - Titles affected: 3
+- INDUSTRY DRIVE
+  - Addresses affected: 30
+  - Titles affected: 9
+
+Recommendation: Use "NE INDUSTRY DR". This option minimizes disruption to residents and matches city preference for using directional designations.
+
+#### SW FOUNDRY ST -> FOUNDRY ST
+
+Addresses Affected: 67
+
+Finding: The City changed the name of the street from "North Main Street" to "Foundry Street" with Ord 281 in 1907.
+
+Evidence:
+
+- [Ord 281](./ord_281.md)
+- Final Plat: [Roller Subdivision](https://www.grantspassoregon.gov/DocumentCenter/View/31467/ROLLER-SUBDIVISION?bidId=) - 1965
+- Final Plat: [Habitat Haven Subdivision](https://www.grantspassoregon.gov/DocumentCenter/View/31825/HABITAT-HAVEN-SUBDIVISION?bidId=) - 2001
+
+Options:
+
+- Change the addresses to match the official street name.
+  - Addresses affected: 67
+  - Titles affected: 48
+- Add the "SW" directional designation to the official street name.
+  - Addresses affected: 0
+  - Titles affected: 1
+
+Recommendation: Add the "SW" directional designation to the official street name. This option minimizes disruption to residents and matches city preference for using directional designations.
+
+#### SW HUMANITY WAY -> HUMANITY WAY
+
+Addresses Affected: 5
+
+Finding: This street was platted as "HUMANITY WAY" in 2001 as part of the Habitat Haven Subdivision.
+
+Evidence:
+
+- Final Plat: [Habitat Haven Subdivision](https://www.grantspassoregon.gov/DocumentCenter/View/31825/HABITAT-HAVEN-SUBDIVISION?bidId=) - 2001
+
+Options:
+
+- Change the addresses to match the official street name.
+  - Addresses affected: 5
+  - Titles affected: 4
+- Add the "SW" directional designation to the official street name.
+  - Addresses affected: 0
+  - Titles affected: 1
+
+Recommendation: Add the "SW" directional designation to the official street name. This option minimizes disruption to residents and matches city preference for using directional designations.
+
+#### SW GREENWOOD AVE -> GREENWOOD ?
+
+Addresses Affected: 68
+
+Finding: Not sure if the street post type is "Drive" or "Avenue". No evidence of "SW" directional designation in use.
+
+Evidence:
+
+- [HB Miller & Company New Addition] - "West Side Street" 1889
+- [Westholm Park Addition](https://www.grantspassoregon.gov/DocumentCenter/View/31527/WEST-L-STREET-SUBDIVISION?bidId=) - "Greenwood Drive" 1911
+- [West L Street Subdivision](https://www.grantspassoregon.gov/DocumentCenter/View/31527/WEST-L-STREET-SUBDIVISION?bidId=) - "Greenwood Drive" 1949
+- [Ballinger Subdivision](https://www.grantspassoregon.gov/DocumentCenter/View/31527/WEST-L-STREET-SUBDIVISION?bidId=) - "Greenwood Avenue" 1961
+
+Options:
+
+- SW GREENWOOD AVE
+  - Addresses affected: 0
+  - Titles affected: 1
+- GREENWOOD AVE
+  - Addresses affected: 68
+  - Titles affected: 65
+    - 1 with situs "\* SW GREENWOOD AVE"
+- GREENWOOD DR
+  - Addresses affected: 68
+  - Titles affected: 66
+
+Recommendation: Use "SW GREENWOOD AVE", adding the "SW" directional designation to the official street name. This option minimizes disruption to residents and matches city preference for using directional designations.
+
+#### SW MARION LN -> MARION LN
+
+Addresses Affected: 52
+
+Finding: This street was platted as "Marion Street" in 1948 and then "Marion Lane" in 2006. No evidence of a directional designation.
+
+Evidence:
+
+- [Redland Manor Tracts](https://www.grantspassoregon.gov/DocumentCenter/View/31682/REDLAND-MANOR-TRACTS?bidId=) - "Marion Street" 1948
+- [Westerly Meadows Subdivision](https://www.grantspassoregon.gov/DocumentCenter/View/31443/WESTERLY-MEADOWS-SUBDIVISION?bidId=) - "Marion Lane" 2006
+
+Options:
+
+- Change the addresses to match the official street name.
+  - Addresses affected: 0
+  - Titles affected: 39
+    - 1 situs address with "\* SW MARION "
+- Add the "SW" directional designation to the official street name.
+  - Addresses affected: 52
+  - Titles affected: 1
+
+Recommendation: Change the addresses to match the official street name. This option minimizes disruption to residents.
+
+#### SW HENDERSON LN -> HENDERSON LN
+
+Addresses Affected: 1
+
+Finding: The street was platted as "Henderson Lane" in 2004, and does not have a directional designation.
+
+Evidence:
+
+- [Westerly Meadows Subdivision](https://www.grantspassoregon.gov/DocumentCenter/View/31443/WESTERLY-MEADOWS-SUBDIVISION?bidId=) - "Henderson Lane" 2004
+- [Ruhl Subdivision](https://www.grantspassoregon.gov/DocumentCenter/View/32002/RUHL-SUBDIVISION?bidId=) - "County Road" - 1949
+
+Options:
+
+- Change the address to match the official street name.
+  - Addresses affected: 1
+  - Titles affected: 0
+- Add the "SW" directional designation to the official street name.
+  - Addresses affected: 0
+  - Titles affected: 1
+
+Recommendation: Add the "SW" directional designation to the street name, matching the city preference for using directional designations.
+
+#### SW WEST HARBECK RD -> W HARBECK RD
+
+Addresses Affected:
+
+Finding:
+
+Evidence:
+
+- [Gix Subdivision](https://www.grantspassoregon.gov/DocumentCenter/View/31648/GIX-SUBDIVISION?bidId=) - "Harbeck Road" 1960
+- [Colorado Subdivision](https://www.grantspassoregon.gov/DocumentCenter/View/31556/COLORADO-SUBDIVISION?bidId=) - "West Harbeck Road" 1978
+- [Meadow Glen Subdivision 1st Addition](https://www.grantspassoregon.gov/DocumentCenter/View/31497/MEADOW-GLEN-SUBDIVISION-1ST-ADDITION?bidId=) - "West Harbeck Road" 1981
+- [Sunset Knoll Subdivision Phase 1](https://www.grantspassoregon.gov/DocumentCenter/View/31672/SUNSET-KNOLL-SUBDIVISION-PHASE-1?bidId=) - "West Harbeck Road" 1991
+- [Sunset Knoll Subdivision Phase 2](https://www.grantspassoregon.gov/DocumentCenter/View/31660/SUNSET-KNOLL-SUBDIVISION-PHASE-2?bidId=) - "West Harbeck Road" 1994
+- [Sunset Knolls Subdivision Phase 3](https://www.grantspassoregon.gov/DocumentCenter/View/31445/SUNSET-KNOLL-SUBDIVISION-PHASE-3?bidId=) - "West Harbeck Road" 1995
+- [Citys Edge Subdivision](https://www.grantspassoregon.gov/DocumentCenter/View/31807/CITYS-EDGE-SUBDIVISION?bidId=) - "West Harbeck Road" 1997
+- [Countrywood Heights Subdivision](https://www.grantspassoregon.gov/DocumentCenter/View/31622/COUNTRYWOOD-HEIGHTS-SUBDIVISION?bidId=) - "West Harbeck Road" 1999
+- [Mayberry Meadows Subdivision](https://www.grantspassoregon.gov/DocumentCenter/View/31740/MAYBERRY-MEADOWS-SUBDIVISION?bidId=) - "West Harbeck Road" 2003
+- [Maurer Meadows Subdivision](https://www.grantspassoregon.gov/DocumentCenter/View/31914/MAURER-MEADOWS-SUBDIVISION?bidId=) - "West Harbeck Road" 2004
+- [Countrywood East Subdivision](https://www.grantspassoregon.gov/DocumentCenter/View/31665/COUNTRYWOOD-EAST-SUBDIVISION?bidId=) - "West Harbeck Road" 2004
+
+#### SW GRANDVIEW AVE -> GRANDVIEW AVE
+
+Addresses Affected:
+
+Finding:
+
+Evidence:
+
+- [Assessment Map](https://alt.co.josephine.or.us/webapps/assessor/fetch-filedata.php?filetype=byaccount&identifier=R340042&inline=true) - "Grandview Avenue"
+
+#### SE OAKVIEW DR -> OAKVIEW DR
+
+Addresses Affected: 18
+
+Finding: We could not find a plat record for Oakview Dr (the best we could do is a bill of sale from the early ‘40s reserving the right-of-way for road purposes).
+
+Evidence:
+
+- [Assessment map](https://alt.co.josephine.or.us/webapps/assessor/fetch-filedata.php?filetype=byaccount&identifier=R314152&inline=true)
+
+Options:
+
+- Change the addresses to match the official street name.
+  - Addresses affected: 18
+  - Titles affected: 0
+- Add the "SW" directional designation to the official street name.
+  - Addresses affected: 0
+  - Titles affected: 14
+
+Recommendation: Add the "SE" directional designation to the official street name. This option minimizes disruption to residents and matches city preference for using directional designations.
+
+#### SE HILLTOP VW -> HILLTOP VW
+
+Addresses Affected: 6
+
+Finding: This street was platted as "Hilltop View" as part of the Hilltop Loop Subdivision in 2007.
+
+Evidence:
+
+- [Hilltop Loop Subdivision](https://www.grantspassoregon.gov/DocumentCenter/View/31798/HILLTOP-LOOP-SUBDIVISION?bidId=) - "Hilltop View" 2007
+
+Options:
+
+- Change the addresses to match the official street name.
+  - Addresses affected: 6
+  - Titles affected: 0
+- Add the "SE" directional designation to the official street name.
+  - Addresses affected: 0
+  - Titles affected: 6
+
+Recommendation: Add the "SE" directional designation to the official street name. This option matches city preference for using directional designations.
+
+#### SE SOUTHRIDGE WAY -> SOUTHRIDGE WAY
+
+Addresses Affected: 48
+
+Finding: This street was platted as "Southridge Way" as part of the Southridge Subdivision in 1984.
+
+Evidence:
+
+- [Southridge Subdivision](https://www.grantspassoregon.gov/DocumentCenter/View/31768/SOUTHRIDGE-SUBDIVISION?bidId=) - "Southridge Way" 1984
+- [Harbeck Heights Subdivision Phase 3](https://www.grantspassoregon.gov/DocumentCenter/View/31910/HARBECK-HEIGHTS-SUBDIVISION-PHASE-3?bidId=) - "Southridge Way" 2000
+
+Options:
+
+- Change the addresses to match the official street name.
+  - Addresses affected: 0
+  - Titles affected: 1
+- Add the "SE" directional designation to the official street name.
+  - Addresses affected: 48
+  - Titles affected: 35
+
+Recommendation: Change the addresses to match the official street name. This option minimizes disruption to residents.
+
+#### SE VISTA DR -> VISTA DR
+
+Addresses Affected: 29
+
+Finding:
+
+Evidence:
+
+- [Assessment Map](https://alt.co.josephine.or.us/webapps/assessor/fetch-filedata.php?filetype=byaccount&identifier=R335244&inline=true) - "VISTA DR"
+
+Options:
+
+- Change the addresses to match the official street name.
+  - Addresses affected: 29
+  - Titles affected: 2
+- Add the "SE" directional designation to the official street name.
+  - Addresses affected: 0
+  - Titles affected: 24
+    - One situs address at "\* VISTA DR"
+
+Recommendation: Add the "SE" directional designation to the official street name. This option minimizes disruption to residents and matches city preference for using directional designations.
+
+#### SE JERRINE ST -> JERRINE ST
+
+Addresses Affected: 20
+
+Finding: This street was platted as "Jerrine Street" with the Jordans Landing Subdivision in 2005, and does not have a directional designation.
+
+Evidence:
+
+- [Misner Subdivision](https://www.grantspassoregon.gov/DocumentCenter/View/31451/MISNER-SUBDIVISION?bidId=) - "Jerrine Street" 2006
+- [Goodin Grove Subdivision](https://www.grantspassoregon.gov/DocumentCenter/View/31982/GOODIN-GROVE?bidId=) - "Jerrine Street" 2023
+- [Jordans Landing Subdivision](https://www.grantspassoregon.gov/DocumentCenter/View/31571/JORDANS-LANDING-SUBDIVISION?bidId=) - "Jerrine Street" 2005
+
+Options:
+
+- Change the addresses to match the official street name.
+  - Addresses affected: 20
+  - Titles affected: 19
+- Add the "SE" directional designation to the official street name.
+  - Addresses affected: 0
+  - Titles affected: 1
+
+Recommendation: Add the "SE" directional designation to the official street name. This option minimizes disruption to residents and matches city preference for using directional designations.
+
+#### SE GRANDVIEW AVE -> GRANDVIEW AVE
+
+Affected Addresses: 117
+
+Finding: The majority of plats record the name as "Grandview Avenue", with no directional designation. The Harbeck Heights Subdivision uses the name "G.I. Lane" in 1996.
+
+Evidence:
+
+- [Sky Way Estates](https://www.grantspassoregon.gov/DocumentCenter/View/31874/SKY-WAY-ESTATES-SUBDIVISION?bidId=) - "Grandview Avenue" 1973
+- [Grandview Estates Subdivision] - "Grandview Avenue" 1974
+- [Grandview Meadows Subdivision](https://www.grantspassoregon.gov/DocumentCenter/View/31635/GRANDVIEW-MEADOWS-SUBDIVISION?bidId=) - "Grandview Avenue" 1976
+- [Gaffney Heights Subdivision](https://www.grantspassoregon.gov/DocumentCenter/View/31606/GAFFNEY-HEIGHTS-SUBDIVISION?bidId=) - "Grandview Avenue" 1989
+- [Drury Estates Subdivision] - "Grandview Avenue" 1994
+- [Fruitwood Estates Subdivision](https://www.grantspassoregon.gov/DocumentCenter/View/31525/FRUITWOOD-ESTATES-SUBDIVISION?bidId=) - "Grandview Avenue" 1994
+- [Harbeck Heights Subdivision](https://www.grantspassoregon.gov/DocumentCenter/View/31709/HARBECK-HEIGHTS-SUBDIVISION?bidId=) - "G.I. Lane" 1996
+  - [Assessment Map](https://alt.co.josephine.or.us/webapps/assessor/fetch-filedata.php?filetype=byaccount&identifier=R347432&inline=true) - "GI Lane"
+- [Grandview Terrace Subdivision](https://www.grantspassoregon.gov/DocumentCenter/View/31494/GRANDVIEW-TERRACE-SUBDIVISION?bidId=) - "Grandview Avenue" 2005
+- [GI Subdivision](https://www.grantspassoregon.gov/DocumentCenter/View/31933/GI-SUBDIVISION?bidId=) - "Grandview Avenue" 2006
+- [Chloebelle Estates](https://www.grantspassoregon.gov/DocumentCenter/View/31975/CHLOEBELLE-ESTATES?bidId=) - "Grandview Avenue" 2005
+- [Landon Estates](https://www.grantspassoregon.gov/DocumentCenter/View/31712/LANDON-ESTATES?bidId=) - "Grandview Avenue" 2017
+
+Options:
+
+- Change the addresses to match the official street name.
+  - Addresses affected: 117
+  - Titles affected: 16
+- Add the "SE" directional designation to the official street name.
+  - Addresses affected: 0
+  - Titles affected: 91
+
+Recommendation: Add the "SE" directional designation to the official street name. Since Grandview crosses Williams Highway, the divisor between east and west directionals, assigned directionals make it easier for responders to orient their response along the segment. This option also minimizes disruption to residents and matches city preference for using directional designations.
+
+#### SE HAVILAND DR -> HAVILAND DR
+
+Affected Addresses:
+
+Finding: This street was platted "Haviland Drive" as part of the Grandview Meadows Subdivision in 1976, and does not have a directional designation.
+
+Evidence:
+
+- [Grandview Meadows Subdivision](https://www.grantspassoregon.gov/DocumentCenter/View/31635/GRANDVIEW-MEADOWS-SUBDIVISION?bidId=) - "Haviland Drive" 1976
+
+#### ACACIA LN -> SE ACACIA LN
+
+Addresses Affected: 16
+
+Finding: The current assessment map shows "SE Acacia Ln".
+
+Evidence:
+
+- [East Park Subdivision](https://www.grantspassoregon.gov/DocumentCenter/View/31522/EAST-PARK-SUBDIVISION?bidId=) - "North Park Street" 1945
+- [Assessment Map](https://www.grantspassoregon.gov/DocumentCenter/View/31522/EAST-PARK-SUBDIVISION?bidId=) - "SE ACACIA LANE"
+
+Options:
+
+- Change the addresses to match the official street name.
+  - Addresses affected: 16
+  - Titles affected: 0
+- Remove the "SE" directional designation from the official street name.
+  - Addresses affected: 0
+  - Titles affected: 16
+
+Recommendation: Change the addresses to match the official street name. This option matches city preference for using directional designations.
+
+## Recommendation: Add the "SE" directional designation to the official street name. This option matches city preference for using directional designations
 
 Affected Addresses: 1216-1337 SE Oakview Dr (18 addresses), 802-2001 W Harbeck Rd (80 addresses).
 
-Description: From 1950-2023, GPMC 6.40.030 (B) specified that new streets shall receive a directional designation of NE, NW, SE or SW, but historically this standard was not consistently applied.
-In some cases, the City failed to apply a directional designation, but the assessor’s office assumed one was in place, resulting in parcel situs addresses that do not match the addresses assigned by the City.
-In other cases, the City has consistently applied a directional designation but the assessor’s office has not followed suit.
 In the case of Oakview Dr, our office recently added the addresses 1216 SE Oakview Dr Units A, B & C, and the assessor’s office inquired whether addresses on Oakview are supposed to have the SE prefix.
 Unless the City takes specific action to change a street name, the assessor’s office is obliged to use the street name as recorded in the final plat.
 We could not find a plat record for Oakview Dr (the best we could do is a bill of sale from the early ‘40s reserving the right-of-way for road purposes).
@@ -450,8 +840,29 @@ Recommendation: Change the addresses to match the official street name.
 
 ### Issue: Inaccurate Parcel Situs Address
 
-Addresses affected:
+Titles affected:
 
 - 1800 NW 6TH ST -> 1700 NW 6TH ST
 - 1806 NW 6TH ST -> 1802 NW 6TH ST
 - 815 STARVIEW LN -> 815 NE STARVIEW LN
+- 363 SW SHORT ST -> 363 SHORT ST
+  - [River Heights Subdivision](https://www.grantspassoregon.gov/DocumentCenter/View/31900/RIVER-HEIGHTS-SUBDIVISION?bidId=)
+- 404 SW SHORT ST -> 404 SHORT ST
+  - [River Heights Subdivision](https://www.grantspassoregon.gov/DocumentCenter/View/31900/RIVER-HEIGHTS-SUBDIVISION?bidId=)
+- 1799 SW WEBSTER RD -> 1799 WEBSTER RD
+  - [Rivers Edge Subdivision](https://www.grantspassoregon.gov/DocumentCenter/View/31891/RIVERS-EDGE-SUBDIVISION?bidId=) - 1993
+  - [Griffith Subdivision](https://www.grantspassoregon.gov/DocumentCenter/View/31669/GRIFFITH-SUBDIVISION?bidId=) - 1992
+  - [Wee Willow Subdivision](https://www.grantspassoregon.gov/DocumentCenter/View/31643/WEE-WILLOW-SUBDIVISION?bidId=) - 1993
+  - [Rogue Willow Estates Subdivision](https://www.grantspassoregon.gov/DocumentCenter/View/31733/ROGUE-WILLOW-ESTATES-SUBDIVISION?bidId=) - 1992
+  - [Garden Valley Estates Subdivision](https://www.grantspassoregon.gov/DocumentCenter/View/31716/GARDEN-VALLEY-ESTATES-SUBDIVISION?bidId=) - 1994
+  - [Parkside Estates Subdivision](https://www.grantspassoregon.gov/DocumentCenter/View/31666/PARKSIDE-ESTATES-SUBDIVISION?bidId=) - 2003
+- 1760 SW WEST HARBECK RD -> 1760 HARBECK RD
+  - [Park Ridge Subdivision](https://www.grantspassoregon.gov/DocumentCenter/View/31945/PARK-RIDGE-SUBDIVISION?bidId=) - 1947 "Harbeck Road"
+  - [Harbeck Manor Subdivision](https://www.grantspassoregon.gov/DocumentCenter/View/31529/HARBECK-MANOR-SUBDIVISION?bidId=) - 2006 "Harbeck Road"
+  - [Southridge Subdivision](https://www.grantspassoregon.gov/DocumentCenter/View/31768/SOUTHRIDGE-SUBDIVISION?bidId=) - 1984 "Harbeck Road"
+  - [GI Subdivision](https://www.grantspassoregon.gov/DocumentCenter/View/31933/GI-SUBDIVISION?bidId=) - 2006 "Harbeck Road"
+  - [Harbeck Heights Subdivision](https://www.grantspassoregon.gov/DocumentCenter/View/31709/HARBECK-HEIGHTS-SUBDIVISION?bidId=) - 1996 "Harbeck Road"
+  - [Harbeck Place Subdivision](https://www.grantspassoregon.gov/DocumentCenter/View/32027/HARBECK-PLACE-1900SUBDIVISION?bidId=) - 1992 "Harbeck Road"
+  - [West Harbeck Place Subdivision](https://www.grantspassoregon.gov/DocumentCenter/View/32027/HARBECK-PLACE-1900SUBDIVISION?bidId=) - 2004 "West Harbeck Road"
+  - [Jeddelohs First Subdivision](https://www.grantspassoregon.gov/DocumentCenter/View/31479/JEDDELOHS-FIRST-SUBDIVISION?bidId=) - "Harbeck Road" 1959
+  - [Hobarts Subdivision](https://www.grantspassoregon.gov/DocumentCenter/View/31919/HOBARTS-SUBDIVISION?bidId=) - "Harbeck Road" 1962
