@@ -99,6 +99,7 @@ Affected Streets:
 - NW STARLITE PL -> STARLITE PL
 - NW LAWNRIDGE AVE -> LAWNRIDGE AVE
 - NW WILLIAMSBURG DR -> ?
+- NW SUN VIEW PL -> SUN VIEW PL
 - W SCHUTZWOHL LN -> SCHUTZWOHL LN
 - NE SCOVILLE RD -> SCOVILLE RD
 - NE TOKAY HTS -> TOKAY HTS
@@ -114,6 +115,17 @@ Affected Streets:
 - SW HENDERSON LN -> HENDERSON LN
 - SW WEST HARBECK RD -> W HARBECK RD
 - SW GRANDVIEW AVE -> GRANDVIEW AVE
+- SW WAGNER MEADOWS DR -> WAGNER MEADOWS DR
+- SW LINCOLN RD -> LINCOLN RD
+- SW DEVONSHIRE WAY -> DEVONSHIRE WAY
+- SW BALSAM RD -> BALSAM RD
+- SW GOLDEN ASPEN DR -> GOLDEN ASPEN DR
+- SW STURGEON CT -> STURGEON CT
+- SW GEORGE TWEED BLVD -> GEORGE TWEED BLVD
+- SW ESTHER LN -> ESTHER LN
+- SW IRONWOOD DR -> IRONWOOD DR
+- SW GARDEN VALLEY WAY -> GARDEN VALLEY WAY
+- SW WEBSTER RD -> WEBSTER RD
 - SE OAKVIEW DR -> OAKVIEW DR
 - SE HILLTOP VW -> HILLTOP VW
 - SE SOUTHRIDGE WAY -> SOUTHRIDGE WAY
@@ -121,6 +133,11 @@ Affected Streets:
 - SE JERRINE ST -> JERRINE ST
 - SE GRANDVIEW AVE -> GRANDVIEW AVE
 - SE HAVILAND DR -> HAVILAND DR
+- SE BRANDY LN -> BRANDY LN
+- SE POPPY LN -> POPPY LN
+- SE NEBRASKA AVE -> NEBRASKA AVE
+- SE KRONER LN -> KRONER LN
+- SE LILLIAN CT -> LILLIAN CT
 - ACACIA LN -> SE ACACIA LN
 
 #### NW MORGAN LN -> MORGAN LN
@@ -262,7 +279,7 @@ Options:
 
 Recommendation: Add "NW" to the official street name. This option minimizes disruption to residents and matches city preference for using directional designations.
 
-#### NE WILLIAMSBURG DR -> ?
+#### NW WILLIAMSBURG DR -> ?
 
 Addresses Affected: 10
 
@@ -281,6 +298,31 @@ Options:
 - Declare the official street name to be "NW WILLIAMSBURG DR".
   - Addresses affected: 0
   - Titles affected: 5
+
+Recommendation: Add "NW" to the official street name. This option minimizes disruption to residents and matches city preference for using directional designations.
+
+#### NW SUN VIEW PL -> SUN VIEW PL
+
+Addresses Affected: 33
+
+Finding: This road was platted as "Sun View Place" in 1967 as part of the Canyon Heights Subdivision, and does not have a directional designation. Later plats from Forest Hills Subdivision Phase 2 & 3 show "N.W. Sun View Place", but Forest Hills Subdivision Phase 1 shows "Sun View Place".
+
+Evidence:
+
+- [Canyon Heights Subdivision](https://www.grantspassoregon.gov/DocumentCenter/View/31773/CANYON-HEIGHTS-SUBDIVISION?bidId=) - "Sun View Place" 1967
+- [Forest Hills Subdivision Phase 1] - "Sun View Place" 2004
+- [Forest Hills Subdivision Phase 2](https://www.grantspassoregon.gov/DocumentCenter/View/31998/FOREST-HILLS-SUBDIVISION-PHASE-2?bidId=) - "N.W. Sun View Place" 2004
+- [Forest Hills Subdivision Phase 3](https://www.grantspassoregon.gov/DocumentCenter/View/31551/FOREST-HILLS-SUBDIVISION-PHASE-3?bidId=) - "N.W. Sun View Place" 2004
+
+Options:
+
+- Declare the official street name to be "Sun View Place".
+  - Addresses affected: 33
+  - Titles affected: 33
+    - Including one situs "\* NW Sun View Pl"
+- Declare the official street name to be "NW Sun View Place".
+  - Addresses affected: 0
+  - Titles affected: 1
 
 Recommendation: Add "NW" to the official street name. This option minimizes disruption to residents and matches city preference for using directional designations.
 
@@ -576,13 +618,287 @@ Evidence:
 
 #### SW GRANDVIEW AVE -> GRANDVIEW AVE
 
+Addresses Affected: 22
+
+Finding: The assessment map shows "Grandview Avenue". We have no final plat on record.
+
+Evidence:
+
+- [Assessment Map](https://alt.co.josephine.or.us/webapps/assessor/fetch-filedata.php?filetype=byaccount&identifier=R340042&inline=true) - "Grandview Avenue"
+
+Options:
+
+- Change the addresses to match the official street name: Grandview Ave
+  - Addresses affected: 22
+  - Titles affected: 3
+- Add the "SW" directional designation to the official street name: SW Grandview Ave
+  - Addresses affected: 0
+  - Titles affected: 1
+
+Recommendation: Add the "SW" directional designation to the official street name. This option minimizes disruption to residents and matches city preference for using directional designations. Grandview crosses Williams Hwy, the divisor between E and W directionals in the city. Using "SW" and "SE" helps to disambiguate between segments of Grandview.
+
+#### SW WAGNER MEADOWS DR -> WAGNER MEADOWS DR
+
+Addresses Affected: 32
+
+Finding: This street was platted as "Wagner Meadows Drive" in 1996 as part of the Wagner Meadows Subdivision, and does not have a directional designation.
+
+Evidence:
+
+- [Wagner Meadows Subdivision](https://www.grantspassoregon.gov/DocumentCenter/View/31436/WAGNER-MEADOWS-SUBDIVISION?bidId=) - "Wagner Meadows Drive" 1996
+- [Wagner Meadows Suvdivision 1st Addition](https://www.grantspassoregon.gov/DocumentCenter/View/31586/WAGNER-MEADOWS-SUBDIVISION-1ST-ADDITION?bidId=) - "Wagner Meadows Drive" 1998
+- [Morningstar PUD](https://www.grantspassoregon.gov/DocumentCenter/View/31774/MORNINGSTAR-PUD?bidId=) - "Wagner Meadows Drive" 1998
+- [Wagner Meadows Subdivision 2nd Addition](https://www.grantspassoregon.gov/DocumentCenter/View/31744/WAGNER-MEADOWS-SUBDIVISION-2ND-ADDITION?bidId=) - "Wagner Meadows Drive" 1999
+- [Scenic Bayou Planned Community](https://www.grantspassoregon.gov/DocumentCenter/View/31534/SCENIC-BAYOU--PLANNED-COMMUNITY?bidId=) - "Wagner Meadows Drive" 2010
+- [Heatherwood PUD](https://www.grantspassoregon.gov/DocumentCenter/View/31896/HEATHERWOOD-PUD?bidId=) - "Wagner Meadows Drive" 2011
+
+Options:
+
+- Change the addresses to match the official street name: Wagner Meadows Drive.
+  - Addresses affected: 32
+  - Titles affected: 28
+- Add the "SW" directional designation to the official street name: SW Wagner Meadows Drive.
+  - Addresses affected: 0
+  - Titles affected: 5
+
+Recommendation: Add the "SW" directional designation to the official street name. This option minimizes disruption to residents and matches city preference for using directional designations.
+
+#### SW LINCOLN RD -> LINCOLN RD
+
+Addresses Affected: 68
+
+Finding: This street was platted as "Lincoln Road" in 1964 as part of the Neil Subdivision, and does not have a directional designation. The plat for Capital Hill Phase 2 shows both versions of the road name "S.W. Lincoln Road" and "Lincoln Road" in 2020.
+
+Evidence:
+
+- [Neil Subdivision](https://www.grantspassoregon.gov/DocumentCenter/View/31670/NEIL-SUBDIVISION?bidId=) - "Lincoln Road" 1964
+- [Lower River Meadows Subdivision](https://www.grantspassoregon.gov/DocumentCenter/View/31506/LOWER-RIVER-MEADOWS-SUBDIVISION?bidId=) - "Lincoln Road" 1994
+- [Garden Valley Estates](https://www.grantspassoregon.gov/DocumentCenter/View/31716/GARDEN-VALLEY-ESTATES-SUBDIVISION?bidId=) - "Lincoln Road" 1998
+- [Morningstar Subdivision](https://www.grantspassoregon.gov/DocumentCenter/View/31774/MORNINGSTAR-PUD?bidId=) - "Lincoln Road" 1998
+- [Lincoln Heights Subdivision](https://www.grantspassoregon.gov/DocumentCenter/View/31969/LINCOLN-HEIGHTS-SUBDIVISION?bidId=) - "Lincoln Road" 2001
+- [Parkside Estates Subdivision](https://www.grantspassoregon.gov/DocumentCenter/View/31666/PARKSIDE-ESTATES-SUBDIVISION?bidId=) - "Lincoln Road" 2003
+- [Lincoln Meadows Subdivision](https://www.grantspassoregon.gov/DocumentCenter/View/31701/LINCOLN-MEADOWS-SUBDIVISION?bidId=) - "Lincoln Road" 2005
+- [Lincoln Acres Subdivision](https://www.grantspassoregon.gov/DocumentCenter/View/32008/LINCOLN-ACRES-SUBDIVISION?bidId=) - "Lincoln Road" 2007
+- [Capital Hill Phase 1](https://www.grantspassoregon.gov/DocumentCenter/View/31765/CAPITAL-HILL-PHASE-1?bidId=) - "Lincoln Road" 2016
+- [All-Sports Park Subdivision](https://www.grantspassoregon.gov/DocumentCenter/View/31809/ALL-SPORTS-PARK-SUBDIVISION?bidId=) - "Lincoln Road" 2018
+- [Capital Hill Phase 2](https://www.grantspassoregon.gov/DocumentCenter/View/31450/CAPITAL-HILL-PHASE-2?bidId=) - "S.W. Lincoln Road" & "Lincoln Road" 2020
+
+Options:
+
+- Change the addresses to match the official street name: Lincoln Road.
+  - Addresses affected: 0
+  - Titles affected: 3
+- Add the "SW" directional designation to the official street name: SW Lincoln Road.
+  - Addresses affected: 68
+  - Titles affected: 59
+
+Recommendation: Change the addresses to match the official street name. This option minimizes disruption to residents.
+
+#### SW BALSAM RD -> BALSAM RD
+
+Addresses Affected: 15
+
+Finding: This street was platted as "Balsam Road" in 1994 as part of the Lower River Meadows Subdivision.
+
+Evidence:
+
+- [Lower River Meadows Subdivision](https://www.grantspassoregon.gov/DocumentCenter/View/31506/LOWER-RIVER-MEADOWS-SUBDIVISION?bidId=) - "Balsam Road" 1994
+- [Lower River Meadows Subdivision Phase 2](https://www.grantspassoregon.gov/DocumentCenter/View/32007/LOWER-RIVER-MEADOWS-SUBDIVISION-PHASE-2?bidId=) - "Balsam Road" 1994
+- [Westview Court Subdivision](https://www.grantspassoregon.gov/DocumentCenter/View/32030/WESTVIEW-COURT-SUBDIVISION?bidId=) - "Balsam Road" 1996
+
+Options:
+
+- Change the addresses to match the official street name: Balsam Road.
+  - Addresses affected: 0
+  - Titles affected: 11
+- Add the "SW" directional designation to the official street name: SW Balsam Road.
+  - Addresses affected: 15
+  - Titles affected: 0
+
+Recommendation: Change the addresses to match the official street name. This option minimizes disruption to residents.
+
+#### SW DEVONSHIRE WAY -> DEVONSHIRE WAY
+
+Affected Addresses: 22
+
+Finding: This street was platted as "Devonshire Way" in 2001 as part of the Southdown Estates Subdivision, and does not have a directional designation.
+
+Evidence:
+
+- [Southdown Estates Subdivision](https://www.grantspassoregon.gov/DocumentCenter/View/31631/SOUTHDOWN-ESTATES-SUBDIVISION?bidId=) - "Devonshire Way" 2001
+- [Johnson Estates](https://www.grantspassoregon.gov/DocumentCenter/View/31935/JOHNSON-ESTATES?bidId=) - "Devonshire Way" 2022
+
+Options:
+
+- Change the addresses to match the official street name: Devonshire Way.
+  - Addresses affected: 0
+  - Titles affected: 1
+- Add the "SW" directional designation to the official street name: SW Devonshire Way.
+  - Addresses affected: 22
+  - Titles affected: 22
+    - Including one situs at "\* DEVONSHIRE WAY"
+
+Recommendation: Change the addresses to match the official street name. This option minimizes disruption to residents.
+
+#### SW GOLDEN ASPEN DR -> GOLDEN ASPEN DR
+
+Addresses Affected: 14
+
+Finding: This street was platted as "Golden Aspen Drive" in 2000 as part of the Aranaway Subdivision.
+
+Evidence:
+
+- [Aranaway Subdivision](https://www.grantspassoregon.gov/DocumentCenter/View/31960/ARANAWAY-SUBDIVISION?bidId=) - "Golden Aspen Drive" 2000
+
+Options:
+
+- Change the addresses to match the official street name: Golden Aspen Drive.
+  - Addresses affected: 14
+  - Titles affected: 0
+- Add the "SW" directional designation to the official street name: SW Golden Aspen Drive.
+  - Addresses affected: 0
+  - Titles affected: 14
+
+Recommendation: Add the "SW" directional designation to the street name. This option matches the city preference for using directional designations.
+
+#### SW STURGEON CT -> STURGEON CT
+
+Addresses Affected: 55
+
+Finding: This street was platted as "Sturgeon Court" in 2005, and does not have a directional designation. In 2022, the plat for the Blackberry Glen Subdivision Phase 2 designates a portion of Sturgeon Ct as "SW Sturgeon Ct".
+
+Evidence:
+
+- [Prairie Glen Subdivision](https://www.grantspassoregon.gov/DocumentCenter/View/31766/PRAIRE-GLEN-SUBDIVISION?bidId=) - "Sturgeon Court" 2005
+- [Redwood Subdivision 1st Addition](https://www.grantspassoregon.gov/DocumentCenter/View/31847/REDWOOD-SUBDIVISION-1ST-ADDITION?bidId=) - "Sturgeon Court" 2005
+- [Blackberry Glen Subdivision Phase 2](https://www.grantspassoregon.gov/DocumentCenter/View/31449/BLACKBERRY-GLEN-SUBDIVISION-PHASE-2?bidId=) - "S.W. Sturgeon Court" & "Sturgeon Court" 2022
+
+Options:
+
+- Change the addresses to match the official street name: Sturgeon Court.
+  - Addresses affected: 55
+  - Titles affected: 53
+- Add the "SW" directional designation to the official street name: SW Sturgeon Court.
+  - Addresses affected: 0
+  - Titles affected: 2
+
+Recommendation: Add the "SW" directional designation to the street name. This option minimizes disruption to residents and matches the city preference for using directional designations.
+
+#### SW GEORGE TWEED BLVD -> GEORGE TWEED BLVD
+
+Addresses Affected: 75
+
+Finding: This street was platted as "George Tweed Boulevard" in 2002 as part of the Nunnwood Subdivision.
+
+Evidence:
+
+- [Nunnwood Subdivision](https://www.grantspassoregon.gov/DocumentCenter/View/32024/NUNNWOOD-SUBDIVISION?bidId=) - "George Tweed Boulevard" 2002
+- [Speelman Subdivision](https://www.grantspassoregon.gov/DocumentCenter/View/32013/SPEELMAN-SUBDIVISION?bidId=) - "George Tweed Boulevard" 2004
+- [Redwood Subdivision](https://www.grantspassoregon.gov/DocumentCenter/View/31904/REDWOOD-SUBDIVISION?bidId=) - "George Tweed Boulevard" 2004
+- [Redwood Subdivision 1st Addition](https://www.grantspassoregon.gov/DocumentCenter/View/31847/REDWOOD-SUBDIVISION-1ST-ADDITION?bidId=) - "George Tweed Boulevard" 2005
+- [Redwood Subdivision 2nd Addition](https://www.grantspassoregon.gov/DocumentCenter/View/31440/REDWOOD-SUBDIVISION-2ND-ADDITION-?bidId=) - "George Tweed Boulevard" 2005
+- [Prairie Glen Subdivision](https://www.grantspassoregon.gov/DocumentCenter/View/31766/PRAIRE-GLEN-SUBDIVISION?bidId=) - "George Tweed Boulevard" 2005
+- [La Monte Subdivision](https://www.grantspassoregon.gov/DocumentCenter/View/31817/LA-MONTE-SUBDIVISION-PHASE-1?bidId=) - "George Tweed Boulevard" 2015
+- [La Monte Subdivision Phase 2](https://www.grantspassoregon.gov/DocumentCenter/View/31587/LA-MONTE-SUBDIVISION-PHASE-2?bidId=) - "George Tweed Boulevard" 2016
+
+Options:
+
+- Change the addresses to match the official street name: George Tweed Boulevard.
+  - Addresses affected: 0
+  - Titles affected: 3
+- Add the "SW" directional designation to the official street name: SW George Tweed Boulevard.
+  - Addresses affected: 75
+  - Titles affected: 58
+
+Recommendation: Change the addresses to match the official street name. This option minimizes disruption to residents.
+
+#### SW ESTHER LN -> ESTHER LN
+
+Addresses Affected: 90
+
+Finding: This street was platted as "Esther Lane" in 2001 as part of the Esther's Meadow Subdivision.
+
+Evidence:
+
+- [Esthers Meadow Subdivision](https://www.grantspassoregon.gov/DocumentCenter/View/32053/ESTHERS-MEADOW-SUBDIVISION?bidId=) - "Esther Lane" 2001
+- [Nunnwood II Subdivision](https://www.grantspassoregon.gov/DocumentCenter/View/31867/NUNNWOOD-2-SUBDIVISION?bidId=) - "Esther Lane" 2004
+- [Summerfield Estates Phase 1](https://www.grantspassoregon.gov/DocumentCenter/View/31650/SUMMERFIELD-ESTATES-PHASE-1?bidId=) - "Esther Lane" 2014
+- [Summerfield Estates Phase 2](https://www.grantspassoregon.gov/DocumentCenter/View/31850/SUMMERFIELD-ESTATES-PHASE-2?bidId=) - "Esther Lane" 2016
+- [Summerfield Estates Phase 3](https://www.grantspassoregon.gov/DocumentCenter/View/31459/SUMMERFIELD-ESTATES-PHASE-3?bidId=) - "Esther Lane" 2016
+- [Keegans Court](https://www.grantspassoregon.gov/DocumentCenter/View/31897/KEEGANS-COURT?bidId=) - "Esther Lane" 2020
+
+Options:
+
+- Change the addresses to match the official street name: Esther Lane.
+  - Addresses affected: 90
+  - Titles affected: 17
+- Add the "SW" directional designation to the official street name: SW Esther Lane.
+  - Addresses affected: 0
+  - Titles affected: 72
+
+Recommendation: Add the "SW" directional designation to the street name. This option minimizes disruption to residents and matches the city preference for using directional designations.
+
+#### SW IRONWOOD DR -> IRONWOOD DR
+
+Addresses Affected: 69
+
+Finding: This street was platted as "Ironwood Drive" in 1992 as part of the Rogue Willow Estates Subdivision, and does not have a directional designation.
+
+Evidence:
+
+- [Rogue Willow Estates Subdivision](https://www.grantspassoregon.gov/DocumentCenter/View/31733/ROGUE-WILLOW-ESTATES-SUBDIVISION?bidId=) - "Ironwood Drive" 1992
+- [Garden Valley Estates Subdivision](https://www.grantspassoregon.gov/DocumentCenter/View/31716/GARDEN-VALLEY-ESTATES-SUBDIVISION?bidId=) - "Ironwood Drive" 1994
+- [Lincoln Heights Subdivision](https://www.grantspassoregon.gov/DocumentCenter/View/31969/LINCOLN-HEIGHTS-SUBDIVISION?bidId=) - "Ironwood Drive" 2001
+- [Webster Estates Subdivision](https://www.grantspassoregon.gov/DocumentCenter/View/31972/WEBSTER-ESTATES-SUBDIVISION?bidId=) - "Ironwood Drive" 2006
+- [All-Sports Park Subdivision](https://www.grantspassoregon.gov/DocumentCenter/View/31809/ALL-SPORTS-PARK-SUBDIVISION?bidId=) - "Ironwood Drive" 2018
+
+Options:
+
+- Change the addresses to match the official street name: Ironwood Drive.
+  - Addresses affected: 0
+  - Titles affected: 26
+- Add the "SW" directional designation to the official street name: SW Ironwood Drive.
+  - Addresses affected: 69
+  - Titles affected: 40
+
+Recommendation: Change the addresses to match the official street name. This option minimizes disruption to residents.
+
+#### SW GARDEN VALLEY WAY -> GARDEN VALLEY WAY
+
+Addresses Affected: 20
+
+Finding: This street was platted as "Garden Valley Way" in 1994 as part of the Garden Valley Estates Subdivision
+
+Evidence:
+
+- [Garden Valley Estates Subdivision](https://www.grantspassoregon.gov/DocumentCenter/View/31716/GARDEN-VALLEY-ESTATES-SUBDIVISION?bidId=) - "Garden Valley Way" 1994
+
+Options:
+
+- Change the addresses to match the official street name: Garden Valley Way.
+  - Addresses affected: 0
+  - Titles affected: 20
+    - Including one situs at "\* SW GARDEN VALLEY WAY"
+- Add the "SW" directional designation to the official street name: SW Garden Valley Way.
+  - Addresses affected: 20
+  - Titles affected: 1
+
+Recommendation: Change the addresses to match the official street name. This option minimizes disruption to residents.
+
+#### SW WEBSTER RD -> WEBSTER RD
+
 Addresses Affected:
 
 Finding:
 
 Evidence:
 
-- [Assessment Map](https://alt.co.josephine.or.us/webapps/assessor/fetch-filedata.php?filetype=byaccount&identifier=R340042&inline=true) - "Grandview Avenue"
+- [Rogue Willow Estates Subdivision](https://www.grantspassoregon.gov/DocumentCenter/View/31733/ROGUE-WILLOW-ESTATES-SUBDIVISION?bidId=) - "Webster Road" 1992
+- [Griffith Subdivision](https://www.grantspassoregon.gov/DocumentCenter/View/31669/GRIFFITH-SUBDIVISION?bidId=) - "Webster Road" 1992
+- [Rivers Edge Subdivision](https://www.grantspassoregon.gov/DocumentCenter/View/31891/RIVERS-EDGE-SUBDIVISION?bidId=) - "Webster Road" 1993
+- [Wee Willow Subdivision](https://www.grantspassoregon.gov/DocumentCenter/View/31643/WEE-WILLOW-SUBDIVISION?bidId=) - "Webster Road" 1993
+- [Garden Valley Estates Subdivision](https://www.grantspassoregon.gov/DocumentCenter/View/31716/GARDEN-VALLEY-ESTATES-SUBDIVISION?bidId=) - "Webster Road" 1994
+- [Parkside Estates Subdivision](https://www.grantspassoregon.gov/DocumentCenter/View/31666/PARKSIDE-ESTATES-SUBDIVISION?bidId=) - "Webster Road" 2003
 
 #### SE OAKVIEW DR -> OAKVIEW DR
 
@@ -716,10 +1032,10 @@ Evidence:
 
 Options:
 
-- Change the addresses to match the official street name.
+- Change the addresses to match the official street name: Grandview Ave.
   - Addresses affected: 117
   - Titles affected: 16
-- Add the "SE" directional designation to the official street name.
+- Add the "SE" directional designation to the official street name: SE Grandview Ave.
   - Addresses affected: 0
   - Titles affected: 91
 
@@ -727,13 +1043,140 @@ Recommendation: Add the "SE" directional designation to the official street name
 
 #### SE HAVILAND DR -> HAVILAND DR
 
-Affected Addresses:
+Affected Addresses: 67
 
 Finding: This street was platted "Haviland Drive" as part of the Grandview Meadows Subdivision in 1976, and does not have a directional designation.
 
 Evidence:
 
 - [Grandview Meadows Subdivision](https://www.grantspassoregon.gov/DocumentCenter/View/31635/GRANDVIEW-MEADOWS-SUBDIVISION?bidId=) - "Haviland Drive" 1976
+- [Grandview Meadows Subdivision 1st Addition](https://www.grantspassoregon.gov/DocumentCenter/View/31763/GRANDVIEW-MEADOWS-SUBDIVISION-1ST-ADDITION?bidId=) - "Haviland Drive" 1977
+- [Meadow Wood Subdivision](https://www.grantspassoregon.gov/DocumentCenter/View/31502/MEADOW-WOOD-SUBDIVISION?bidId=) - "Haviland Drive" 2000
+- [Meadow Wood Subidivision Phase 6](https://www.grantspassoregon.gov/DocumentCenter/View/32043/MEADOW-WOOD-SUBDIVISION-PHASE-6?bidId=) - "Haviland Drive" 2005
+- [Meadow Wood Subdivision Phase 7](https://www.grantspassoregon.gov/DocumentCenter/View/31984/MEADOW-WOOD-SUBDIVISION-PHASE-7?bidId=) - "Haviland Drive" 2005
+
+Options:
+
+- Change the addresses to match the official street name: Haviland Drive.
+  - Addresses affected: 67
+  - Titles affected: 15
+- Add the "SE" directional designation to the official street name: SE Haviland Drive.
+  - Addresses affected: 0
+  - Titles affected: 54
+
+Recommendation: Add the "SE" directional designation to the official street name. Since Grandview crosses Williams Highway, the divisor between east and west directionals, assigned directionals make it easier for responders to orient their response along the segment. This option also minimizes disruption to residents and matches city preference for using directional designations.
+
+#### SE BRANDY LN -> BRANDY LN
+
+Affected Addresses: 22
+
+Finding: This street was platted as "Brandy Lane" in 1977 as part of the Sky Way Estates subdivision, and does not have a directional designation.
+
+Evidence:
+
+- [Sky Way Estates](https://www.grantspassoregon.gov/DocumentCenter/View/31874/SKY-WAY-ESTATES-SUBDIVISION?bidId=) - "Brandy Lane" 1973
+- [Grandview Terrace Subdivision](https://www.grantspassoregon.gov/DocumentCenter/View/31494/GRANDVIEW-TERRACE-SUBDIVISION?bidId=) - "Brandy Lane" 2005
+
+Options:
+
+- Change the addresses to match the official street name: Brandy Lane.
+  - Addresses affected: 13
+  - Titles affected: 0
+- Add the "SE" directional designation to the official street name: SE Haviland Drive.
+  - Addresses affected: 9
+  - Titles affected: 22
+
+Recommendation: Change the addresses to match the official street name. This option also minimizes disruption to residents.
+
+#### SE POPPY LN -> POPPY LN
+
+Affected Addresses: 5
+
+Finding: This street was platted as "Poppy Lane" in 2000 as part of the Meadow Wood Subdivision, and does not have a directional designation.
+
+Evidence:
+
+- [Meadow Wood Subidivision](https://www.grantspassoregon.gov/DocumentCenter/View/31502/MEADOW-WOOD-SUBDIVISION?bidId=) - "Poppy Lane" 2000
+- [Meadow Wood Subdivision Phase 2](https://www.grantspassoregon.gov/DocumentCenter/View/31689/MEADOW-WOOD-SUBDIVISION-PHASE-2?bidId=) - "Poppy Lane" 2002
+
+Options:
+
+- Change the addresses to match the official street name: Poppy Lane.
+  - Addresses affected: 5
+  - Titles affected: 0
+- Add the "SE" directional designation to the official street name: SE Poppy Drive.
+  - Addresses affected: 0
+  - Titles affected: 5
+
+Recommendation: Change the addresses to match the official street name. This option minimizes disruption to residents, under the assumption that a change of title creates a larger disruption than a change in mailing address.
+
+#### SE NEBRASKA AVE -> NEBRASKA AVE
+
+Addresses Affected: 36
+
+Finding: This street was platted as "Nebraska Avenue" in 1977 as part of the Nebraska Acres Subdivision, and does not have a directional designation.
+
+Evidence:
+
+- [Nebraska Acres Subdivision](https://www.grantspassoregon.gov/DocumentCenter/View/31862/NEBRASKA-ACRES-SUBDIVISION?bidId=) - "Nebraska Avenue" 1977
+- [Hidden Glen Subdivision](https://www.grantspassoregon.gov/DocumentCenter/View/31491/HIDDEN-GLEN-SUBDIVISION?bidId=) - "Nebraska Avenue" 1980
+- [Allen Creek Estates PUD](https://www.grantspassoregon.gov/DocumentCenter/View/31548/ALLEN-CREEK-ESTATES-PUD?bidId=) - "Nebraska Avenue" 1985
+- [Redwood Industrial Subdivision](https://www.grantspassoregon.gov/DocumentCenter/View/31806/REDWOOD-INDUSTRIAL-SUBDIVISION?bidId=) - "Nebraska Avenue" 1993
+- [Maurer Meadows Subidivision](https://www.grantspassoregon.gov/DocumentCenter/View/31914/MAURER-MEADOWS-SUBDIVISION?bidId=) - "Nebraska Avenue" 2004
+
+Options:
+
+- Change the addresses to match the official street name: Nebraska Ave.
+  - Addresses affected: 0
+  - Titles affected: 13
+- Add the "SE" directional designation to the official street name: SE Nebraska Ave.
+  - Addresses affected: 36
+  - Titles affected: 16
+
+Recommendation: Change the addresses to match the official street name. This option minimizes disruption to residents, under the assumption that a change of title creates a larger disruption than a change in mailing address.
+
+#### SE KRONER DR -> KRONER DR
+
+Addresses Affected: 10
+
+Finding: This street was platted as "Kroner Drive" in 2006 as part of the Cathedral Heights 2nd Addition, and does not have a directional designation.
+
+Evidence:
+
+- [Cathedral Heights 2nd Addition](https://www.grantspassoregon.gov/DocumentCenter/View/31887/CATHEDRAL-HEIGHTS-2ND-ADDITION?bidId=) - "Kroner Drive" 2006
+
+Options:
+
+- Change the addresses to match the official street name: Kroger Drive.
+  - Addresses affected: 10
+  - Titles affected: 0
+- Add the "SE" directional designation to the official street name: SE Kroger Drive.
+  - Addresses affected: 0
+  - Titles affected: 10
+
+Recommendation: Change the addresses to match the official street name. This option minimizes disruption to residents, under the assumption that a change of title creates a larger disruption than a change in mailing address.
+
+#### SE LILLIAN CT -> LILLIAN CT
+
+Affected Addresses: 11
+
+Finding: This street was platted as "Lillian Court" in 2003 as part of the Cathedral Heights subdivision, and does not have a directional designation.
+
+Evidence:
+
+- [Cathedral Heights](https://www.grantspassoregon.gov/DocumentCenter/View/31738/CATHEDRAL-HEIGHTS?bidId=) - "Lillian Court" 2003
+- [Cathedral Heights 2nd Addition](https://www.grantspassoregon.gov/DocumentCenter/View/31887/CATHEDRAL-HEIGHTS-2ND-ADDITION?bidId=) - "Lillian Court" 2006
+
+Options:
+
+- Change the addresses to match the official street name: Lillian Court.
+  - Addresses affected: 11
+  - Titles affected: 7
+- Add the "SE" directional designation to the official street name: SE Lillian Court.
+  - Addresses affected: 0
+  - Titles affected: 4
+
+Recommendation: Add the "SE" directional designation to the official street name. This option minimizes disruption to residents and matches city preference for using directional designations.
 
 #### ACACIA LN -> SE ACACIA LN
 
@@ -795,6 +1238,7 @@ Affected Streets:
 
 - DENTON TRAIL ROAD -> DENTON TRAIL
 - SPRING MOUNTAIN DRIVE -> SPRING MOUNTAIN ROAD
+- EASTWOOD LANE -> EASTWOOD DRIVE
 
 #### DENTON TRAIL ROAD -> DENTON TRAIL
 
@@ -838,6 +1282,27 @@ Options:
 
 Recommendation: Change the addresses to match the official street name.
 
+#### EASTWOOD LANE -> EASTWOOD DRIVE
+
+Affected Addresses: 4
+
+Finding: The county road centerlines layer uses Eastwood Lane along this portion, as a continuation of Eastwood Lane. The plat record shows the official road type is "Drive", forcing Eastwood Lane to transition to Eastwood Drive at the intersection with Waterstone.
+
+Evidence:
+
+- [Waterstone Estates Subdivision](https://www.grantspassoregon.gov/DocumentCenter/View/31636/WATERSTONE-ESTATES-SUBDIVISION?bidId=) - "Eastwood Drive"
+
+Options:
+
+- Change the addresses to match the official street name.
+  - Addresses affected: 4
+  - Titles affected: 0
+- Change the street post type to "LANE" by act of Council.
+  - Addresses affected: 0
+  - Titles affected: 4
+
+Recommendation: Change the street post type to "LANE" by act of Council. This will bring us consistent with the road centerlines used by ECSO, and allow EASTWOOD to have a consistent road type along its extent.
+
 ### Issue: Inaccurate Parcel Situs Address
 
 Titles affected:
@@ -866,3 +1331,16 @@ Titles affected:
   - [West Harbeck Place Subdivision](https://www.grantspassoregon.gov/DocumentCenter/View/32027/HARBECK-PLACE-1900SUBDIVISION?bidId=) - 2004 "West Harbeck Road"
   - [Jeddelohs First Subdivision](https://www.grantspassoregon.gov/DocumentCenter/View/31479/JEDDELOHS-FIRST-SUBDIVISION?bidId=) - "Harbeck Road" 1959
   - [Hobarts Subdivision](https://www.grantspassoregon.gov/DocumentCenter/View/31919/HOBARTS-SUBDIVISION?bidId=) - "Harbeck Road" 1962
+- 1443 SW LARKSPUR CT
+  - [Aranaway Subdivision](https://www.grantspassoregon.gov/DocumentCenter/View/31960/ARANAWAY-SUBDIVISION?bidId=) - "Larkspur Court" 2000
+- 1309, 1317 & 1325 SW GEORGE TWEED BLVD -> 1309, 1317 & 1325 GEORGE TWEED BLVD
+  - [Nunnwood Subdivision](https://www.grantspassoregon.gov/DocumentCenter/View/32024/NUNNWOOD-SUBDIVISION?bidId=) - "George Tweed Boulevard" 2002
+  - [Speelman Subdivision](https://www.grantspassoregon.gov/DocumentCenter/View/32013/SPEELMAN-SUBDIVISION?bidId=) - "George Tweed Boulevard" 2004
+  - [Redwood Subdivision](https://www.grantspassoregon.gov/DocumentCenter/View/31904/REDWOOD-SUBDIVISION?bidId=) - "George Tweed Boulevard" 2004
+  - [Redwood Subdivision 1st Addition](https://www.grantspassoregon.gov/DocumentCenter/View/31847/REDWOOD-SUBDIVISION-1ST-ADDITION?bidId=) - "George Tweed Boulevard" 2005
+  - [Redwood Subdivision 2nd Addition](https://www.grantspassoregon.gov/DocumentCenter/View/31440/REDWOOD-SUBDIVISION-2ND-ADDITION-?bidId=) - "George Tweed Boulevard" 2005
+  - [Prairie Glen Subdivision](https://www.grantspassoregon.gov/DocumentCenter/View/31766/PRAIRE-GLEN-SUBDIVISION?bidId=) - "George Tweed Boulevard" 2005
+  - [La Monte Subdivision](https://www.grantspassoregon.gov/DocumentCenter/View/31817/LA-MONTE-SUBDIVISION-PHASE-1?bidId=) - "George Tweed Boulevard" 2015
+  - [La Monte Subdivision Phase 2](https://www.grantspassoregon.gov/DocumentCenter/View/31587/LA-MONTE-SUBDIVISION-PHASE-2?bidId=) - "George Tweed Boulevard" 2016
+- 1241 WILLOW LN
+  - Parcel situs address for 360623DB000900, but address does not exist anymore.
