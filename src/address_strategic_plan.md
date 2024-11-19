@@ -100,7 +100,6 @@ Affected Streets:
 - NW LAWNRIDGE AVE -> LAWNRIDGE AVE
 - NW WILLIAMSBURG DR -> ?
 - NW SUN VIEW PL -> SUN VIEW PL
-- W SCHUTZWOHL LN -> SCHUTZWOHL LN
 - NE SCOVILLE RD -> SCOVILLE RD
 - NE TOKAY HTS -> TOKAY HTS
 - NE FOOTHILL BLVD -> FOOTHILL BLVD
@@ -108,6 +107,7 @@ Affected Streets:
 - NE DUANE DR -> DUANE DR
 - NE JOSEPHINE ST -> JOSEPHINE ST
 - NE INDUSTRY DR -> ?
+- W SCHUTZWOHL LN -> SCHUTZWOHL LN
 - SW FOUNDRY ST -> FOUNDRY ST
 - SW HUMANITY WAY -> HUMANITY WAY
 - SW GREENWOOD AVE -> GREENWOOD ?
@@ -126,6 +126,15 @@ Affected Streets:
 - SW IRONWOOD DR -> IRONWOOD DR
 - SW GARDEN VALLEY WAY -> GARDEN VALLEY WAY
 - SW WEBSTER RD -> WEBSTER RD
+- SW ANDY GRIFFITH DR -> ANDY GRIFFITH DR
+- SW AUNT BEA WAY -> AUNT BEA WAY
+- SW OPIE PLACE -> OPIE PLACE
+- SW BARNEY FIFE DR -> BARNEY FIFE DR
+- SW THELMA LOU LN -> THELMA LOU LN
+- SW RAMSEY AVENUE -> RAMSEY AVE
+- SW SUNNY SLOPE DR -> SUNNY SLOPE DR
+- SW FORESTVIEW DR -> FORESTVIEW DR
+- SW FLORER DR -> FLORER DR
 - SE OAKVIEW DR -> OAKVIEW DR
 - SE HILLTOP VW -> HILLTOP VW
 - SE SOUTHRIDGE WAY -> SOUTHRIDGE WAY
@@ -139,6 +148,7 @@ Affected Streets:
 - SE KRONER LN -> KRONER LN
 - SE LILLIAN CT -> LILLIAN CT
 - ACACIA LN -> SE ACACIA LN
+- DAHLIA WAY -> SW DAHLIA WAY
 
 #### NW MORGAN LN -> MORGAN LN
 
@@ -479,6 +489,23 @@ Options:
 
 Recommendation: Use "NE INDUSTRY DR". This option minimizes disruption to residents and matches city preference for using directional designations.
 
+#### W SCHUTZWOHL LN -> SCHUTZWOHL LN
+
+Addresses Affected: 3
+
+Finding: No plat evidence for the western portion of Schutzwohl Ln.
+
+Evidence:
+
+Options:
+
+- W SCHUTZWOHL LN
+  - Addresses affected: 0
+  - Titles affected: 2
+- SCHUTZWOHL LN
+  - Addresses affected: 3
+  - Titles affected: 1
+
 #### SW FOUNDRY ST -> FOUNDRY ST
 
 Addresses Affected: 67
@@ -596,25 +623,42 @@ Options:
 
 Recommendation: Add the "SW" directional designation to the street name, matching the city preference for using directional designations.
 
-#### SW WEST HARBECK RD -> W HARBECK RD
+#### SW WEST HARBECK RD -> WEST HARBECK RD
 
-Addresses Affected:
+Addresses Affected: 109
 
-Finding:
+Finding: Prior to 1978, this street was platted as "Harbeck Road", without a directional prefix, starting in 1959 with Jeddelohs First Subdivision. From 1978 onward, the plat name is "West Harbeck Road", beginning with the Colorado Subdivision.
 
 Evidence:
 
+- [Jeddelohs First Subdivision](https://www.grantspassoregon.gov/DocumentCenter/View/31479/JEDDELOHS-FIRST-SUBDIVISION?bidId=) - "Harbeck Road" 1959
+- [Hobarts Subdivision](https://www.grantspassoregon.gov/DocumentCenter/View/31919/HOBARTS-SUBDIVISION?bidId=) - "Harbeck Road" 1959
 - [Gix Subdivision](https://www.grantspassoregon.gov/DocumentCenter/View/31648/GIX-SUBDIVISION?bidId=) - "Harbeck Road" 1960
 - [Colorado Subdivision](https://www.grantspassoregon.gov/DocumentCenter/View/31556/COLORADO-SUBDIVISION?bidId=) - "West Harbeck Road" 1978
-- [Meadow Glen Subdivision 1st Addition](https://www.grantspassoregon.gov/DocumentCenter/View/31497/MEADOW-GLEN-SUBDIVISION-1ST-ADDITION?bidId=) - "West Harbeck Road" 1981
+- [Meadow Glen Subdivision](https://www.grantspassoregon.gov/DocumentCenter/View/31497/MEADOW-GLEN-SUBDIVISION-1ST-ADDITION?bidId=) - "West Harbeck Road" 1981
 - [Sunset Knoll Subdivision Phase 1](https://www.grantspassoregon.gov/DocumentCenter/View/31672/SUNSET-KNOLL-SUBDIVISION-PHASE-1?bidId=) - "West Harbeck Road" 1991
 - [Sunset Knoll Subdivision Phase 2](https://www.grantspassoregon.gov/DocumentCenter/View/31660/SUNSET-KNOLL-SUBDIVISION-PHASE-2?bidId=) - "West Harbeck Road" 1994
-- [Sunset Knolls Subdivision Phase 3](https://www.grantspassoregon.gov/DocumentCenter/View/31445/SUNSET-KNOLL-SUBDIVISION-PHASE-3?bidId=) - "West Harbeck Road" 1995
+- [Sunset Knoll Subdivision Phase 3](https://www.grantspassoregon.gov/DocumentCenter/View/31445/SUNSET-KNOLL-SUBDIVISION-PHASE-3?bidId=) - "West Harbeck Road" 1995
 - [Citys Edge Subdivision](https://www.grantspassoregon.gov/DocumentCenter/View/31807/CITYS-EDGE-SUBDIVISION?bidId=) - "West Harbeck Road" 1997
 - [Countrywood Heights Subdivision](https://www.grantspassoregon.gov/DocumentCenter/View/31622/COUNTRYWOOD-HEIGHTS-SUBDIVISION?bidId=) - "West Harbeck Road" 1999
+- [Maurer Meadows Subdivision](https://www.grantspassoregon.gov/DocumentCenter/View/31914/MAURER-MEADOWS-SUBDIVISION?bidId=) - "West Harbeck Road" 2003
 - [Mayberry Meadows Subdivision](https://www.grantspassoregon.gov/DocumentCenter/View/31740/MAYBERRY-MEADOWS-SUBDIVISION?bidId=) - "West Harbeck Road" 2003
-- [Maurer Meadows Subdivision](https://www.grantspassoregon.gov/DocumentCenter/View/31914/MAURER-MEADOWS-SUBDIVISION?bidId=) - "West Harbeck Road" 2004
+- [West Harbeck Place Subdivision](https://www.grantspassoregon.gov/DocumentCenter/View/31753/WEST-HARBECK-PLACE-SUBDIVISION?bidId=) - "West Harbeck Road" 2004
 - [Countrywood East Subdivision](https://www.grantspassoregon.gov/DocumentCenter/View/31665/COUNTRYWOOD-EAST-SUBDIVISION?bidId=) - "West Harbeck Road" 2004
+
+Options:
+
+- HARBECK ROAD
+  - Addresses affected: 109
+  - Titles affected: 106
+- WEST HARBECK ROAD
+  - Addresses affected: 0
+  - Titles affected: 69
+- SW WEST HARBECK ROAD
+  - Addresses affected: 109
+  - Titles affected: 37
+
+Recommendation: Use "West Harbeck Road". This option minimizes disruption to residents. The directional "West" helps to differentiate the east/west aligned portion from the north/west aligned portion.
 
 #### SW GRANDVIEW AVE -> GRANDVIEW AVE
 
@@ -887,9 +931,9 @@ Recommendation: Change the addresses to match the official street name. This opt
 
 #### SW WEBSTER RD -> WEBSTER RD
 
-Addresses Affected:
+Addresses Affected: 45
 
-Finding:
+Finding: This street was platted as "Webster Road" starting in 1992 with the Rogue Willow Estates Subdivision.
 
 Evidence:
 
@@ -899,6 +943,213 @@ Evidence:
 - [Wee Willow Subdivision](https://www.grantspassoregon.gov/DocumentCenter/View/31643/WEE-WILLOW-SUBDIVISION?bidId=) - "Webster Road" 1993
 - [Garden Valley Estates Subdivision](https://www.grantspassoregon.gov/DocumentCenter/View/31716/GARDEN-VALLEY-ESTATES-SUBDIVISION?bidId=) - "Webster Road" 1994
 - [Parkside Estates Subdivision](https://www.grantspassoregon.gov/DocumentCenter/View/31666/PARKSIDE-ESTATES-SUBDIVISION?bidId=) - "Webster Road" 2003
+
+Options:
+
+- Change the addresses to match the official street name: Webster Road.
+  - Addresses affected: 0
+  - Titles affected: 4
+- Add the "SW" directional designation to the official street name: SW Webster Road.
+  - Addresses affected: 45
+  - Titles affected: 22
+
+Recommendation: Change the address to match the official street name. This option minimizes disruption to residents.
+
+#### SW ANDY GRIFFITH DRIVE -> ANDY GRIFFITH DRIVE
+
+Addresses Affected: 20
+
+Finding: This street was platted as "Andy Griffith Drive" in 2003 as part of the Maryberry Meadows Subdivision.
+
+Evidence:
+
+- [Mayberry Meadows Subdivision](https://www.grantspassoregon.gov/DocumentCenter/View/31740/MAYBERRY-MEADOWS-SUBDIVISION?bidId=) - "Andy Griffith Drive" 2003
+
+Options:
+
+- Change the addresses to match the official street name: Andy Griffith Drive.
+  - Addresses affected: 0
+  - Titles affected: 20
+- Add the "SW" directional designation to the official street name: SW Andy Griffith Way.
+  - Addresses affected: 20
+  - Titles affected: 0
+
+Recommendation: Add the "SW" directional designation to the official street name. This option minimizes disruption to residents, under the presumption that a change in address is less disruptive than a change in title. This option also matches city preference for directional designations.
+
+#### SW AUNT BEA WAY -> AUNT BEA WAY
+
+Addresses Affected: 5
+
+Finding: This street was platted as "Aunt Bea Way" in 2003 as part of the Mayberry Meadows Subdivision.
+
+Evidence:
+
+- [Mayberry Meadows Subdivision](https://www.grantspassoregon.gov/DocumentCenter/View/31740/MAYBERRY-MEADOWS-SUBDIVISION?bidId=) - "Aunt Bea Way" 2003
+
+Options:
+
+- Change the addresses to match the official street name: Aunt Bea Way.
+  - Addresses affected: 0
+  - Titles affected: 5
+- Add the "SW" directional designation to the official street name: SW Aunt Bea Way.
+  - Addresses affected: 5
+  - Titles affected: 0
+
+Recommendation: Add the "SW" directional designation to the official street name. This option minimizes disruption to residents, under the presumption that a change in address is less disruptive than a change in title. This option also matches city preference for directional designations.
+
+#### SW OPIE PL -> OPIE PL
+
+Addresses Affected: 6
+
+Finding: This street was platted as "Opie Place" in 2003 as part of the Mayberry Meadows Subdivision.
+
+Evidence:
+
+- [Mayberry Meadows Subdivision](https://www.grantspassoregon.gov/DocumentCenter/View/31740/MAYBERRY-MEADOWS-SUBDIVISION?bidId=) - "Opie Place" 2003
+
+Options:
+
+- Change the addresses to match the official street name: Opie Place.
+  - Addresses affected: 0
+  - Titles affected: 6
+- Add the "SW" directional designation to the official street name: SW Opie Place.
+  - Addresses affected: 6
+  - Titles affected: 0
+
+Recommendation: Add the "SW" directional designation to the official street name. This option minimizes disruption to residents, under the presumption that a change in address is less disruptive than a change in title. This option also matches city preference for directional designations.
+
+#### SW BARNEY FIFE DR -> BARNEY FIFE DR
+
+Addresses Affected: 12
+
+Finding: This street was platted as "Barney Fife Drive" in 2003 as part of the Mayberry Meadows Subdivision.
+
+Evidence:
+
+- [Mayberry Meadows Subdivision](https://www.grantspassoregon.gov/DocumentCenter/View/31740/MAYBERRY-MEADOWS-SUBDIVISION?bidId=) - "Barney Fife Drive" 2003
+
+Options:
+
+- Change the addresses to match the official street name: Barney Fife Drive.
+  - Addresses affected: 0
+  - Titles affected: 12
+- Add the "SW" directional designation to the official street name: SW Barney Fife Drive.
+  - Addresses affected: 12
+  - Titles affected: 0
+
+Recommendation: Add the "SW" directional designation to the official street name. This option minimizes disruption to residents, under the presumption that a change in address is less disruptive than a change in title. This option also matches city preference for directional designations.
+
+#### SW THELMA LOU LN -> THELMA LOU LN
+
+Addresses Affected: 1
+
+Finding: This street was platted as "Thelma Lou Lane" in 2003 as part of the Mayberry Meadows Subdivision.
+
+Evidence:
+
+- [Mayberry Meadows Subdivision](https://www.grantspassoregon.gov/DocumentCenter/View/31740/MAYBERRY-MEADOWS-SUBDIVISION?bidId=) - "Thelma Lou Lane" 2003
+
+Options:
+
+- Change the addresses to match the official street name: Thelma Lou Lane.
+  - Addresses affected: 0
+  - Titles affected: 1
+- Add the "SW" directional designation to the official street name: SW Thelma Lou Lane.
+  - Addresses affected: 1
+  - Titles affected: 0
+
+Recommendation: Add the "SW" directional designation to the official street name. This option minimizes disruption to residents, under the presumption that a change in address is less disruptive than a change in title. This option also matches city preference for directional designations.
+
+#### SW RAMSEY AVE -> RAMSEY AVE
+
+Addresses Affected: 48
+
+Finding: This street was platted as "South Union Avenue" starting in 1981. The only reference to "Ramsey Avenue" is from Allen Ranch Estates Phase 1 in 1986.
+
+Evidence:
+
+- [Allen Creek Estates PUD](https://www.grantspassoregon.gov/DocumentCenter/View/31548/ALLEN-CREEK-ESTATES-PUD?bidId=) - "South Union Avenue" 1981
+- [Allen Ranch Estates Phase 1](https://www.grantspassoregon.gov/DocumentCenter/View/31687/ALLEN-RANCH-ESTATES-PHASE-1?bidId=) - "Ramsey Ave" 1986
+- [Meadow Glen Subdivision 2nd Addition](https://www.grantspassoregon.gov/DocumentCenter/View/31776/MEADOW-GLEN-SUBDIVISION-2ND-ADDITION?bidId=) - "South Union Avenue" 1987
+- [Redwood Industrial Subdivision](https://www.grantspassoregon.gov/DocumentCenter/View/31806/REDWOOD-INDUSTRIAL-SUBDIVISION?bidId=) - "Future South Union Avenue" 1993
+
+Options:
+
+- SOUTH UNION AVENUE
+  - Addresses affected: 48
+  - Titles affected: 16
+- RAMSEY AVE
+  - Addresses affected: 48
+  - Titles affected: 11
+- SW RAMSEY AVE
+  - Addresses affected: 0
+  - Titles affected: 5
+
+Recommendation: Add the "SW" directional designation to the official street name. This option minimizes disruption to residents, and matches city preference for directional designations.
+
+#### SW SUNNY SLOPE DR -> SUNNY SLOPE DR
+
+Affected addresses: 15
+
+Finding: This street was platted as "Sunny Slope Drive" in 1991 as part of the Sunset Knoll Subdivision Phase 1.
+
+Evidence:
+
+- [Sunset Knoll Subdivision Phase 1](https://www.grantspassoregon.gov/DocumentCenter/View/31672/SUNSET-KNOLL-SUBDIVISION-PHASE-1?bidId=) - "Sunny Slope Drive" 1991
+
+Options:
+
+- Change the addresses to match the official street name: Sunny Slope Drive.
+  - Addresses affected: 0
+  - Titles affected: 1
+- Add the "SW" directional designation to the official street name: SW Sunny Slope Drive.
+  - Addresses affected: 15
+  - Titles affected: 14
+
+Recommendation: Change the addresses to match the official street name. This options minimizes disruption to residents.
+
+#### SW FORESTVIEW DR -> FORESTVIEW DR
+
+Affected Addresses: 18
+
+Finding: This street was platted as "Forestview Drive" in 1995 as part of Sunset Knoll Subdivision Phase 3.
+
+Evidence:
+
+- [Sunset Knoll Subdivision Phase 3](https://www.grantspassoregon.gov/DocumentCenter/View/31445/SUNSET-KNOLL-SUBDIVISION-PHASE-3?bidId=) - "Forestview Drive" 1995
+
+Options:
+
+- Change the addresses to match the official street name: Forestview Drive.
+  - Addresses affected: 0
+  - Titles affected: 1
+- Add the "SW" directional designation to the official street name: SW Forestview Drive.
+  - Addresses affected: 18
+  - Titles affected: 17
+
+Recommendation: Change the addresses to match the official street name. This options minimizes disruption to residents.
+
+#### SW FLORER DR -> FLORER DR
+
+Addresses Affected: 25
+
+Finding: This street was platted as "Florer Drive" in 1978 as part of the Brookside Subdivision.
+
+Evidence:
+
+- [Brookside Subdivision](https://www.grantspassoregon.gov/DocumentCenter/View/31671/BROOKSIDE-SUBDIVISION?bidId=) - "Florer Drive" 1978
+- [Thompson Subdivision](https://www.grantspassoregon.gov/DocumentCenter/View/31836/THOMPSON-SUBDIVISION?bidId=) - "Florer Drive" 2002
+
+Options:
+
+- Change the addresses to match the official street name: Florer Drive.
+  - Addresses affected: 0
+  - Titles affected: 10
+- Add the "SW" directional designation to the official street name: SW Florer Drive.
+  - Addresses affected: 25
+  - Titles affected: 15
+
+Recommendation: Change the addresses to match the official street name. This options minimizes disruption to residents.
 
 #### SE OAKVIEW DR -> OAKVIEW DR
 
@@ -1200,7 +1451,28 @@ Options:
 
 Recommendation: Change the addresses to match the official street name. This option matches city preference for using directional designations.
 
-## Recommendation: Add the "SE" directional designation to the official street name. This option matches city preference for using directional designations
+#### DAHLIA WAY -> SW DAHLIA WAY
+
+Addresses Affected: 14
+
+Finding: This street was platted as "SW Dahlia Way" in 2016 as part of Summerfield Estates Phase 2.
+
+Evidence:
+
+- [Summerfield Estates Phase 2](https://www.grantspassoregon.gov/DocumentCenter/View/31850/SUMMERFIELD-ESTATES-PHASE-2?bidId=) - "SW Dahlia Way" 2016
+
+Options:
+
+- Change the addresses to match the official street name: SW Dahlia Way.
+  - Addresses affected: 0
+  - Titles affected: 14
+- Remove the "SW" directional designation from the official street name: Dahlia Way.
+  - Addresses affected: 14
+  - Titles affected: 0
+
+Recommendation: Change the addresses to match the official street name. This option matches city preference for using directional designations.
+
+---
 
 Affected Addresses: 1216-1337 SE Oakview Dr (18 addresses), 802-2001 W Harbeck Rd (80 addresses).
 
