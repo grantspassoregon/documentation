@@ -2,7 +2,7 @@
 
 For redundancy, we host our published GIS services both in our Enterprise portal as well as AGOL.
 Services published to our Enterprise portal are referenced data, meaning that as we update our database, these changes will be reflected in the published service in near real-time.
-However, the services published to AGOL are copied onto their servers, and will become out-of-date when additional changes our made to our database.
+However, the services published to AGOL are copied onto their servers, and will become out-of-date when additional changes are made to our database.
 AGOL is often the preferred provider, because we are leveraging their server resources to deliver better performance, so the majority of services on our public-facing web viewer are reading from AGOL.
 However, this also means we must periodically update the content on AGOL, so that the latest data is available to our users.
 
@@ -73,7 +73,7 @@ Failed to execute (StageService).
 In the above example, the _planning_ service failed to update automatically. We will need to open the project file for this service and determine why it is failing to build. When the staging succeeds, the message will read "Draft staged for X". If you have made adjustments to a service, and wish to try staging the draft again for that service in particular, you can pass the service name in a vector to the _draft_services_ method:
 
 ```{bash}
-drafts.draft_services(base_path, ["planning"])
+drafts.draft_service(base_path, ["planning"])
 ```
 
 ## Step Four: Update Web Services
