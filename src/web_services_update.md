@@ -26,7 +26,7 @@ Review and approve changes before merging. If the changes are edits that you hav
 
 ## Step Two: Push Utility Edits to Beehive
 
-When edits include changes to any utility layer, we also need to push these changes to the Beehive mapping service that we use to for event management. Utility workers use the Beehive map to track recurring maintenance and record progress on their tasks, so from their perspective, if it has not been uploaded to Beehive, the update may as well have not occurred. Currently, we use the _beehive_push.mdx_ project in ArcMap to update the Beehive layer.
+When edits include changes to any utility layer, we also need to push these changes to the Beehive mapping service that we use to for event management. Utility workers use the Beehive map to track recurring maintenance and record progress on their tasks, so from their perspective, if it has not been uploaded to Beehive, the update may as well have not occurred. Currently, we use the _beehive_push.mdx_ project in ArcMap to update the Beehive layer. This can be found in the _GIS General\Public_Works_Projects directory_.
 
 - Select all updated features in a layer.
 - Select the layer of interest in the contents pane.
