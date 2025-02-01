@@ -111,4 +111,4 @@ Indeed, if you print the contents of _short_, it shows you the vector of service
 
 The services that typically fail to update are _historic_cultural_areas_, _water_utilities_, _sewer_utilities_, and _transportation_. The issue may be related to amount of data in the service, which may be leading to time-outs during the upload stage. For each service that fails to update by script, I open the ArcPro project associated with the service, and republish the service from there.
 
-THIS IS A TEST LINE
+THIS IS A TEST LINE OF TEXT TO BE REMOVED
