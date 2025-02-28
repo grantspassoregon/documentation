@@ -11,6 +11,7 @@
 - [Packages](./packages_intro.md)
   - [Github Integration](./github.md)
   - [Using git](./using_git.md)
+  - [Git Workflow](./git_workflow.md)
   - [Using a Virtual Environment](./virtual_env.md)
   - [Updating Web Services](./web_services_update.md)
 - [Utility Editing](./utility_editing.md)

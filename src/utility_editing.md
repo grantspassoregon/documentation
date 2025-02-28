@@ -31,3 +31,19 @@
   - If some features have failed to connect, zoom in and ensure that they are placed correctly, touching the features of the network to which they should connect.
 - Select "Save Edits" from the "Editor" tool on the Editor toolbar.
 - Select "Stop Editing" from the "Editor" tool on the Editor toolbar when you are finished.
+
+# General Notes
+
+- Georeference any pdfs needed in ArcPro, better tooling.
+- Place points first in ArcMap, filling in the elevation in the correct fields.
+  - Double-check that all assets have Facility IDs, and derive the label field.
+    - Sewer Manholes, Sewer Cleanouts
+    - Sewer Gravity Mains, from and to junctions
+    - Stormwater Gravity Mains Asset ID
+    - Open ditches
+  - Set the flow direction for the pipes.
+- Place points next in ArcPro on the UN pilots, filling in the elevation in the z field.
+  - Copy Asset IDs from the GN to the UN assets.
+- Reconcile versions in ArcPro using the city_editor project.
+- Push the assets to Beehive in ArcMap.
+- Check direction of flow in Beehive, and flip lines in ArcMap to the correct flow direction.
