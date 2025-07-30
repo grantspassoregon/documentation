@@ -32,7 +32,7 @@
 - Select "Save Edits" from the "Editor" tool on the Editor toolbar.
 - Select "Stop Editing" from the "Editor" tool on the Editor toolbar when you are finished.
 
-# General Notes
+## General Notes
 
 - Georeference any pdfs needed in ArcPro, better tooling.
 - Place points first in ArcMap, filling in the elevation in the correct fields.
