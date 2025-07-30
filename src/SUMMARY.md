@@ -16,5 +16,6 @@
   - [Using a Virtual Environment](./virtual_env.md)
   - [Updating Web Services](./web_services_update.md)
 - [Utility Editing](./utility_editing.md)
+- [Utility Network Creation](./utility_network_creation.md)
 - [Stand-Alone Scripts](./scripts_intro.md)
   - [Missing Sidewalks](./missing_sidewalks.md)
