@@ -6,7 +6,7 @@ The contents of an ideal commit should address only one issue or feature. A sing
 
 One primary reason to adopt this strategy is for automating changelog generation. Changelogs are a standard practice in the software industry, where new version releases include a log describing changes from the old version to the new. Part of the reason for their ubiquity is the existence of automatic tooling that converts commit messages from `git` into a reader-friendly changelog, called changelog generators. The current changelog generator used by our team is [`git-cliff`](https://git-cliff.org/). The important part is not so much _which_ tool we use, because they all work from the same set of commit messages. The changelog will only be as well-written as your commit messages. When you write a new commit, imagine your users reading the changelog and write a message with this audience in mind. Try reading some changelogs from software you admire and emulating their style. Use `git-cliff` to generate a changelog from your unreleased edits, and read through the output.
 
-For a more details, see the article [Write Better Commits, Build Better Projects](https://github.blog/developer-skills/github/write-better-commits-build-better-projects/)
+For a more details, see the article [Write Better Commits, Build Better Projects](https://github.blog/developer-skills/github/write-better-commits-build-better-projects/).
 
 ### Git-cliff Usage
 
@@ -62,9 +62,18 @@ To begin the merge, run the command `git merge yourBranchName`.
 
 If you are on the happy path, the merge is successful. The final step is to push the merge up to the Github repo using the command `git push`.
 
-If you are not on the happy path, then you are reading an error message that says something about a "merge conflict". This is a potentially deep rabbit hole, too deep to address here. To get an introduction, check out the article [Git Merge Conflicts](https://www.atlassian.com/git/tutorials/using-branches/merge-conflicts). The best strategy to deal with merge conflicts is to avoid them. Ensure your development branches are based off the current `main` branch. Use the `git pull` command to ensure your version of `main` is up-to-date. Merge conflicts occur when the `main` branch diverges from the version of the `main` branch that the development branch is based upon.
+If you are not on the happy path, then you are reading an error message that says something about a "merge conflict". This is a potentially deep rabbit hole, too deep to address here.
+To get an introduction, check out the article [Git Merge Conflicts](https://www.atlassian.com/git/tutorials/using-branches/merge-conflicts).
+The best strategy to deal with merge conflicts is to avoid them.
+Ensure your development branches are based off the current `main` branch.
+Use the `git pull` command to ensure your version of `main` is up-to-date.
+Merge conflicts occur when the `main` branch diverges from the version of the `main` branch that the development branch is based upon.
 
-After merging the development branch, it is best practice to delete the development branch. Rather than using a single development branch called "erik" or "draft", best practice is to name the branch in some way after the work being done, such as "parser" or "unit-tests". When looking through the merge history of your repo, descriptive branch name will help to understand where and why changes have occurred, without having to dig into the details of the commits. Delete a development branch using the command `git branch -d yourBranchName`. The `-d` flag communicates that you would like to delete the indicated branch.
+After merging the development branch, it is best practice to delete the development branch.
+Rather than using a single development branch called "erik" or "draft", best practice is to name the branch in some way after the work being done, such as "parser" or "unit-tests".
+When looking through the merge history of your repo, descriptive branch names will help you to understand where and why changes have occurred, without having to dig into the details of the commits.
+Delete a development branch using the command `git branch -d yourBranchName`.
+The `-d` flag communicates that you would like to delete the indicated branch.
 
 For more details on using development branches, see the article [How to Work With Branches in Git and Github](https://thenewstack.io/dont-mess-with-the-master-working-with-branches-in-git-and-github/).
 
