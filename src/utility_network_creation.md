@@ -124,12 +124,26 @@ Previous instructions from Robert Krishner:
     - Set the To Asset Group field to Pipe.
     - Set the To Asset Type field to Gravity Pipe.
 
+### SS Catchbasin
+
+The wastewater network includes grease traps and oil water separators that feed from catchbasins. To distinguish these catchbasins from the many that participate in the stormwater network, we will make a catchbasin type unique to the wastewater network.
+
+- Use the Add Subtype tool to create the Catchbasin type within the Sewer Device subtype layer.
+- Create a domain to represent the subtypes of catchbasins:
+  - 0 = Unknown
+  - 500 = Catchbasin
+    ![Add Subtype](images/add_subtype.png)
+- Use the Assign Domain to Field tool to associate the domain with the subtype asset:
+  ![Assign Domain to Field](images/assign_domain_to_field.png)
+
 ## Data Loading Tools
 
 - Run Create Data Loading Workspace from the DLT folder.
   - Select each layer in the GN for source layers.
   - Select the appropriate analog in the asset package for the target.
   - Creates a folder called "DataLoadingWorkspace".
+    ![Create Data Loading Workspace](images/create_data_loading_workspace.png)
+    Note that we read from the fitting layer for wastewater twice, once for SewerJunction assets and once for SewerDevice assets.
 - Update target domains.
   - Add missing domain variants to the asset package.
   - Check field mapping and fix scrambled imports.
@@ -138,6 +152,7 @@ Previous instructions from Robert Krishner:
   - Also add these fields to the correct asset worksheet
 - The Target column in DataReference.xslx specifies the asset package into which we are loading the data (e.g. "working_ap").
 - Run "Load Data Using Workspace" from the DLT folder.
+  ![Load Data Using Workspace](images/load_data_using_workspace.png)
 
 ## Convert Asset Package to Geodatabase
 
@@ -152,6 +167,28 @@ Previous instructions from Robert Krishner:
     - Spaces in the name are replaced by underscores, and the string " Utility Network" is appended to the end of the name.
       So "Wastewater Network" becomes "Wastewater_Network Utility Network", and "Wastewater" becomes "Wastewater Utility Network".
   - Within "Asset Package Options", make sure the Post Process box is unchecked. Although it claims to be unchecked by default, I find that it is checked by default on my machine and needs to be unchecked manually before executing.
+    ![Asset Package to Geodatabase](images/asset_package_to_geodatabase.png)
+
+## Clear Network Connectivity Errors
+
+- In the Geoprocessing pane, search for the tool "Enable Network Topology" from the Utility Network toolset. Beware that there is an identically named tool in the Trace Network toolset that you _do not want_.
+  - CAUTION: You must check the box "Only generate errors". There are configuration changes that you can only make before Network Topology has been enabled, and often you won't know what those are until you start resolving connectivity errors, so you are going to run Enable Network Topology to generate the errors without actually enabling the network.
+  - The initial import may contain more than 10000 errors, so delete this number and leave the "Maximum number of errors" field blank, which will not put a cap on errors.
+    ![Enable Network Topology Errors Only](images/enable_network_topology_errors.png)
+- The network errors layer does not have a simple way to display errors. If you turn on labeling, the default errormessage field will give the integer code associated with an error, which will likely not be enough to go on, especially at first. So instead, I recommend copying the method employed in the online tutorial [Fix connectivity errors in a utility network](https://learn.arcgis.com/en/projects/fix-connectivity-errors-in-a-utility-network/).
+
+  - Download the [tutorial project](https://www.arcgis.com/sharing/rest/content/items/fe8f6832bcd74bde9118e54afe18951d/data) and open it in ArcGIS Pro.
+  - In the Contents pane, expand the "Water Utility Network" category, right-click on "Dirty Areas" and select "Labeling Properties..." from the context menu.
+  - Copy the expression in the "Expression" field and paste it into the "Expression" field for the dirty areas labeling in your network import, and click apply.
+
+- Add rule to connect manholes to lateral lines.
+
+## Export Asset Package
+
+Now that we have created a fully-functional utility network, we are going to turn it back into an asset package that includes all our changes.
+
+- Run the Export Asset Package tool.
+  ![Export Asset Package](images/export_asset_package.png)
 
 ## Deploying a Utility Network
 
@@ -167,18 +204,36 @@ Here is a link to the [video](https://mediaspace.esri.com/media/t/1_7afu0n8p/246
     - I created the database using my normal login (PACIFIC\erose), using operating system authentication.
   - Need ArcGIS Server license file
   - The process reported failure, but the database got created.
+    ![Create Enterprise Geodatabase](images/create_enterprise_geodatabase.png)
 - Create an Admin Database Connection
+  ![Create Database Connection Admin](images/create_database_connection_admin.png)
+  - Right-click on the connection file in the Catalog Pane and select Enable Enterprise Geodatabase.
+    ![Enable Enterprise Geodatabase](images/enable_enterprise_geodatabase.png)
+  - Right-click on the connection file in the Catalog Pane and select Geodatabase Connection Properties.
+    - Select Branch versioning and press OK.
+      ![GDB Connection Properties](images/gdb_connection_props.png)
 - Create Database User
+  - E.g. wastewater | stormwater
+    ![Create Database User](images/create_database_user.png)
 - Create Network Owner Database Connection
-  - I modified the connection properties:
-    - To enable the database as a geodatabase.
-    - I named the user un_owner.
-    - You can change the password of the user in SQL Management Studio.
-    - Set the authentication to database (not OS), use the user name and password.
+  - You can change the password of the user in SQL Management Studio.
+  - Set the authentication to database (not OS), use the user name and password.
+  - Note the username and password for future reference.
+    ![Create Database Connection User](images/create_database_connection_user.png)
 - Create the Utility Network
+  - Run the Stage Utility Network tool.
   - Use the UN Owner user, not the Admin
+    ![Stage Utility Network](images/stage_utility_network.png)
 - Migrate the data using Data Loading Tools
-- Network Topology must be enabled and errors cleared before enabling version control, so clear all errors on a local GDB first.
+  - Run the Apply Asset Package tool.
+    ![Apply Asset Package](images/apply_asset_package.png)
+  - Set versioning for the utility network layers to Branch and enable replica tracking.
+    - Refresh the database connection to see Validation layers, which also need replica tracking.
+  - Enable Network Topology for the branched version.
+    ![Enable Network Topology](images/enable_network_topology.png)
+- Publish the network as a feature service.
+  - Drag the network layers into a map. Do not apply any symbology.
+  - Register the data source with the server.
 
 ## Trace Configuration
 
