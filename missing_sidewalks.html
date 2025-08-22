@@ -1,0 +1,284 @@
+<!DOCTYPE HTML>
+<html lang="en" class="light" dir="ltr">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>Missing Sidewalks - Grants Pass GIS Documentation</title>
+
+
+        <!-- Custom HTML head -->
+        
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff">
+
+        <link rel="icon" href="favicon.svg">
+        <link rel="shortcut icon" href="favicon.png">
+        <link rel="stylesheet" href="css/variables.css">
+        <link rel="stylesheet" href="css/general.css">
+        <link rel="stylesheet" href="css/chrome.css">
+        <link rel="stylesheet" href="css/print.css" media="print">
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="FontAwesome/css/font-awesome.css">
+        <link rel="stylesheet" href="fonts/fonts.css">
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" href="highlight.css">
+        <link rel="stylesheet" href="tomorrow-night.css">
+        <link rel="stylesheet" href="ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+
+    </head>
+    <body class="sidebar-visible no-js">
+    <div id="body-container">
+        <!-- Provide site root to javascript -->
+        <script>
+            var path_to_root = "";
+            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "navy" : "light";
+        </script>
+
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script>
+            try {
+                var theme = localStorage.getItem('mdbook-theme');
+                var sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script>
+            var theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            var html = document.querySelector('html');
+            html.classList.remove('light')
+            html.classList.add(theme);
+            var body = document.querySelector('body');
+            body.classList.remove('no-js')
+            body.classList.add('js');
+        </script>
+
+        <input type="checkbox" id="sidebar-toggle-anchor" class="hidden">
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script>
+            var body = document.querySelector('body');
+            var sidebar = null;
+            var sidebar_toggle = document.getElementById("sidebar-toggle-anchor");
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            } else {
+                sidebar = 'hidden';
+            }
+            sidebar_toggle.checked = sidebar === 'visible';
+            body.classList.remove('sidebar-visible');
+            body.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <div class="sidebar-scrollbox">
+                <ol class="chapter"><li class="chapter-item expanded "><a href="overview.html"><strong aria-hidden="true">1.</strong> Home</a></li><li class="chapter-item expanded "><a href="addressing.html"><strong aria-hidden="true">2.</strong> Addressing Manual</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="address_request.html"><strong aria-hidden="true">2.1.</strong> The Address Request Form</a></li><li class="chapter-item expanded "><a href="addressing_layer.html"><strong aria-hidden="true">2.2.</strong> The Addressing Layer</a></li><li class="chapter-item expanded "><a href="addressing_rules.html"><strong aria-hidden="true">2.3.</strong> Addressing Rules</a></li><li class="chapter-item expanded "><a href="addressing_policies.html"><strong aria-hidden="true">2.4.</strong> Addressing Policies</a></li><li class="chapter-item expanded "><a href="address_verification.html"><strong aria-hidden="true">2.5.</strong> Address Verification</a></li><li class="chapter-item expanded "><a href="address_strategic_plan.html"><strong aria-hidden="true">2.6.</strong> Address Strategic Plan</a></li><li class="chapter-item expanded "><a href="lexisnexis.html"><strong aria-hidden="true">2.7.</strong> LexisNexis Tables</a></li></ol></li><li class="chapter-item expanded "><a href="publishing_services.html"><strong aria-hidden="true">3.</strong> Services</a></li><li class="chapter-item expanded "><a href="layer_files.html"><strong aria-hidden="true">4.</strong> Layer Files</a></li><li class="chapter-item expanded "><a href="survey_points.html"><strong aria-hidden="true">5.</strong> Survey Points</a></li><li class="chapter-item expanded "><a href="packages_intro.html"><strong aria-hidden="true">6.</strong> Packages</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="github.html"><strong aria-hidden="true">6.1.</strong> Github Integration</a></li><li class="chapter-item expanded "><a href="using_git.html"><strong aria-hidden="true">6.2.</strong> Using git</a></li><li class="chapter-item expanded "><a href="git_workflow.html"><strong aria-hidden="true">6.3.</strong> Git Workflow</a></li><li class="chapter-item expanded "><a href="virtual_env.html"><strong aria-hidden="true">6.4.</strong> Using a Virtual Environment</a></li><li class="chapter-item expanded "><a href="web_services_update.html"><strong aria-hidden="true">6.5.</strong> Updating Web Services</a></li></ol></li><li class="chapter-item expanded "><a href="utility_editing.html"><strong aria-hidden="true">7.</strong> Utility Editing</a></li><li class="chapter-item expanded "><a href="utility_network_creation.html"><strong aria-hidden="true">8.</strong> Utility Network Creation</a></li><li class="chapter-item expanded "><a href="scripts_intro.html"><strong aria-hidden="true">9.</strong> Stand-Alone Scripts</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="missing_sidewalks.html" class="active"><strong aria-hidden="true">9.1.</strong> Missing Sidewalks</a></li></ol></li></ol>
+            </div>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle">
+                <div class="sidebar-resize-indicator"></div>
+            </div>
+        </nav>
+
+        <!-- Track and set sidebar scroll position -->
+        <script>
+            var sidebarScrollbox = document.querySelector('#sidebar .sidebar-scrollbox');
+            sidebarScrollbox.addEventListener('click', function(e) {
+                if (e.target.tagName === 'A') {
+                    sessionStorage.setItem('sidebar-scroll', sidebarScrollbox.scrollTop);
+                }
+            }, { passive: true });
+            var sidebarScrollTop = sessionStorage.getItem('sidebar-scroll');
+            sessionStorage.removeItem('sidebar-scroll');
+            if (sidebarScrollTop) {
+                // preserve sidebar scroll position when navigating via links within sidebar
+                sidebarScrollbox.scrollTop = sidebarScrollTop;
+            } else {
+                // scroll sidebar to current active section when navigating via "next/previous chapter" buttons
+                var activeSection = document.querySelector('#sidebar .active');
+                if (activeSection) {
+                    activeSection.scrollIntoView({ block: 'center' });
+                }
+            }
+        </script>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky">
+                    <div class="left-buttons">
+                        <label id="sidebar-toggle" class="icon-button" for="sidebar-toggle-anchor" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </label>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        </ul>
+                        <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                    </div>
+
+                    <h1 class="menu-title">Grants Pass GIS Documentation</h1>
+
+                    <div class="right-buttons">
+                        <a href="print.html" title="Print this book" aria-label="Print this book">
+                            <i id="print-button" class="fa fa-print"></i>
+                        </a>
+
+                    </div>
+                </div>
+
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script>
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <h1 id="missing-sidewalks"><a class="header" href="#missing-sidewalks">Missing Sidewalks</a></h1>
+<p>According to the City of Grants Pass development code, new street should have sidewalk adjacent on either side, except for the following cases.  Only one sidewalk is necessary if:
+- the street is on a hillslope, or
+- the street serves four units or fewer.</p>
+<p>Currently a number of city streets lack the required number of sidewalks.  Older developments that predate the language in the development code may have omitted the construction of sidewalks.  Developers also have the option of omitting sidewalk construction using the Fee in Lieu Option, paying the cost of construction to the city instead of building the sidewalks directly.  The purpose of the Missing Sidewalks Map is to show areas of the city where sidewalks are currently required but not built.</p>
+<p>To produce the Missing Sidewalks Map, first clone the <em>scripts</em> repository from the GIS Github account:</p>
+<pre><code class="language-{shell}">git clone git@github.com:grantspassoregon/scripts
+</code></pre>
+<p>Whereas repositories normally host working packages, such as the <a href="https://github.com/grantspassoregon/webmap">webmap</a> package for producing web city web maps, or the content for a static web site, such as the <a href="https://github.com/grantspassoregon/documentation">documentation</a> repo, the <em>scripts</em> repository hosts stand-alone scripts designed to handle specific projects in the City of Grants Pass GIS Office.  In the case of the script for this project, <em>missing_sidewalks.py</em>, the code uses the <em>arcpy</em> module, which only works during a running session of ArcGIS.  Since the <em>arcpy</em> module is not available outside of ArcGIS, consolidating the code within the script into a full Python package does not make sense.</p>
+<p>To use the <em>missing_sidewalks.py</em> script, the first step is to open an empty project in ArcGIS Pro.  With the mouse, select the <strong>View</strong> tab and open the Python window by clicking the <strong>Python Window</strong> button in the <em>Windows</em> menu.  The Python window will open in a pane docked to the bottom of the application.  The upper portion of the pane shows output from the Python interpreter, while the blank line with the cursor on the bottom of the pane is where you enter Python code.</p>
+<p>The script <em>missing_sidewalks.py</em> will create a file geodatabase on your machine, a log file, and a csv of summary statistics.  Before running the script on your machine, you will likely want to customize the name and location of these files by adjusting the file path names in the script.  Open the <em>missing_sidewalks.py</em> in the file editor of your choice, and note that the file path variables appear at the top of the file, immediately below the import statements:</p>
+<pre><code class="language-Python"># Customize these variables to paths on your system
+PROJECT_DIR = "C:/Users/erose/projects"
+GDB_NAME = "missing_sidewalks.gdb"
+WORKSPACE = "C:/Users/erose/projects/missing_sidewalks.gdb"
+ARCGIS_PROJECT = "P:/projects/sidewalks/sidewalks3.aprx"
+LOG_FILE = "P:/missing_sidewalks.log"
+CSV_FILE = "P:/missing_sidewalks_report.csv"
+</code></pre>
+<p>The variable names are in SCREAMING_SNAKE_CASE, and the values are strings indicating the file path names that the script uses for the project.  Edit these file path names as suitable for your device (for instance, your username is probably not <em>erose</em>).  A short description of each file path variable:</p>
+<ul>
+<li>PROJECT_DIR - The project directory where ArcGIS will create a new file geodatabase.</li>
+<li>GDB_NAME - The desired name of the new geodatabase.  The script may fail if the geodatabase already exists!</li>
+<li>WORKSPACE - The full path name of the new geodatabase.  This should be the project directory followed by the new geodatabase name, separated by a space.  Since we create and use a new geodatabase, this step is a little redundant.</li>
+<li>ARCGIS_PROJECT - The name of the empty ArcGIS project that should be open in ArcGIS Pro.  One of the <em>arcpy</em> commands run by the script (SelectByAttribute), requires an open session of ArcGIS to work, which is why we open first open an empty project in ArcGIS Pro.  There is no need to use a pre-existing project because the script will load and create the necessary layers when run.</li>
+<li>LOG_FILE - The file path name at which to create a log file.  This script uses the <em>logging</em> package to record progress, but ArcGIS does not permit logging to the console, so the script saves logging messages in a log file.  If an error occurs while running the script, you can open the log file in the text editor of your choice to view the output and diagnose where the problem occurred.</li>
+<li>CSV_FILE - The file path name of the table of summary statistics on the length of streets missing sidewalks.</li>
+</ul>
+<p>Once you have editing the file path variable names in <em>missing_sidewalks.py</em>, you can save the changes in a copy on your local machine.  In a traditional Python package, we might store the values of these variables in a <code>.env</code> file, but ArcGIS does not currently support the <em>dotenv</em> package, so we are stuck with the values hard-coded into the script for now.  This should be the only part of the script that you need to alter, and now we can run it on your machine.</p>
+<p>In the Python window in your open session of ArcGIS Pro, paste the following line of code:</p>
+<pre><code class="language-Python">exec(open('/path-to-my-script/missing_sidewalks.py').read())
+</code></pre>
+<p>You can also change the working directory to your project folder, using the <em>os</em> package:</p>
+<pre><code class="language-Python">import os
+os.chdir('/project/directory/path')
+exec(open('missing_sidewalks.py').read())
+</code></pre>
+<p>Important note:  Do not set the location of the file geodatabase on a virtual drive.  Use the primary (C:) drive on your machine.  The IT department discourages employees from storing information on the local (C:) drive, and consequently employees are in the habit of storing personal files on the P: drive, and GIS project files on the O: drive.  However, this script performs many heavy computations in ArcGIS.  If you store the geodatabase in a remote drive (P: or O:), this will substantially decrease the speed of operations by requiring ArcGIS to transmit the information over the network to the remote drive.  This may also cause internal congestion on the city network.  Once the script has finished running, you can move the resulting geodatabase to a permanent storage location on the O: drive, but while the script is generating the geodatabase you want the work to occur on your local (C:) drive.  This will improve processing time as ArcGIS will be limited by the speed on your processor (CPU-bound) and not by the speed of the network (I/O-bound).</p>
+<h2 id="overwriting-the-web-layer"><a class="header" href="#overwriting-the-web-layer">Overwriting the Web Layer</a></h2>
+<p>The <em>missing_sidewalks.py</em> automates construction of the layers for exporting into the missing sidewalks feature class service hosted by the City on ArcGIS Online.  Once the script is done running, several manual steps remain to export the service.  Partially this is due to lack of <em>arcpy</em> expertise on behalf of the script author, but this is also the point where you exert your authority to inspect and approve of the layers before overwriting the service layer.  By the time is the <em>missing_sidewalks.py</em> script is finished running, there will be several open layers in the open ArcGIS project, many of which are computational artifacts, or intermediary steps that are not intended for inclusion in the final map.  Feel free to either remove the unnecessary layers from the current project, or open a fresh new project for hosting the configuration of the web service layer.</p>
+<p>For each street classification type (Local, Local Collector, Collector, Arterial, State, Private and Park), there is an export layer labeled <em>&lt;street_type&gt;_sidewalks_export</em>.  To create the service layer map, include each of these layers twice, as well as the layers called <em>streets</em>, <em>sidewalks</em>, <em>addresses</em>, <em>hillslopes</em> and <em>taxlots</em>.  The order of the layers should be as follows:</p>
+<ul>
+<li><em>local_street_sidewalks_export</em> (first time)</li>
+<li><em>local_collector_sidewalks_export</em></li>
+<li><em>collector_sidewalks_export</em></li>
+<li><em>arterial_sidewalks_export</em></li>
+<li><em>state_street_sidewalks_export</em></li>
+<li><em>private_street_sidewalks_export</em></li>
+<li><em>park_street_sidewalks_export</em></li>
+<li><em>local_street_sidewalks_export</em> (second time)</li>
+<li><em>local_collector_sidewalks_export</em></li>
+<li><em>collector_sidewalks_export</em></li>
+<li><em>arterial_sidewalks_export</em></li>
+<li><em>state_street_sidewalks_export</em></li>
+<li><em>private_street_sidewalks_export</em></li>
+<li><em>park_street_sidewalks_export</em></li>
+<li><em>streets</em></li>
+<li><em>sidewalks</em></li>
+<li><em>addresses</em></li>
+<li><em>hillslopes</em></li>
+<li><em>taxlots</em></li>
+</ul>
+<p>On the Missing Sidewalks web map, we use the first sidewalks export layer to indicate the number of missing sidewalks, with green indicating none missing, yellow one, and red two missing. The second sidewalks export layer indicates whether the street fronts an undeveloped lot, with a thick blue indicating undeveloped, which is visible underneath the missing sidewalk symbology.  Since we needs to display different colors based on the number of sidewalks, as well as whether the street fronts developed property, we simply include the layers twice and give each version a different symbology.  The template web map should have the required symbology already stored, so customizing the style of each layer is not necessary.  But in order to overwrite the service layer correctly, the layer order has to match the original.</p>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                            <a rel="prev" href="scripts_intro.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                    <a rel="prev" href="scripts_intro.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+
+            </nav>
+
+        </div>
+
+
+
+
+        <script>
+            window.playground_copyable = true;
+        </script>
+
+
+        <script src="elasticlunr.min.js"></script>
+        <script src="mark.min.js"></script>
+        <script src="searcher.js"></script>
+
+        <script src="clipboard.min.js"></script>
+        <script src="highlight.js"></script>
+        <script src="book.js"></script>
+
+        <!-- Custom JS scripts -->
+
+
+    </div>
+    </body>
+</html>

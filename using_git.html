@@ -1,0 +1,333 @@
+<!DOCTYPE HTML>
+<html lang="en" class="light" dir="ltr">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>Using git - Grants Pass GIS Documentation</title>
+
+
+        <!-- Custom HTML head -->
+        
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff">
+
+        <link rel="icon" href="favicon.svg">
+        <link rel="shortcut icon" href="favicon.png">
+        <link rel="stylesheet" href="css/variables.css">
+        <link rel="stylesheet" href="css/general.css">
+        <link rel="stylesheet" href="css/chrome.css">
+        <link rel="stylesheet" href="css/print.css" media="print">
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="FontAwesome/css/font-awesome.css">
+        <link rel="stylesheet" href="fonts/fonts.css">
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" href="highlight.css">
+        <link rel="stylesheet" href="tomorrow-night.css">
+        <link rel="stylesheet" href="ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+
+    </head>
+    <body class="sidebar-visible no-js">
+    <div id="body-container">
+        <!-- Provide site root to javascript -->
+        <script>
+            var path_to_root = "";
+            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "navy" : "light";
+        </script>
+
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script>
+            try {
+                var theme = localStorage.getItem('mdbook-theme');
+                var sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script>
+            var theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            var html = document.querySelector('html');
+            html.classList.remove('light')
+            html.classList.add(theme);
+            var body = document.querySelector('body');
+            body.classList.remove('no-js')
+            body.classList.add('js');
+        </script>
+
+        <input type="checkbox" id="sidebar-toggle-anchor" class="hidden">
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script>
+            var body = document.querySelector('body');
+            var sidebar = null;
+            var sidebar_toggle = document.getElementById("sidebar-toggle-anchor");
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            } else {
+                sidebar = 'hidden';
+            }
+            sidebar_toggle.checked = sidebar === 'visible';
+            body.classList.remove('sidebar-visible');
+            body.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <div class="sidebar-scrollbox">
+                <ol class="chapter"><li class="chapter-item expanded "><a href="overview.html"><strong aria-hidden="true">1.</strong> Home</a></li><li class="chapter-item expanded "><a href="addressing.html"><strong aria-hidden="true">2.</strong> Addressing Manual</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="address_request.html"><strong aria-hidden="true">2.1.</strong> The Address Request Form</a></li><li class="chapter-item expanded "><a href="addressing_layer.html"><strong aria-hidden="true">2.2.</strong> The Addressing Layer</a></li><li class="chapter-item expanded "><a href="addressing_rules.html"><strong aria-hidden="true">2.3.</strong> Addressing Rules</a></li><li class="chapter-item expanded "><a href="addressing_policies.html"><strong aria-hidden="true">2.4.</strong> Addressing Policies</a></li><li class="chapter-item expanded "><a href="address_verification.html"><strong aria-hidden="true">2.5.</strong> Address Verification</a></li><li class="chapter-item expanded "><a href="address_strategic_plan.html"><strong aria-hidden="true">2.6.</strong> Address Strategic Plan</a></li><li class="chapter-item expanded "><a href="lexisnexis.html"><strong aria-hidden="true">2.7.</strong> LexisNexis Tables</a></li></ol></li><li class="chapter-item expanded "><a href="publishing_services.html"><strong aria-hidden="true">3.</strong> Services</a></li><li class="chapter-item expanded "><a href="layer_files.html"><strong aria-hidden="true">4.</strong> Layer Files</a></li><li class="chapter-item expanded "><a href="survey_points.html"><strong aria-hidden="true">5.</strong> Survey Points</a></li><li class="chapter-item expanded "><a href="packages_intro.html"><strong aria-hidden="true">6.</strong> Packages</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="github.html"><strong aria-hidden="true">6.1.</strong> Github Integration</a></li><li class="chapter-item expanded "><a href="using_git.html" class="active"><strong aria-hidden="true">6.2.</strong> Using git</a></li><li class="chapter-item expanded "><a href="git_workflow.html"><strong aria-hidden="true">6.3.</strong> Git Workflow</a></li><li class="chapter-item expanded "><a href="virtual_env.html"><strong aria-hidden="true">6.4.</strong> Using a Virtual Environment</a></li><li class="chapter-item expanded "><a href="web_services_update.html"><strong aria-hidden="true">6.5.</strong> Updating Web Services</a></li></ol></li><li class="chapter-item expanded "><a href="utility_editing.html"><strong aria-hidden="true">7.</strong> Utility Editing</a></li><li class="chapter-item expanded "><a href="utility_network_creation.html"><strong aria-hidden="true">8.</strong> Utility Network Creation</a></li><li class="chapter-item expanded "><a href="scripts_intro.html"><strong aria-hidden="true">9.</strong> Stand-Alone Scripts</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="missing_sidewalks.html"><strong aria-hidden="true">9.1.</strong> Missing Sidewalks</a></li></ol></li></ol>
+            </div>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle">
+                <div class="sidebar-resize-indicator"></div>
+            </div>
+        </nav>
+
+        <!-- Track and set sidebar scroll position -->
+        <script>
+            var sidebarScrollbox = document.querySelector('#sidebar .sidebar-scrollbox');
+            sidebarScrollbox.addEventListener('click', function(e) {
+                if (e.target.tagName === 'A') {
+                    sessionStorage.setItem('sidebar-scroll', sidebarScrollbox.scrollTop);
+                }
+            }, { passive: true });
+            var sidebarScrollTop = sessionStorage.getItem('sidebar-scroll');
+            sessionStorage.removeItem('sidebar-scroll');
+            if (sidebarScrollTop) {
+                // preserve sidebar scroll position when navigating via links within sidebar
+                sidebarScrollbox.scrollTop = sidebarScrollTop;
+            } else {
+                // scroll sidebar to current active section when navigating via "next/previous chapter" buttons
+                var activeSection = document.querySelector('#sidebar .active');
+                if (activeSection) {
+                    activeSection.scrollIntoView({ block: 'center' });
+                }
+            }
+        </script>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky">
+                    <div class="left-buttons">
+                        <label id="sidebar-toggle" class="icon-button" for="sidebar-toggle-anchor" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </label>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        </ul>
+                        <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                    </div>
+
+                    <h1 class="menu-title">Grants Pass GIS Documentation</h1>
+
+                    <div class="right-buttons">
+                        <a href="print.html" title="Print this book" aria-label="Print this book">
+                            <i id="print-button" class="fa fa-print"></i>
+                        </a>
+
+                    </div>
+                </div>
+
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script>
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <h1 id="using-git"><a class="header" href="#using-git">Using git</a></h1>
+<p>This section describes how to use <code>git</code> commands to download code from the GitHub repository onto your local machine, make changes to this code and then upload these changes back onto the repository, as well as how to make a new repository and associate it with the GitHub account.
+We introduce the most common commands that you will use to manage the code base.
+Although <code>git</code> offers many additional features, and you are welcome to use these features to improve your productivity, the following commands should be sufficient for a new user to set up a basic workflow.</p>
+<h2 id="cloning-a-repository-git-clone"><a class="header" href="#cloning-a-repository-git-clone">Cloning a Repository (git clone)</a></h2>
+<p>GitHub offers centralized cloud-based code storage that allows users of an organization to collaborate across multiple locations.
+Changes made to the code from an individual computer synchronize the with the centrally-stored code database, ensuring that all users are able to access a shared version.
+The first step in gaining access to the shared code is to make a local copy of the relevant GitHub project onto your local machine, a process called "Cloning a Repository."</p>
+<p>The City of Grants Pass organizational account is located at <a href="https://github.com/grantspassoregon/">https://github.com/grantspassoregon/</a>. This account hosts projects related to the GIS Division. Each project is an independent repository that you may elect to download to your local machine. If you select a repository by clicking on its link, the file tree of the main branch will load onto the screen. Clicking on the green <code>&lt;&gt; Code</code> button displays a dropdown field showing the download path to use in order to clone the repository. The image below shows the download path to the <code>documentation</code> repository, which holds the source for this markdown book.</p>
+<p><img src="./images/clone_repository_ssh.png" alt="Clone by SSH" /></p>
+<p>Running the <code>clone</code> command will download and install the specified code into the current working directory. You may wish to create a dedicated directory on your machine for storing repositories on your system, such as a <code>repos</code> directory in <code>C:\Users\%Username%\</code>. First, navigate to this directory in the terminal:</p>
+<pre><code class="language-{bash}">  cd c:/users/%Username%/repos
+</code></pre>
+<p>Then make a local copy of the selected repository, in this case <code>documentation</code>, using the <code>clone</code> command:</p>
+<pre><code class="language-{bash}">git clone git@github.com:grantspassoregon/documentation.git
+</code></pre>
+<p>This command will create a folder with the same name as the project in the working directory. You can view the downloaded files by navigating into the directory (e.g. <code>cd documentation</code>) or by opening the files directly into your favorite code editor.</p>
+<h2 id="updating-your-local-version-git-pull"><a class="header" href="#updating-your-local-version-git-pull">Updating Your Local Version (git pull)</a></h2>
+<p>The command <code>git pull</code> is a way to sync the copy of the code base on a local machine with the latest changes made to the remote repository.
+If some time has passed since you cloned a repository on your local machine, or if the project is in active development by a colleague, then you may need to run <code>git pull</code> in order to update your local copy to the most recent version.
+When executed from the working directory of a git project, <code>git pull</code> will download the latest changes on the remote repository and update the local copy.
+If you plan on making changes to a code base that is actively under development by multiple people, it is wise to <code>git pull</code> before you begin editing, to prevent potential merge conflicts.</p>
+<p>A typical use pattern for this command looks like this:</p>
+<pre><code class="language-{bash}">&gt; cd path\to\project
+&gt; git pull
+</code></pre>
+<h2 id="examining-the-project-directory-git-status"><a class="header" href="#examining-the-project-directory-git-status">Examining the Project Directory (git status)</a></h2>
+<p>The <code>git status</code> commands tracks changes made to files tracked by git. When you edit a local file in the repository, <code>git status</code> will show the file to be changed but not "staged". Staged changes are edits that you explicitly want to push up into the remote branch. You can stage changes for committing to the remote branch using the <code>git add</code> command. Running <code>git status</code> is a good way to ensure that all changes made during an editing sessions are properly staged before attempting to commit to a remote repository.
+<img src="./images/git_status_unstaged.png" alt="Git Status" /></p>
+<h2 id="staging-changes-to-commit-to-a-remote-repository-git-add"><a class="header" href="#staging-changes-to-commit-to-a-remote-repository-git-add">Staging Changes to Commit to a Remote Repository (git add)</a></h2>
+<p>The <code>git add</code> command promotes changes in your local files to the staging area. Only staged files are pushed to the remote repository during a commit. If you only want to stage a single file from your local machine, you can specify the file name:</p>
+<pre><code class="language-{bash}"># stage a single file
+&gt; git add address.rs
+</code></pre>
+<p>If you want to add all changes made to the staging area, you can use to dot operator "." or the -p flag, short for "patch":</p>
+<pre><code class="language-{bash}"># stage all changes
+&gt; git add .
+# or, alternatively
+&gt; git add -p
+</code></pre>
+<p>When you create a new file name that is not stored on the remote repository, this file begins as "untracked". When you add the file to the staging area, it becomes "tracked". If you want to ignore new files (maybe they are not ready yet) and only stage changes made to files that are already tracked, use the -u flag, short for "update", which will only stage files that have a matching entry in the remote repository:</p>
+<pre><code class="language-{bash}"># stage tracked changes
+&gt; git add -u
+</code></pre>
+<p>After staging changes, it is helpful to run <code>git status</code> to ensure the staging area is correct before committing changes to the remote repository:
+<img src="./images/git_status_staged.png" alt="Git Status Staged" /></p>
+<h2 id="commit-staged-changes-to-a-remote-repository-git-commit"><a class="header" href="#commit-staged-changes-to-a-remote-repository-git-commit">Commit Staged Changes to a Remote Repository (git commit)</a></h2>
+<p>When you are ready to commit staged changes to a remote repository, use the <code>git commit</code> command.
+Industry best practice includes attaching a short descriptive message to a commit. This message makes it easier to understand the purpose of the committed code without wading through it line by line.
+When searching through the past history of commits, a good message can make it easier to find the change you are looking for.
+To include a message, using the -m flag and pass the message inside quotes, so the format of the command looks like this:</p>
+<pre><code class="language-{bash}">&gt; git commit -m "descriptive message"
+</code></pre>
+<p><img src="./images/git_commit.png" alt="Git Commit" /></p>
+<h2 id="pushing-committed-changes-to-a-remote-repository-git-push"><a class="header" href="#pushing-committed-changes-to-a-remote-repository-git-push">Pushing Committed Changes to a Remote Repository (git push)</a></h2>
+<p>The <code>git push</code> command is the final step in moving changes from your local machine to a remote repository.
+You can edit and revise your work, and make multiple calls to <code>git commit</code>, but until you run <code>git push</code>, these changes will remain confined to your local machine.
+Generally, it is good practice to commit stable changes regularly to the remote repository, to serve as a backup if something happens to your local machine.
+In addition, the more commits stack up on your local machine, the greater the risk of merge errors when you finally do run <code>git push</code>, and the best way to handle merge errors is to avoid having them occur in the first place, so push often.</p>
+<p>Here is an example of <code>git push</code> in action:
+<img src="./images/git_push.png" alt="Git Push" /></p>
+<p>And here is an example of pushing multiple commits at once:
+<img src="./images/git_push_commits.png" alt="Git Push Commits" /></p>
+<h2 id="adding-locally-hosted-code-to-a-new-repository"><a class="header" href="#adding-locally-hosted-code-to-a-new-repository">Adding Locally-Hosted Code to a New Repository</a></h2>
+<p>As the scope and duties of the GIS Division change over time, we create new projects to meet the changing needs of the City government. The easiest method to add a new project to the GitHub account is to begin with code hosted on your own machine, and then to push this code into an empty repository on GitHub using the CLI.
+Referring to the <a href="https://docs.github.com/en/migrations/importing-source-code/using-the-command-line-to-import-source-code/adding-locally-hosted-code-to-github">docs</a>:</p>
+<ul>
+<li>
+<p>Create a new repository on GitHub.com.</p>
+<ul>
+<li>Click the new repository button:
+<img src="./images/new_repository_button.png" alt="New Repository Button" /></li>
+<li>Enter the name of the new project:
+<img src="./images/create_new_repository.png" alt="Create New Repository" /></li>
+<li>Unless there are overriding privacy concerns, a Public repository is standard.</li>
+<li>Do not initialize the new repository with a README, license, or gitignore files. Leave it empty.</li>
+<li>An empty repository prevents merge errors when uploading the code hosted on the local machine.</li>
+</ul>
+</li>
+<li>
+<p>At the top of the new Quick Setup page for the new repository, copy the remote repository URL.
+<img src="./images/remote_repository_url.png" alt="Remote Repository URL" /></p>
+</li>
+<li>
+<p>Open Git Bash or the Alacritty terminal and navigate to the local project directory.</p>
+<ul>
+<li>Ensure that the local repository is committed and ready to push.
+<ul>
+<li>If the code is not set up as a git repository, run <code>git init</code>.</li>
+<li>Run <code>git status</code> and add any outstanding changes using <code>git add .</code>.</li>
+<li>Commit the changes using <code>git commit -m "descriptive message"</code>.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p>Link the local directory to the remote repository:</p>
+<pre><code class="language-{bash}"># replate &lt;remote-URL&gt; with the URL copied from the Quick Setup page on GitHub.com
+git remote add origin &lt;remote-URL&gt;
+# change the default branch name to "main"
+git branch -M main
+# push the contents of the local directory to the remote repository
+git push -u origin main
+</code></pre>
+</li>
+</ul>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                            <a rel="prev" href="github.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+
+                            <a rel="next prefetch" href="git_workflow.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                    <a rel="prev" href="github.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+
+                    <a rel="next prefetch" href="git_workflow.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+            </nav>
+
+        </div>
+
+
+
+
+        <script>
+            window.playground_copyable = true;
+        </script>
+
+
+        <script src="elasticlunr.min.js"></script>
+        <script src="mark.min.js"></script>
+        <script src="searcher.js"></script>
+
+        <script src="clipboard.min.js"></script>
+        <script src="highlight.js"></script>
+        <script src="book.js"></script>
+
+        <!-- Custom JS scripts -->
+
+
+    </div>
+    </body>
+</html>

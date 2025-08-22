@@ -1,0 +1,346 @@
+<!DOCTYPE HTML>
+<html lang="en" class="light" dir="ltr">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>LexisNexis Tables - Grants Pass GIS Documentation</title>
+
+
+        <!-- Custom HTML head -->
+        
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff">
+
+        <link rel="icon" href="favicon.svg">
+        <link rel="shortcut icon" href="favicon.png">
+        <link rel="stylesheet" href="css/variables.css">
+        <link rel="stylesheet" href="css/general.css">
+        <link rel="stylesheet" href="css/chrome.css">
+        <link rel="stylesheet" href="css/print.css" media="print">
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="FontAwesome/css/font-awesome.css">
+        <link rel="stylesheet" href="fonts/fonts.css">
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" href="highlight.css">
+        <link rel="stylesheet" href="tomorrow-night.css">
+        <link rel="stylesheet" href="ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+
+    </head>
+    <body class="sidebar-visible no-js">
+    <div id="body-container">
+        <!-- Provide site root to javascript -->
+        <script>
+            var path_to_root = "";
+            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "navy" : "light";
+        </script>
+
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script>
+            try {
+                var theme = localStorage.getItem('mdbook-theme');
+                var sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script>
+            var theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            var html = document.querySelector('html');
+            html.classList.remove('light')
+            html.classList.add(theme);
+            var body = document.querySelector('body');
+            body.classList.remove('no-js')
+            body.classList.add('js');
+        </script>
+
+        <input type="checkbox" id="sidebar-toggle-anchor" class="hidden">
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script>
+            var body = document.querySelector('body');
+            var sidebar = null;
+            var sidebar_toggle = document.getElementById("sidebar-toggle-anchor");
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            } else {
+                sidebar = 'hidden';
+            }
+            sidebar_toggle.checked = sidebar === 'visible';
+            body.classList.remove('sidebar-visible');
+            body.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <div class="sidebar-scrollbox">
+                <ol class="chapter"><li class="chapter-item expanded "><a href="overview.html"><strong aria-hidden="true">1.</strong> Home</a></li><li class="chapter-item expanded "><a href="addressing.html"><strong aria-hidden="true">2.</strong> Addressing Manual</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="address_request.html"><strong aria-hidden="true">2.1.</strong> The Address Request Form</a></li><li class="chapter-item expanded "><a href="addressing_layer.html"><strong aria-hidden="true">2.2.</strong> The Addressing Layer</a></li><li class="chapter-item expanded "><a href="addressing_rules.html"><strong aria-hidden="true">2.3.</strong> Addressing Rules</a></li><li class="chapter-item expanded "><a href="addressing_policies.html"><strong aria-hidden="true">2.4.</strong> Addressing Policies</a></li><li class="chapter-item expanded "><a href="address_verification.html"><strong aria-hidden="true">2.5.</strong> Address Verification</a></li><li class="chapter-item expanded "><a href="address_strategic_plan.html"><strong aria-hidden="true">2.6.</strong> Address Strategic Plan</a></li><li class="chapter-item expanded "><a href="lexisnexis.html" class="active"><strong aria-hidden="true">2.7.</strong> LexisNexis Tables</a></li></ol></li><li class="chapter-item expanded "><a href="publishing_services.html"><strong aria-hidden="true">3.</strong> Services</a></li><li class="chapter-item expanded "><a href="layer_files.html"><strong aria-hidden="true">4.</strong> Layer Files</a></li><li class="chapter-item expanded "><a href="survey_points.html"><strong aria-hidden="true">5.</strong> Survey Points</a></li><li class="chapter-item expanded "><a href="packages_intro.html"><strong aria-hidden="true">6.</strong> Packages</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="github.html"><strong aria-hidden="true">6.1.</strong> Github Integration</a></li><li class="chapter-item expanded "><a href="using_git.html"><strong aria-hidden="true">6.2.</strong> Using git</a></li><li class="chapter-item expanded "><a href="git_workflow.html"><strong aria-hidden="true">6.3.</strong> Git Workflow</a></li><li class="chapter-item expanded "><a href="virtual_env.html"><strong aria-hidden="true">6.4.</strong> Using a Virtual Environment</a></li><li class="chapter-item expanded "><a href="web_services_update.html"><strong aria-hidden="true">6.5.</strong> Updating Web Services</a></li></ol></li><li class="chapter-item expanded "><a href="utility_editing.html"><strong aria-hidden="true">7.</strong> Utility Editing</a></li><li class="chapter-item expanded "><a href="utility_network_creation.html"><strong aria-hidden="true">8.</strong> Utility Network Creation</a></li><li class="chapter-item expanded "><a href="scripts_intro.html"><strong aria-hidden="true">9.</strong> Stand-Alone Scripts</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="missing_sidewalks.html"><strong aria-hidden="true">9.1.</strong> Missing Sidewalks</a></li></ol></li></ol>
+            </div>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle">
+                <div class="sidebar-resize-indicator"></div>
+            </div>
+        </nav>
+
+        <!-- Track and set sidebar scroll position -->
+        <script>
+            var sidebarScrollbox = document.querySelector('#sidebar .sidebar-scrollbox');
+            sidebarScrollbox.addEventListener('click', function(e) {
+                if (e.target.tagName === 'A') {
+                    sessionStorage.setItem('sidebar-scroll', sidebarScrollbox.scrollTop);
+                }
+            }, { passive: true });
+            var sidebarScrollTop = sessionStorage.getItem('sidebar-scroll');
+            sessionStorage.removeItem('sidebar-scroll');
+            if (sidebarScrollTop) {
+                // preserve sidebar scroll position when navigating via links within sidebar
+                sidebarScrollbox.scrollTop = sidebarScrollTop;
+            } else {
+                // scroll sidebar to current active section when navigating via "next/previous chapter" buttons
+                var activeSection = document.querySelector('#sidebar .active');
+                if (activeSection) {
+                    activeSection.scrollIntoView({ block: 'center' });
+                }
+            }
+        </script>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky">
+                    <div class="left-buttons">
+                        <label id="sidebar-toggle" class="icon-button" for="sidebar-toggle-anchor" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </label>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        </ul>
+                        <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                    </div>
+
+                    <h1 class="menu-title">Grants Pass GIS Documentation</h1>
+
+                    <div class="right-buttons">
+                        <a href="print.html" title="Print this book" aria-label="Print this book">
+                            <i id="print-button" class="fa fa-print"></i>
+                        </a>
+
+                    </div>
+                </div>
+
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script>
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <h1 id="creating-the-lexisnexis-table"><a class="header" href="#creating-the-lexisnexis-table">Creating the LexisNexis Table</a></h1>
+<p>LexisNexis provides a third-party service to emergency dispatch, allowing officers to file an automated ticket for events that they are unable to follow up on with a site visit. The function of the LexisNexis table is to provide a lookup mechanism to easily determine the applicable service area for the call. The service area is either within GPPD or without.</p>
+<p>Areas within the GPPD service district include:</p>
+<ul>
+<li>Inside City Limits</li>
+<li>Properties outside city limits with a public safety agreement in place.</li>
+</ul>
+<p>The LexisNexis table can change whenever we add new addresses, annex a property into the City Limits, or enter in a public safety agreement with a property outside of the City Limits.</p>
+<h2 id="export-gis-data-to-the-ams"><a class="header" href="#export-gis-data-to-the-ams">Export GIS data to the AMS</a></h2>
+<p>Currently the easiest way to generate the LexisNexis table is from the AMS. Here are the instructions to load the applicable data into the AMS:</p>
+<ul>
+<li>Export the Addresses layer to .csv
+<ul>
+<li>Export a copy of the Address layer to the local project GDB.
+<ul>
+<li>In the Environments tab, set Output Coordinate System to WGS 1984 Web Mercator (auxiliary sphere).</li>
+</ul>
+</li>
+<li>Use the Calculate Geometry Attributes tool to generate coordinates:
+<ul>
+<li>longitude - Point X in decimal degrees.</li>
+<li>latitude - Point Y in decimal degrees.</li>
+<li>x - Point X using Same as Input.</li>
+<li>y - Point Y using Same as Input.</li>
+</ul>
+</li>
+<li>Export the feature layer to .csv file using "Export Table".</li>
+</ul>
+</li>
+<li>Export the City Limits layer to shapefile.
+<ul>
+<li>Use the polygon layer GPGIS.reg_CITYLIMITS</li>
+<li>Use the Feature Class to Shapefile tool.</li>
+<li>In the Environments tab, set Output Coordinate System to WGS 1984 Web Mercator (auxiliary sphere).</li>
+</ul>
+</li>
+<li>Export the Public Safety Agreements layer to shapefile.
+<ul>
+<li>Use the polygon layer GPGIS.plan_SERVICEANNEXATIONAGREEMENTS</li>
+<li>Use the Feature Class to Shapefile tool.</li>
+<li>In the Environments tab, set Output Coordinate System to WGS 1984 Web Mercator (auxiliary sphere).</li>
+</ul>
+</li>
+</ul>
+<p>If one of the applicable layers has not changed since the last time, the file does not need to be re-exported.</p>
+<p>Be sure to change the projection of the exported layers to WGS 1984 Web Mercator (auxiliary sphere). The field names in Addresses needs to match the values listed, namely "longitude", "latitude", "x", and "y".</p>
+<h2 id="modify-the-test-file-to-read-your-data"><a class="header" href="#modify-the-test-file-to-read-your-data">Modify the <code>test</code> file to read your data</a></h2>
+<p>The scripts for reading .csv and shapefile formats into the AMS is within the <code>tests</code> folder. Eventually, the goal is to move these capabilities out into the user-facing API. The <code>tests</code> folder is located in the main repo directory <a href="https://github.com/grantspassoregon/ams/tests/test.rs">here</a>. To read in new data, you will modify the file path of the appropriate tests:</p>
+<p>From test.rs lines 48-55:</p>
+<pre><code class="language-{rust}">fn city_addresses() -&gt; Clean&lt;SpatialAddresses&gt; {
+    let addr = address::import::GrantsPassSpatialAddresses::from_csv(
+        // Modify the path here to match the new file location
+        "c:/users/erose/repos/address/tests/test_data/city_addresses_20240905.csv",
+    )?;
+    let addr = SpatialAddresses::from(&amp;addr[..]);
+    addr.save("data/addresses.data")?;
+    Ok(addr)
+}
+</code></pre>
+<p>From test.rs lines 84-97:</p>
+<pre><code class="language-{rust}">fn lexis_nexis_boundary() -&gt; Clean&lt;Boundary&gt; {
+    info!("Reading city limits.");
+    // Modify the path here to match the new file location
+    let cl = Boundary::from_shp_z("c:/users/erose/geojson/city_limits.shp", "City Limits")?;
+    info!("City limits successfully read.");
+    info!("Reading public safety.");
+    let ps = Boundary::from_shp(
+        // Modify the path here to match the new file location
+        "c:/users/erose/geojson/public_safety_agreement.shp",
+        "Public Safety Agreement",
+    )?;
+    info!("Public safety agreements successfully read.");
+    let ln = Boundary::new("Lexis Nexis Boundary", cl.geometry.union(&amp;ps.geometry));
+    ln.save("data/lexis_nexis_boundary.data")?;
+    Ok(ln)
+}
+</code></pre>
+<p>Note that these functions update two saved files within the repo: "addresses.data" and "lexis_nexis_boundary.data". These files are in a binary format that loads quickly into the AMS.</p>
+<h2 id="generate-the-lexisnexis-table"><a class="header" href="#generate-the-lexisnexis-table">Generate the LexisNexis Table</a></h2>
+<p>Now you can start the AMS by navigating to the AMS repo on your machine and entering:</p>
+<pre><code class="language-{cargo}">cargo run --release
+</code></pre>
+<ol>
+<li>
+<p>Load the address targets into the system:</p>
+<ul>
+<li>Click the Load button.</li>
+<li>Navigate to the target file and click Open.</li>
+</ul>
+</li>
+<li>
+<p>Click the LexisNexis button.</p>
+<ul>
+<li>Check to ensure the correct layer is selected as the address source.</li>
+<li>Click Run.</li>
+<li>When the table completes building, click Save to export as a .csv.</li>
+</ul>
+</li>
+</ol>
+<p>Navigate to the <a href="https://github.com/grantspassoregon/lexisnexis">lexisnexis</a> repo. Observe the current version level of the most recent lexisnexis table. Version numbers consist of three levels: MAJOR.MINOR.PATCH.
+Bump the patch version number by 1 for normal table updates. If you change the scheme of the table, bump the minor version. If LexisNexis changes their format and you have to redo everything, bump the major version.
+Save the new version in the repo with the bumped version number. For instance, if the previous version was "lexisnexis_1.0.9.csv", the new version would be "lexisnexis_1.0.10.csv".</p>
+<h2 id="create-a-diff-report"><a class="header" href="#create-a-diff-report">Create a diff report</a></h2>
+<p>From the terminal, use <code>prettydiff</code> to produce a diff report. From the root of the lexisnexis repo, enter the command:</p>
+<pre><code class="language-{bash}">prettydiff lexisnexis_1.0.OLD.csv lexisnexis_1.0.NEW.csv
+</code></pre>
+<p>Note you will need to replace the file path names with the appropriate version numbers. Make sure to list the older file first, or the diff report will come out backwards.</p>
+<p>If you do not have this program installed, you can obtain it from cargo by running:</p>
+<pre><code class="language-{cargo}">cargo install prettydiff
+</code></pre>
+<p>The diff report will look something like this:</p>
+<p><img src="./images/prettydiff.png" alt="Pretty Diff Report" /></p>
+<p>The header indicates the parent file. The line numbers indicate the corresponding row affected on the resulting spreadsheet.
+Data highlighted in red indicates information that was present in the old version that has been removed from the newer, while white text remains unchanged.
+Data highlighted in green indicates additions to the newer file that are not present in the older.
+For instance, this diff report indicates that the range 130-1991 SW Bridge St has been removed.
+The entry formerly containing the range 2015-2248 SW Bridge St has been amended to read 201-2248 SW Bridge St.
+The green values indicate new addresses on Leonard, Hillcrest, and Allen Creek Road. There has also been a shift in range along Carnahan Dr.</p>
+<p>Email a link to the new lexisnexis file and a copy of the diff report to the 911 Operations Manager, who will review the diff report and may ask a few questions in follow-up, depending on how much has changed.</p>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                            <a rel="prev" href="address_strategic_plan.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+
+                            <a rel="next prefetch" href="publishing_services.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                    <a rel="prev" href="address_strategic_plan.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+
+                    <a rel="next prefetch" href="publishing_services.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+            </nav>
+
+        </div>
+
+
+
+
+        <script>
+            window.playground_copyable = true;
+        </script>
+
+
+        <script src="elasticlunr.min.js"></script>
+        <script src="mark.min.js"></script>
+        <script src="searcher.js"></script>
+
+        <script src="clipboard.min.js"></script>
+        <script src="highlight.js"></script>
+        <script src="book.js"></script>
+
+        <!-- Custom JS scripts -->
+
+
+    </div>
+    </body>
+</html>

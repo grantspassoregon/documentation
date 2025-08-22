@@ -1,0 +1,281 @@
+<!DOCTYPE HTML>
+<html lang="en" class="light" dir="ltr">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>Git Workflow - Grants Pass GIS Documentation</title>
+
+
+        <!-- Custom HTML head -->
+        
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff">
+
+        <link rel="icon" href="favicon.svg">
+        <link rel="shortcut icon" href="favicon.png">
+        <link rel="stylesheet" href="css/variables.css">
+        <link rel="stylesheet" href="css/general.css">
+        <link rel="stylesheet" href="css/chrome.css">
+        <link rel="stylesheet" href="css/print.css" media="print">
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="FontAwesome/css/font-awesome.css">
+        <link rel="stylesheet" href="fonts/fonts.css">
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" href="highlight.css">
+        <link rel="stylesheet" href="tomorrow-night.css">
+        <link rel="stylesheet" href="ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+
+    </head>
+    <body class="sidebar-visible no-js">
+    <div id="body-container">
+        <!-- Provide site root to javascript -->
+        <script>
+            var path_to_root = "";
+            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "navy" : "light";
+        </script>
+
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script>
+            try {
+                var theme = localStorage.getItem('mdbook-theme');
+                var sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script>
+            var theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            var html = document.querySelector('html');
+            html.classList.remove('light')
+            html.classList.add(theme);
+            var body = document.querySelector('body');
+            body.classList.remove('no-js')
+            body.classList.add('js');
+        </script>
+
+        <input type="checkbox" id="sidebar-toggle-anchor" class="hidden">
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script>
+            var body = document.querySelector('body');
+            var sidebar = null;
+            var sidebar_toggle = document.getElementById("sidebar-toggle-anchor");
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            } else {
+                sidebar = 'hidden';
+            }
+            sidebar_toggle.checked = sidebar === 'visible';
+            body.classList.remove('sidebar-visible');
+            body.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <div class="sidebar-scrollbox">
+                <ol class="chapter"><li class="chapter-item expanded "><a href="overview.html"><strong aria-hidden="true">1.</strong> Home</a></li><li class="chapter-item expanded "><a href="addressing.html"><strong aria-hidden="true">2.</strong> Addressing Manual</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="address_request.html"><strong aria-hidden="true">2.1.</strong> The Address Request Form</a></li><li class="chapter-item expanded "><a href="addressing_layer.html"><strong aria-hidden="true">2.2.</strong> The Addressing Layer</a></li><li class="chapter-item expanded "><a href="addressing_rules.html"><strong aria-hidden="true">2.3.</strong> Addressing Rules</a></li><li class="chapter-item expanded "><a href="addressing_policies.html"><strong aria-hidden="true">2.4.</strong> Addressing Policies</a></li><li class="chapter-item expanded "><a href="address_verification.html"><strong aria-hidden="true">2.5.</strong> Address Verification</a></li><li class="chapter-item expanded "><a href="address_strategic_plan.html"><strong aria-hidden="true">2.6.</strong> Address Strategic Plan</a></li><li class="chapter-item expanded "><a href="lexisnexis.html"><strong aria-hidden="true">2.7.</strong> LexisNexis Tables</a></li></ol></li><li class="chapter-item expanded "><a href="publishing_services.html"><strong aria-hidden="true">3.</strong> Services</a></li><li class="chapter-item expanded "><a href="layer_files.html"><strong aria-hidden="true">4.</strong> Layer Files</a></li><li class="chapter-item expanded "><a href="survey_points.html"><strong aria-hidden="true">5.</strong> Survey Points</a></li><li class="chapter-item expanded "><a href="packages_intro.html"><strong aria-hidden="true">6.</strong> Packages</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="github.html"><strong aria-hidden="true">6.1.</strong> Github Integration</a></li><li class="chapter-item expanded "><a href="using_git.html"><strong aria-hidden="true">6.2.</strong> Using git</a></li><li class="chapter-item expanded "><a href="git_workflow.html" class="active"><strong aria-hidden="true">6.3.</strong> Git Workflow</a></li><li class="chapter-item expanded "><a href="virtual_env.html"><strong aria-hidden="true">6.4.</strong> Using a Virtual Environment</a></li><li class="chapter-item expanded "><a href="web_services_update.html"><strong aria-hidden="true">6.5.</strong> Updating Web Services</a></li></ol></li><li class="chapter-item expanded "><a href="utility_editing.html"><strong aria-hidden="true">7.</strong> Utility Editing</a></li><li class="chapter-item expanded "><a href="utility_network_creation.html"><strong aria-hidden="true">8.</strong> Utility Network Creation</a></li><li class="chapter-item expanded "><a href="scripts_intro.html"><strong aria-hidden="true">9.</strong> Stand-Alone Scripts</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="missing_sidewalks.html"><strong aria-hidden="true">9.1.</strong> Missing Sidewalks</a></li></ol></li></ol>
+            </div>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle">
+                <div class="sidebar-resize-indicator"></div>
+            </div>
+        </nav>
+
+        <!-- Track and set sidebar scroll position -->
+        <script>
+            var sidebarScrollbox = document.querySelector('#sidebar .sidebar-scrollbox');
+            sidebarScrollbox.addEventListener('click', function(e) {
+                if (e.target.tagName === 'A') {
+                    sessionStorage.setItem('sidebar-scroll', sidebarScrollbox.scrollTop);
+                }
+            }, { passive: true });
+            var sidebarScrollTop = sessionStorage.getItem('sidebar-scroll');
+            sessionStorage.removeItem('sidebar-scroll');
+            if (sidebarScrollTop) {
+                // preserve sidebar scroll position when navigating via links within sidebar
+                sidebarScrollbox.scrollTop = sidebarScrollTop;
+            } else {
+                // scroll sidebar to current active section when navigating via "next/previous chapter" buttons
+                var activeSection = document.querySelector('#sidebar .active');
+                if (activeSection) {
+                    activeSection.scrollIntoView({ block: 'center' });
+                }
+            }
+        </script>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky">
+                    <div class="left-buttons">
+                        <label id="sidebar-toggle" class="icon-button" for="sidebar-toggle-anchor" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </label>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        </ul>
+                        <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                    </div>
+
+                    <h1 class="menu-title">Grants Pass GIS Documentation</h1>
+
+                    <div class="right-buttons">
+                        <a href="print.html" title="Print this book" aria-label="Print this book">
+                            <i id="print-button" class="fa fa-print"></i>
+                        </a>
+
+                    </div>
+                </div>
+
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script>
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <h1 id="git-workflow"><a class="header" href="#git-workflow">Git Workflow</a></h1>
+<h2 id="make-short-targeted-commits"><a class="header" href="#make-short-targeted-commits">Make short, targeted commits</a></h2>
+<p>The contents of an ideal commit should address only one issue or feature. A single, concise description should be able to cover the scope of the code changes. When searching through the commit history, you will use the commit descriptions to remind yourself of the contents of each commit, so with each new commit try to consider the well-being of your future self. If you are using a tool like <code>git blame</code> to identify the commit associated with a change in code, the other changes in the that commit should be relevant to the code of concern, and not a kitchen sink of unrelated patches, features and documentation. This may mean taking the changes from a single work session and breaking them up into three or four targeted commits.</p>
+<p>One primary reason to adopt this strategy is for automating changelog generation. Changelogs are a standard practice in the software industry, where new version releases include a log describing changes from the old version to the new. Part of the reason for their ubiquity is the existence of automatic tooling that converts commit messages from <code>git</code> into a reader-friendly changelog, called changelog generators. The current changelog generator used by our team is <a href="https://git-cliff.org/"><code>git-cliff</code></a>. The important part is not so much <em>which</em> tool we use, because they all work from the same set of commit messages. The changelog will only be as well-written as your commit messages. When you write a new commit, imagine your users reading the changelog and write a message with this audience in mind. Try reading some changelogs from software you admire and emulating their style. Use <code>git-cliff</code> to generate a changelog from your unreleased edits, and read through the output.</p>
+<p>For a more details, see the article <a href="https://github.blog/developer-skills/github/write-better-commits-build-better-projects/">Write Better Commits, Build Better Projects</a>.</p>
+<h3 id="git-cliff-usage"><a class="header" href="#git-cliff-usage">Git-cliff Usage</a></h3>
+<p>The configuration file for git-cliff (cliff.toml) looks for certain words at the beginning of the commit message, and uses these terms to map the commit to the correct category of the changelog.</p>
+<ul>
+<li><strong>feat</strong> - The commit introduces a new feature, corresponding to a minor version bump.</li>
+<li><strong>feat!</strong> - The commit introduces a new feature that is considered a breaking change, corresponding to a major version bump.</li>
+<li><strong>fix</strong> - The commit introduces a bug fix, corresponding to a patch version bump.</li>
+<li><strong>doc</strong> - The commit adds documentation.</li>
+<li><strong>perf</strong> - The commit pertains to performance improvements.</li>
+<li><strong>refactor</strong> - The commit refactors existing code without adding or eliminating features.</li>
+<li><strong>style</strong> - The commit adjusts code style without changing code logic or implementing new features.</li>
+<li><strong>test</strong> - The commit pertains to unit or integration tests.</li>
+<li><strong>chore</strong> - Categorize the commit as a miscellaneous task.</li>
+</ul>
+<p>While a package is immature and still under active development, we use a major version of 0. Using a major version of zero signals to users that the package is still under development, and the user API may not be stable. When a package is in this state, breaking changes do not result in major version bumps. We have set the bump level in <code>cliff.toml</code> to <code>patch</code>, so every update increments the patch version number.</p>
+<h2 id="use-a-dedicated-branch-for-development"><a class="header" href="#use-a-dedicated-branch-for-development">Use a dedicated branch for development</a></h2>
+<p>"<em>Never mess with the main repo</em>". - Michelle Gienow</p>
+<p>When you create a new project using <code>git</code>, the code exists in the default branch, called <code>main</code>. During development, you can create new branches to try out changes to the code without touching the main branch. When multiple contributors are working on a single project, each contributor will make the changes to their own branch, merging these changes into the main branch when they are ready. Using this method, contributors do not have to worry about the changes others are making conflicting with their own work, when and until these changes are merged. We want the main branch to contain stable, well-tested code. Users should be able to download and use the main branch without finding it in some half-complete state of revision. Keeping working changes on a separate branch helps prevent half-finished work or newly-created bugs from appearing on the main branch between releases.</p>
+<p>The intended purpose of branches is to permit you to develop features or changes to existing code safely, "off to the side", merging them back into the main project only after they have been fully tested and reviewed.</p>
+<h3 id="check-existing-branches"><a class="header" href="#check-existing-branches">Check Existing Branches</a></h3>
+<p>Use the command <code>git branch -a</code> to list all of the branches associated with a project. The output will show an asterisk next to the current branch.</p>
+<h3 id="checkout-a-new-branch"><a class="header" href="#checkout-a-new-branch">Checkout a New Branch</a></h3>
+<p>Use the command <code>git checkout -b yourBranchName</code> to create a new branch, here named <code>yourBranchName</code>. The <code>checkout</code> command switches you to the named branch, and the <code>-b</code> flag creates the branch at the same time.</p>
+<p>Note that you can also create a branch using the command <code>git branch yourBranchName</code>, but this command will not move you to the new branch, and you will still have to enter the command <code>git checkout yourBranchName</code>. Passing the <code>-b</code> flag to <code>git checkout</code> is more concise, and prevents errors from the user creating a branch and forgetting to switch to it.</p>
+<p>To switch back to the <code>main</code> branch, use the command <code>git checkout main</code>.</p>
+<h3 id="committing-changes-to-a-branch"><a class="header" href="#committing-changes-to-a-branch">Committing Changes to a Branch</a></h3>
+<p>The process for committing changes to a branch is identical to working with the <code>main</code> branch:</p>
+<ul>
+<li>Use the command <code>git add</code> to add changes to the tracked files for the repo.</li>
+<li>Then use the <code>git commit</code> command to commit the added changes.</li>
+<li>Finally use the <code>git push</code> command to push the committed changes up to Github.</li>
+</ul>
+<p>See the <a href="./using_git.html">Using git</a> section for more details.</p>
+<h3 id="merging-branches"><a class="header" href="#merging-branches">Merging Branches</a></h3>
+<p>When the code on your development branch is ready to move into the production branch, it is time to merge branches. When you run the merge command, you are pulling code from another branch into the branch you are currently working in. Since we want to move changes from the development branch into the main branch, we need to switch back to main before running the merge. Switch from the development branch back to the <code>main</code> branch using the command <code>git checkout main</code>.</p>
+<p>To begin the merge, run the command <code>git merge yourBranchName</code>.</p>
+<p>If you are on the happy path, the merge is successful. The final step is to push the merge up to the Github repo using the command <code>git push</code>.</p>
+<p>If you are not on the happy path, then you are reading an error message that says something about a "merge conflict". This is a potentially deep rabbit hole, too deep to address here.
+To get an introduction, check out the article <a href="https://www.atlassian.com/git/tutorials/using-branches/merge-conflicts">Git Merge Conflicts</a>.
+The best strategy to deal with merge conflicts is to avoid them.
+Ensure your development branches are based off the current <code>main</code> branch.
+Use the <code>git pull</code> command to ensure your version of <code>main</code> is up-to-date.
+Merge conflicts occur when the <code>main</code> branch diverges from the version of the <code>main</code> branch that the development branch is based upon.</p>
+<p>After merging the development branch, it is best practice to delete the development branch.
+Rather than using a single development branch called "erik" or "draft", best practice is to name the branch in some way after the work being done, such as "parser" or "unit-tests".
+When looking through the merge history of your repo, descriptive branch names will help you to understand where and why changes have occurred, without having to dig into the details of the commits.
+Delete a development branch using the command <code>git branch -d yourBranchName</code>.
+The <code>-d</code> flag communicates that you would like to delete the indicated branch.</p>
+<p>For more details on using development branches, see the article <a href="https://thenewstack.io/dont-mess-with-the-master-working-with-branches-in-git-and-github/">How to Work With Branches in Git and Github</a>.</p>
+<p>Note that this article advocates for disabling the default <code>git</code> merge behavior of fast-forwarding commits. We are electing to keep the default fast-forward behavior, without a strong compelling reason to do so. Feel free to revisit this policy as needed.</p>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                            <a rel="prev" href="using_git.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+
+                            <a rel="next prefetch" href="virtual_env.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                    <a rel="prev" href="using_git.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+
+                    <a rel="next prefetch" href="virtual_env.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+            </nav>
+
+        </div>
+
+
+
+
+        <script>
+            window.playground_copyable = true;
+        </script>
+
+
+        <script src="elasticlunr.min.js"></script>
+        <script src="mark.min.js"></script>
+        <script src="searcher.js"></script>
+
+        <script src="clipboard.min.js"></script>
+        <script src="highlight.js"></script>
+        <script src="book.js"></script>
+
+        <!-- Custom JS scripts -->
+
+
+    </div>
+    </body>
+</html>

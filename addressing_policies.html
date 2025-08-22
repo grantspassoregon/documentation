@@ -1,0 +1,413 @@
+<!DOCTYPE HTML>
+<html lang="en" class="light" dir="ltr">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>Addressing Policies - Grants Pass GIS Documentation</title>
+
+
+        <!-- Custom HTML head -->
+        
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff">
+
+        <link rel="icon" href="favicon.svg">
+        <link rel="shortcut icon" href="favicon.png">
+        <link rel="stylesheet" href="css/variables.css">
+        <link rel="stylesheet" href="css/general.css">
+        <link rel="stylesheet" href="css/chrome.css">
+        <link rel="stylesheet" href="css/print.css" media="print">
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="FontAwesome/css/font-awesome.css">
+        <link rel="stylesheet" href="fonts/fonts.css">
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" href="highlight.css">
+        <link rel="stylesheet" href="tomorrow-night.css">
+        <link rel="stylesheet" href="ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+
+    </head>
+    <body class="sidebar-visible no-js">
+    <div id="body-container">
+        <!-- Provide site root to javascript -->
+        <script>
+            var path_to_root = "";
+            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "navy" : "light";
+        </script>
+
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script>
+            try {
+                var theme = localStorage.getItem('mdbook-theme');
+                var sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script>
+            var theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            var html = document.querySelector('html');
+            html.classList.remove('light')
+            html.classList.add(theme);
+            var body = document.querySelector('body');
+            body.classList.remove('no-js')
+            body.classList.add('js');
+        </script>
+
+        <input type="checkbox" id="sidebar-toggle-anchor" class="hidden">
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script>
+            var body = document.querySelector('body');
+            var sidebar = null;
+            var sidebar_toggle = document.getElementById("sidebar-toggle-anchor");
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            } else {
+                sidebar = 'hidden';
+            }
+            sidebar_toggle.checked = sidebar === 'visible';
+            body.classList.remove('sidebar-visible');
+            body.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <div class="sidebar-scrollbox">
+                <ol class="chapter"><li class="chapter-item expanded "><a href="overview.html"><strong aria-hidden="true">1.</strong> Home</a></li><li class="chapter-item expanded "><a href="addressing.html"><strong aria-hidden="true">2.</strong> Addressing Manual</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="address_request.html"><strong aria-hidden="true">2.1.</strong> The Address Request Form</a></li><li class="chapter-item expanded "><a href="addressing_layer.html"><strong aria-hidden="true">2.2.</strong> The Addressing Layer</a></li><li class="chapter-item expanded "><a href="addressing_rules.html"><strong aria-hidden="true">2.3.</strong> Addressing Rules</a></li><li class="chapter-item expanded "><a href="addressing_policies.html" class="active"><strong aria-hidden="true">2.4.</strong> Addressing Policies</a></li><li class="chapter-item expanded "><a href="address_verification.html"><strong aria-hidden="true">2.5.</strong> Address Verification</a></li><li class="chapter-item expanded "><a href="address_strategic_plan.html"><strong aria-hidden="true">2.6.</strong> Address Strategic Plan</a></li><li class="chapter-item expanded "><a href="lexisnexis.html"><strong aria-hidden="true">2.7.</strong> LexisNexis Tables</a></li></ol></li><li class="chapter-item expanded "><a href="publishing_services.html"><strong aria-hidden="true">3.</strong> Services</a></li><li class="chapter-item expanded "><a href="layer_files.html"><strong aria-hidden="true">4.</strong> Layer Files</a></li><li class="chapter-item expanded "><a href="survey_points.html"><strong aria-hidden="true">5.</strong> Survey Points</a></li><li class="chapter-item expanded "><a href="packages_intro.html"><strong aria-hidden="true">6.</strong> Packages</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="github.html"><strong aria-hidden="true">6.1.</strong> Github Integration</a></li><li class="chapter-item expanded "><a href="using_git.html"><strong aria-hidden="true">6.2.</strong> Using git</a></li><li class="chapter-item expanded "><a href="git_workflow.html"><strong aria-hidden="true">6.3.</strong> Git Workflow</a></li><li class="chapter-item expanded "><a href="virtual_env.html"><strong aria-hidden="true">6.4.</strong> Using a Virtual Environment</a></li><li class="chapter-item expanded "><a href="web_services_update.html"><strong aria-hidden="true">6.5.</strong> Updating Web Services</a></li></ol></li><li class="chapter-item expanded "><a href="utility_editing.html"><strong aria-hidden="true">7.</strong> Utility Editing</a></li><li class="chapter-item expanded "><a href="utility_network_creation.html"><strong aria-hidden="true">8.</strong> Utility Network Creation</a></li><li class="chapter-item expanded "><a href="scripts_intro.html"><strong aria-hidden="true">9.</strong> Stand-Alone Scripts</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="missing_sidewalks.html"><strong aria-hidden="true">9.1.</strong> Missing Sidewalks</a></li></ol></li></ol>
+            </div>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle">
+                <div class="sidebar-resize-indicator"></div>
+            </div>
+        </nav>
+
+        <!-- Track and set sidebar scroll position -->
+        <script>
+            var sidebarScrollbox = document.querySelector('#sidebar .sidebar-scrollbox');
+            sidebarScrollbox.addEventListener('click', function(e) {
+                if (e.target.tagName === 'A') {
+                    sessionStorage.setItem('sidebar-scroll', sidebarScrollbox.scrollTop);
+                }
+            }, { passive: true });
+            var sidebarScrollTop = sessionStorage.getItem('sidebar-scroll');
+            sessionStorage.removeItem('sidebar-scroll');
+            if (sidebarScrollTop) {
+                // preserve sidebar scroll position when navigating via links within sidebar
+                sidebarScrollbox.scrollTop = sidebarScrollTop;
+            } else {
+                // scroll sidebar to current active section when navigating via "next/previous chapter" buttons
+                var activeSection = document.querySelector('#sidebar .active');
+                if (activeSection) {
+                    activeSection.scrollIntoView({ block: 'center' });
+                }
+            }
+        </script>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky">
+                    <div class="left-buttons">
+                        <label id="sidebar-toggle" class="icon-button" for="sidebar-toggle-anchor" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </label>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        </ul>
+                        <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                    </div>
+
+                    <h1 class="menu-title">Grants Pass GIS Documentation</h1>
+
+                    <div class="right-buttons">
+                        <a href="print.html" title="Print this book" aria-label="Print this book">
+                            <i id="print-button" class="fa fa-print"></i>
+                        </a>
+
+                    </div>
+                </div>
+
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script>
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <h1 id="addressing-policies"><a class="header" href="#addressing-policies">Addressing Policies</a></h1>
+<p>By necessity, this section serves as a companion piece to the <em>Address Standards</em> (<a href="https://www.grantspassoregon.gov/DocumentCenter/View/39/Title-6---Grants-Pass-Uniform-Traffic-Code-?bidId=">Ch. 6.40</a>) of the GPMC. Address policies refer to a set of guidelines and best-practices that describe how to follow the rules in the code. By adhering to these policies, staff can enforce the municipal code in a manner that is fair and consistent over time and with different residents. However, to the extent that these policies represent a set of heuristics, unusual cases may arise that challenge their application. Since these policies are not set into the municipal code, staff have more flexibility to handle special cases, and management may elect to change a policy or discontinue a policy if appropriate. This is in contrast to the language of the municipal code, which is approved by council action and may only be changed through the same process.</p>
+<p>The format follows the language of the <em>Address Standards</em> chapter, because the code uses concepts defined in earlier sections to define more complex concepts in later sections. Those portions of the chapter that discuss issues unrelated to address assignment, such as requirements for the display of address identification at the property, will not receive further discussion here.</p>
+<h2 id="scope"><a class="header" href="#scope">Scope</a></h2>
+<p>The first paragraph of section 6.40.010 describes the scope of city responsibility related to addressing, and among the six items only the first and second are the direct responsibility of the GIS Division:</p>
+<blockquote>
+<ol>
+<li>Determine address assignments within the City.</li>
+<li>Produce and maintain a database of assigned addresses and a map of their locations within the City.</li>
+</ol>
+</blockquote>
+<p>As the local municipality, we become responsible for assigning addresses within the area we claim as our City Limits. As the authority of record regarding our addresses, we are obliged to maintain a database of valid addresses, and a map of their locations, so that other agencies, businesses and individuals can determine which addresses are legitimate. Key agencies that rely on our address records include the USPS, Josephine County and Emergency Communications of Southern Oregon, while private businesses include Pacific Power, Avista Gas, Southern Oregon Sanitation and Republic Services. Among our own departments, addresses are the nexus of organization for building permits, planning agreements, and utility billing, but the most time-sensitive and urgent use is for emergency dispatch and response.</p>
+<p>In the past, the city would maintain a literal map of addresses, but today we provide an ArcGIS mapping service, and make our address map available to the public on the City Web Viewer. It is important to remember that providing access to this map for the public is a regulatory obligation.</p>
+<p>The <em>Assignment Criteria</em> in paragraph 1 specify the circumstances under which we are obliged to assign an address to a location:</p>
+<ul>
+<li>Individual tax lot parcels shall have at least one unique address.</li>
+<li>Buildings, or areas within buildings, shall have unique addresses when they are:
+<ul>
+<li>a separate residence,</li>
+<li>a place of business that serves customers, or</li>
+<li>receiving mail, package deliveries or utility services.</li>
+</ul>
+</li>
+<li>Developments with multiple buildings shall assign each building a unique identifier.</li>
+</ul>
+<p>To understand the motivation for these criteria, it is helpful to reflect on what has occurred in the past in the absence of these requirements. Partition and subdivision of parcels has been a common occurrence within the Urban Growth Boundary. When partition occurs, the county assessors will often increment the lot number by single digits for the newly-created lots, so the lot identifiers are unique. But if the new lot did not receive an address assignments, the assessors would enter the parent address of the original parcel as the situs address of the new lot. For instance, the owners of the property at 2494 Hamilton Lane partitioned off a portion of their land, and since then both properties have been sold to new owners. For the new owners of the original parcel, this process worked normally. But the owners of the newly-created parcel ran into some problems.</p>
+<p>The situs address associated with the new parcel was still 2494 Hamilton Lane. When the owner searched for this address on the Josephine County property map, the site identified the wrong/old parcel, because it was also associated with this address. If the owner wanted to sell the property, the lack of an address made it difficult to market. The cause of this predicament is that the land was undeveloped, so no one ever applied for an address. Now, we require an address assignment for all newly-created taxlots, so that all tax parcels in the city have a unique address associated with them. This avoids confusion and difficulty for residents dealing with undeveloped lots. As a happy ending to this story, the undeveloped lot now has a situs address of 2620 Hamilton Lane.</p>
+<p>Some parcels do not have situs addresses associated with them at all. For instance, the parking lot that extends over parcels 360517CB004900 - 5200 contains four parcels all registered under a situs address of "* SE G ST". Today, each of these parcels would receive an address that would serve as the parent address for the parcel, preventing confusion down the line when someone tries to sell or develop the parcel.</p>
+<p>For addressing buildings, every unique occupancy receives an address to facilitate emergency response. Over the decades, emergency response has increased the level of detail that they request in address assignments. Where they might not have required each occupancy to receive a separate address in the past, today they will ask for a floor number associated with each occupancy (in some extreme cases even a room or a seat identifier). We have codified these requirements into the municipal code so that addresses in new development conform to our emergency response standards.</p>
+<p>We require unique addresses for each separate residence, and we also require addresses for businesses that serve customers. If a resident conducts a business from their home, they do not require a separate address if they are not serving customers, but may be interested in acquiring a business address to facilitate deliveries, set up utilities in the business name or to distinguish an area as business space for tax purposes.</p>
+<p>Finally, we require addresses for buildings where the property owner would like to receive mail, package deliveries or utility services. This is often enforced by the agencies and companies delivering the service. For example, we have received calls from residents asking for an address because they want to add internet access, but the internet company refused to hook up service without a valid associated address. The Post Office will also turn away residents requesting mail service if the address is not in their records, so even if a building does not count as a "separate occupancy", it still may require an address, depending on the intended use of the space.</p>
+<p>If the building is part of a complex, such that utilities are shared, a single address number may be sufficient to serve the property, but each building will still need to receive a unique identifier. Examples of this include the Holiday Garden Apartments at 1051 E Park St, which consist of 124 apartment units among 18 buildings. Each building takes the parent address of 1051 E Park St, with a building identifier (A-R). The business complex at 2001 NE Foothilll Blvd includes seven buildings with identifiers A-G. This requirement facilitates emergency response. In a large complex, knowing the building identifier can help responders to choose the appropriate point of access, and avoid unnecessary delays in finding the building.</p>
+<p>In practice, residents or developers will typically request an address in the process of working with a planner. It is the planner who guides the process and informs when an address request is necessary. In the GIS Office, we wait for an address request form to appear in our inbox, and often have no direct contact with the applicant. It is important to discuss address assignment criteria with the planners in Community Development, to maintain awareness of what circumstances should trigger an address request when working with an applicant, especially during periods of turnover.</p>
+<h2 id="assignment-of-street-names"><a class="header" href="#assignment-of-street-names">Assignment of Street Names</a></h2>
+<p>If a development includes a new street, the proposed street will be identified on the site plan submitted with the Address Request Form. New street names require the approval of the City Manager, the 911 Operations Manager and the Fire Marshall, acting through their designees. Tentative address assignments go to a mailing list including the 911 Operations Manager and the Fire Marshall, in order to solicit their approval. The GIS Office and you will be representing the City Manager when approving street names, so it is important to carefully consider the requirements in 6.40.020 before granting approval to these applications.</p>
+<p>The spelling of the street name as recorded in the final plat constitutes the official name of the street. Changing the official name of a street requires an act of council. Given these constraints, it is much easier to catch and deny an inappropriate street name during the application process, compared to the effort required to change a street name once it has been released out into the wild.</p>
+<p>The language of 6.40.020 (A) includes a number of specific prohibitions, such as denying punctuation, special characters, accents or diacritics, as well as offensive or derogatory terms. During my tenure, I have not seen any requests for street names with acute or grave accents, diacritics or emojis, but some requests have included punctuation (an apostrophe). Inclusion of special characters is problematic because not all agencies have the capacity to manage special characters in street names. The likelihood is increased that different agencies will record the address differently (with or without the apostrophe), which can make coordination between agencies more difficult. The computer-aided dispatch (CAD) system used by emergency response is currently not equipped to handle special characters, which is a sufficient reason alone to deny special characters in street names.</p>
+<p>The decision of whether a name is offensive or derogatory may be subjective. Some words are unequivocally inappropriate, such as profanity or racial epithets, but other names may appear to fall in a gray area. If you feel compelled to deny a proposed name due to potentially offensive or derogatory interpretation, do not make this decision in isolation. Lean upon the other members of the group responsible for approving new names, including the designees for the 911 Manager and the Fire Marshall, and try to obtain a consensus for denial from the team. This protects our organization from the perception that our staff is making decisions capriciously or arbitrarily, when that decision requires the exercise of subjective judgement.</p>
+<p>Street names are not allowed to duplicate existing names in the registry of official street names maintained by ECSO 911. The reference to the official street names registry maintained by ECSO 911 is a subtle but intentional reference to an organization outside the City of Grants Pass. This is because currently Josephine County and Jackson County have a shared emergency dispatch service (ECSO 911). The official street names registry includes street names from Jackson County. Because we have a shared dispatch system, if the City of Grants Pass duplicates street names in use in Medford, these Medford streets will also appear in dispatch searches for addresses on this street, making it more difficult to identify the correct location in an emergency.</p>
+<p>An initial draft of this language referred to "street names in Josephine and Jackson counties", which was rejected out of the logic that street names in Josephine County should not depend explicity on street names in Jackson County. Instead, by clarifying that duplication cannot occur within the registry of street names maintained by our emergency response provider, it becomes clear and apparent <em>why</em> street names in the City of Grants Pass cannot duplicate those in Jackson County. It also leaves the door open in the future, if we change our emergency dispatch arrangement with Jackson County, to loosen the prohibition on duplicating names in Jackson County, without needing to change the language of the code.</p>
+<p>Duplicate street names create ongoing issues for emergency response. In Grants Pass, we have three streets named "Sunset": Sunset Way, NW Sunset Drive and NE Sunset Lane. The streets are on opposite ends of town, more than a mile and a half from each other. When residents call 911 to report an emergency, they may identify the street as "Sunset" and require clarification. A mistake will send the responder to the wrong end of town. These issues are avoidable by preventing duplication of street names.</p>
+<p>Bullets i-iv of item c in 6.40.020 (A) identify circumstances under which our office <em>may</em> deny a street name. As in the case regarding potentially offensive or derogatory names, decisions related to these bullets involve a degree of subjectivity. If you plan to deny a proposed named based on this criteria, it would be wise to gain the consensus of staff instead of acting unilaterally. For instance, "similarity to existing names" requires staff to make a determination of when a name is "too close" to another. Likewise, "difficulty in pronunciation" is not only subjective, but will vary from person to person based upon elements like cultural context. This language is designed to give staff the authority to deny names that are potentially problematic, while providing the latitude to accept names within a reasonable range of options.</p>
+<p>Note that "similarity to existing names" can refer to naming patterns among sets of streets. For instance, a developer attempted to name a private street intersecting NE 9th St as "NE 53rd Ln". The use of "53rd" proved problematic for emergency dispatch because we currently use numbered avenues running north-south throughout the city center. The proposed "NE 53rd Ln" would run east-west, instead of north-south, and would be located between 9th and 10th avenues. In this case, the similarity of the name to the numbering scheme already in use makes it inappropriate, although there is nothing problematic about the street name taken in isolation. Breaking the existing numbering convention, both in the ordering and the alignment, creates confusion based upon its similarity to the existing numbered streets, by failing to adhere to the existing pattern.</p>
+<p>Currently, staff do not have tooling or procedures for checking "similarity" of a proposed name to existing names. Staff check for explicit duplication, but treatment of potentially similar names is essentially ad-hoc. Lacking sophisticated tooling or clear objective standards for quantifying similarity, the language in the code leaves the discretion to staff as to how stringently to enforce this requirement.</p>
+<p>Abbreviations, acronyms and initials are prohibited to prevent ambiguity. When a name includes an abbreviation, acronym or initials, people are more likely to include periods and other "noise" characters when writing out the address, making it more challenging to reconcile records from different sources. People reporting the street name over the phone to dispatch may expand the abbreviation, adding to confusion in identifying the street. Note that "MLK JR BLVD" would be unsuitable because MLK are initials and JR is an abbreviation, while "MARTIN LUTHER KING JUNIOR BLVD" is potentially too long to fit on a street sign. The intent of the language is not to deny our city the opportunity of honoring a celebrated civil rights leader, so there is an argument that this language is perhaps overly restrictive.</p>
+<p>Street names may not contain a Cardinal direction (north, south, east, west, northeast, northwest, southeast or southwest). The reason is that street names may include a directional prefix indicating the general location of the street relative to the city center. If the street name can be mistaken for a directional prefix, this creates the potential for confusion and delay in emergency response. For this reason, we also reserve the right to prohibit street names that contain a Cardinal direction as a component (such as Northstar). You can imagine a dispatch operator trying to determine if an emergency is occurring at "N Star St" or "Northstar St", and this is the sort of confusion we intend to prevent.</p>
+<p>Combining a numeric name with an alphabetic name is prohibited to prevent confusion between the street name and the address number. This is an edge case that has not come up during my tenure. The language comes from the municipal code for Roseville, CA.</p>
+<p>When an address request includes a proposed street name, then we share the request with a contact list of staff designated to inspect and approve new street names. This list includes the designated representatives for the 911 Manager and the Fire Marshall, as well as a member of the streets division. The member of the streets staff will inform you if the proposed name is too long to fit on our street signage. Letters have minimum size requirements set in the Manual on Uniform Traffic Control Devices (MUTCD). However, because individual letters vary in width ("I" being skinnier than "M" for example) staff did not feel comfortable setting a hard character limit for street names. After trying a few tricks to fit the name on the sign, the streets staff will inform us if the proposed name is too long, and we will pass this information along to the applicant, so they can choose a new name.</p>
+<p>While the lettered items of 6.40.020 (A) are designed to prevent naming conflicts among streets, the numbered items 1-6 are designed to maintain the continuity of streets across multiple developments. Item 1 specifies that a street will have only one name throughout its length. Streets are not allowed to change names midway along their length because of the confusion this could cause, both in emergency response and basic navigation. The exception to this rule applies to roads that meander in alignment, often in response to local topography. When a road changes alignment, such as from north-south to east-west, it is permissible to change the street name at the inflection point of the alignment change.</p>
+<p>Although this rule is intended to allow changes in alignment between north-south and east-west directions of travel, the code permits a name change upon a directional change of 45 degrees or more, to accommodate sections of the city grid that do not run strictly north-south or east-west. For instance, the numbered avenues in the city center observe a generally north-south alignment, but in fact are skewed east 23 degrees, while the east-west aligned streets are aligned straight east-west. The resulting angle of intersection between an avenue and a street downtown is 67 degrees. If we required a directional change of 90 degrees or more to permit a name change, then we would not be able to apply this rule to any downtown streets. The selection of 45 degrees as the threshold was intended to allow additional flexibility regarding intersections on non-standard alignments. While a street <em>may</em> receive a new name upon a change in alignment, it does not <em>need</em> to receive a new name. There are several examples of existing streets that maintain a single name throughout several changes in direction, such as Cloverlawn Dr, Fruitdale Dr, Harbeck Rd and even Poplar Dr, just to name a few.</p>
+<p>If the new proposed street functions as an extension of an existing street, it should take the name of the existing street. Even if there is existing development blocking the existing street from connecting to the proposed street, the proposed street may still be considered an extension of the existing street if it is possible to connect the portions sometime in the future. In practice, this is a difficult determination to make, and often is contextually dependent on a time frame. If the development blocking connection of the streets is relatively new, you may reason that connection of the streets is unlikely to happen during your lifetime, and safely defer the problem to a future generation. But if the development is aging and rife for redevelopment, it may be prudent to insist that the proposed street take the name of the existing street, so that the two can connect if the area is further developed.</p>
+<p>Similar to the rule that new streets shall take the name of the existing street on which it aligns, the rule that street names shall continue across intersections and roundabouts is designed to preserve the continuity of the city grid across multiple developments. If a new street functions as an extension of an existing street by continuing the direction of travel across an intersection or roundabout, then the new street shall take the name of the existing street. By explicitly listing these requirements in the municipal code, we make it clear to developers the circumstances under which a new street may take the name of existing street.</p>
+<p>The treatment of cul-de-sacs is varied across the different municipal codes we surveyed during the drafting process for our code. Some cities allow developers to place cul-de-sacs along a segment of street that take the name of the connecting street. Apparently, because these cul-de-sacs are not large and do not encompass very many properties, staff in these cities are comfortable with the cul-de-sac sharing the street name with the intersecting street. Here that is not the case, and a cul-de-sac branching off of a street will need to have a unique street name. However, if a street terminates in a cul-de-sac, then the cul-de-sac takes the name of that street.</p>
+<blockquote>
+<p><em>The street name for commercial developments served by more than one public street shall correspond to the public street carrying the higher traffic volume.</em></p>
+</blockquote>
+<p>Large commercial developments often have multiple access points, with parking lots that connect to two or three local streets. In these cases, the address takes the street name of the connecting street with the highest traffic volume. The street bearing the highest volume is typically the primary access for emergency response. As an added bonus, associating the business address with the higher-volume street can often make it easier to find for customers.</p>
+<blockquote>
+<p><em>The street name for addresses within a manufactured or mobile home park shall correspond to the public street it fronts, with each home having a space number.</em></p>
+</blockquote>
+<p>The language for this portion comes from the City of Medford (Section 9.571). Given the large number of spaces that a mobile home park can accommodate, unique address numbers for each space are often not possible, so this restriction seemed reasonable. By sharing a parent address, it is clear which park the unit belongs to, and we avoid duplicating space numbers within the park. Note that the code specifies the address type as "Space". Also, as a critique, the language should refer to a "space identifier" rather than a space number. While it is reasonable to use letters as a space identifier, technically the code requires a number due to the language choice. This is a case where I failed to correct the wording of code that I copied from another municipality, as "identifier" is used throughout the rest of the chapter.</p>
+<p><em>The City shall assign a directional designation to new streets. The main line of the Southern Pacific Railroad serves as the divider between North and South designations, and the center line of 6th Street and Williams Highway serves as
+the divider between west and east designations.</em></p>
+<p>Enforcement of this provision is straightforward and simple. When you receive an address request form with a proposed street name, the new street must include a directional designation. If the developer forgets to add one, it is acceptable to add the directional designation and inform the developer that the change is in accordance with GPMC 6.40.020(B) on the Tentative Notification. The developer has opportunity at this stage to request changes before the address is finalized, if they so desire. The requirement that new streets receive a directional prefix dates back to 1950 in this city, but the standard was not consistently enforced over time, so many streets fail to adhere to this requirement. Bearing this in mind, be vigilant and ensure that none slip through the cracks on your watch.</p>
+<p>If the street that serves as primary access for a property has a directional prefix, the address assigned to the property will also take the prefix as part of the complete street name. If the street name does not include a directional prefix, then do not add one to the address.</p>
+<blockquote>
+<p>Each street name shall include a suffix type from the list of recognized street suffix names in Appendix C1 of the United States Postal Service (USPS) Publication 28 - Postal Addressing Standards.</p>
+</blockquote>
+<p>Enforcement of this provision is also straightforward. Appendix C1 delineates 231 recognized street suffix names. If the proposed street name is missing a street type, or if the type does not match one of the recognized types, you cannot approve the name.</p>
+<p>There are conventions related to assigning street types, largely informal or local in nature. For instance, "Lane" and "Way" may be reserved for local streets, whereas "Avenue" is more appropriate for a collector or arterial. However, practically speaking, developers are not in the habit of asking the GIS Division what type to assign to proposed streets. Typically they will propose, and your primary responsibility will be to accept or deny. If the type name is on the list of recognized street suffix names, this is sufficient to accept the type designation. Our office does not enforce conventions related to the use associated with a street type designation.</p>
+<p>The FGDC standard classifies the street name post type as optional, whereas in our code it is required. There is a bit of history here unrelated to the existence of single name streets like "Broadway". The county uses a subset of appendix C1 as their list of recognized street suffix names, including 27 options. When developers submitted new street names using type that are included in appendix C1, but not within the county subset, the county classified the street name post type as part of the street name component.</p>
+<p>For context, the FGDC standard defines a Complete Street Name as consisting of the following components:</p>
+<ul>
+<li>Street Name Pre Modifier</li>
+<li>Street Name Pre Directional</li>
+<li>Street Name Pre Type</li>
+<li>Separator Element</li>
+<li>Street Name</li>
+<li>Street Name Post Type</li>
+<li>Street Name Post Directional</li>
+<li>Street Name Post Modifier</li>
+</ul>
+<p>Among these elements, only the street name is required. When we reconcile address databases with the county, we compare the values in the individual components against each other. So even if the complete address looks identical, the matching process can fail if the city and county have parsed the complete street name into different constituent components. For instance, the city classifies the complete street name "SE Formosa Gardens" as consisting of three components: a street name pre modifier (SE), a street name (Formosa), and a street type (Gardens). Whereas the county records the same street using two components: the street name pre modifier (SE), and the street name (Formosa Gardens), leaving the street type as null. Within the City, we do not have any single name streets, and in every case where the county assigns the street type as null, the street name includes a valid street suffix name from appendix C1 as part of the street name component.</p>
+<p>Part of the motivation for this standard is to establish a consistent policy for managing the presence of valid street suffix names in proposed street names. Consistent classification of street name components makes it easier to compare addresses between agencies. As mentioned previously, our emergency dispatch services are combined with Jackson county, so the actual address database that dispatch uses is maintained by ECSO 911, with our addresses serving as a source. When we issue a new address, staff at ECSO 911 add the new address to their database, but no process was in place to reconcile our records. Over the years, small differences in the records had accumulated until there were hundreds of discrepancies between our agencies.</p>
+<p>These discrepancies periodically caused delays in emergency response. Many of these delays were preventable by systematically comparing the ECSO 911 database against our own, and correcting inconsistencies before an emergency response situation occurs. One could argue that the responsibility rests equally upon ECSO 911 to ensure fidelity between our two records, but in reality the onus lies upon our office, because we have more to lose if our addresses are not correct in their system. After all, it is our city and our residents that are negatively impacted. Avoiding those potential negative impacts is our responsibility. Therefore, we periodically reconcile our address records against ECSO 911, and largely they rely upon us to provide this function.</p>
+<h3 id="change-of-street-name"><a class="header" href="#change-of-street-name">Change of Street Name</a></h3>
+<blockquote>
+<p>The City may change the directional designation of a street. The City shall provide written notice of the proposed change to owners of property fronting the street 30 days prior to any change, and upon enactment of the change. The City may change a street name or type designation according to the process described in ORS 227.120. In addition to the provisions of the statute, the City shall provide written notice of the proposed change to owners of property fronting the street 30 days prior to any change, and upon enactment of the change.</p>
+</blockquote>
+<p>The spelling of the street name as recorded in the final plat for a new development constitutes the official and legal name of the street. This includes all components of the complete street name, including the directional prefix and the street type. The process for changing a street name is constrained by ORS 227.120, and it is germane to this discussion to review the text in full:</p>
+<blockquote>
+<p>Within six miles of the limits of any city, the commission, if there is one, or if no such commission legally exists, then the city engineer, shall recommend to the city council the renaming of any existing street, highway or road, other than a county road or state highway, if in the judgment of the commission, or if no such commission legally exists, then in the judgment of the city engineer, such renaming is in the best interest of the city and the six mile area. Upon receiving such recommendation the council shall afford persons particularly interested, and the general public, an opportunity to be heard, at a time and place to be specified in a notice of hearing published in a newspaper of general circulation within the municipality and the six mile area not less than once within the week prior to the week within which the hearing is to be held. After such opportunity for hearing has been afforded, the city council by ordinance shall rename the street or highway in accordance with the recommendation or by resolution shall reject the recommendation. A certified copy of each such ordinance shall be filed for record with the county clerk or recorder, and a like copy shall be filed with the county assessor and county surveyor. The county surveyor shall enter the new names of such streets and roads in red ink on the county surveyor’s copy of any filed plat and tracing thereof which may be affected, together with appropriate notations concerning the same. The original plat may not be corrected or changed after it is recorded with the county clerk.</p>
+</blockquote>
+<p>Takeaways from this text:</p>
+<ul>
+<li>Changing a street name requires council action.</li>
+<li>The council cannot change the name of a county road or state highway.</li>
+</ul>
+<p>The constraints that this statute places on our municipality depends on the meaning of the term <em>street name</em> in the text. Does <em>street name</em> refer to the fully-qualified FGDC complete street name, including all components, or does <em>street name</em> refer to just the "street name" component of the complete street name? Our code assumes the latter, and permits us to change the directional prefix or the street type without an act of council. The primary motivation for this text is to enable us to change the directional prefix associated with a street.</p>
+<p>Consensus among staff is that changing the street name component would trigger ORS 217.120 and require an ordinance from Council. However, staff feel that changing the directional designation does not constitute a change of street name as described by the statute, and would not require an act of Council. Part of the reasoning here is that the street name and street post type function as a unique identifier, like a first and last name do for people. We have several streets with the same name but different post types, so both the street name and post type serve to guarantee the uniqueness of the street name. However, a directional designation can only take a specific value, either the quadrant designation set by the city grid or the existing directional designation of a street being annexed. The value is not arbitrary, like a name, but rather set based upon its orientation to the city center. Hence, a directional designation may be made present or absent, but its value if present cannot be changed. In other words, because the directional designation describes an orientation, as opposed to an identity, it does not comprise a part of the street name as referred to by ORS 227.120.</p>
+<p>Prior to 2023, the municipal code did not contain language for changing street names. Therefore, this mechanism is still untested, but there are a set of problems related to historic street name assignments in the City that required this change in the text to address. Since 1950, the municipal code has required that new streets receive a directional prefix. However, city staff did not consistently enforce this requirement, so many streets created since 1950 did not receive a directional prefix. In some cases, the City failed to apply a directional designation, but the assessor’s office assumed one was in place, resulting in parcel situs addresses that do not match the addresses assigned by the City. In other cases, the City has consistently applied a directional designation but the assessor’s office has not followed suit.</p>
+<p>In the case of Oakview Dr, our office recently added the addresses 1216 SE Oakview Dr Units A, B &amp; C, and the assessor’s office inquired whether addresses on Oakview are supposed to have the SE prefix. Unless the City takes specific action to change a street name, the assessor’s office is obliged to use the street name as recorded in the final plat. We could not find a plat record for Oakview Dr (the best we could do is a bill of sale from the early ‘40s reserving the right-of-way for road purposes). Since we were unable to use the plat to prove the presence of a directional designation, the assessor’s office requested the City take specific action to adopt the directional designation, at which point they would change their records to match.</p>
+<p>In the case of West Harbeck Rd, address numbers 269-709 (25 addresses) have parcel situs addresses of West Harbeck Rd, and address numbers 802-2001 (80 addresses) have parcel situs addresses of SW West Harbeck Rd (see Figure 5). The City does not recognize the SW prefix for West Harbeck Rd, considering West to be the directional designation and Harbeck to be the street name. The City needs some formal mechanism by which to declare that West is the official directional designation, and the assessor’s office will change their records to match.</p>
+<p>Now that we have the regulatory authority to change the directional designation of a street, we can begin to tackle this issue. A naive solution might be to tackle issues as they arise, but this is an unsatisfying approach for a number of reasons. One concern is uneven enforcement. If we try to correct one address because of a specific issue, are we also correcting other occurrences of this issue? If not, enforcement is potentially unfair, and we could even open up the city to liability for acting in a discriminatory manner. Enforcement that is uniformly and evenly applied protects staff from the perception that their actions are capricious or arbitrary.</p>
+<p>A second concern is prioritization. First-come/first-serve is an appropriate business model for a coffee shop, but not all address issues are of equal priority. Address issues that result in emergency response or personal safety concerns should receive higher priority in proportion to the perceived risk. Given the time and effort required to correct an address across multiple agencies, failure to prioritize serious safety concerns can significantly increase the risk of poor outcomes.</p>
+<p>The resolution process also raises questions. What should the documentation of an address issue look like? If the address presents a potential safety concern, do we require a statement from emergency dispatch identifying the safety concern? The municipal code requires us to contact the resident in writing both 30 days prior to any change and after the change has occurred. The intent was to provide residents with a minimum assurance that they would be informed in a timely manner during the process, but we did not intend for it to be the whole of the process.</p>
+<h3 id="the-address-strategic-plan"><a class="header" href="#the-address-strategic-plan">The Address Strategic Plan</a></h3>
+<p>The <a href="./address_strategic_plan.html">Address Strategic Plan</a> is a document designed to organize, prioritize and focus on address issues. When you encounter a new address issue, record the issue in the appropriate section of the strategic plan. As a companion to the strategic plan, we keep a map layer showing the location of address issues, with links back to the appropriate sections of the strategic plan. The intent is to publish the strategic plan map within a web app, so that users who click on a particular feature can follow the link to the strategic plan and become informed on the issues affecting an address. Updating the strategic plan involves recording the address issue in the planning document, and then adding the points at issue to the strategic plan map.</p>
+<p>Each address issue identified in the plan should include:</p>
+<ul>
+<li>An issue category.</li>
+<li>The address(es) at issue.</li>
+<li>A description of the issue.</li>
+</ul>
+<p>If the issue does not fit into an existing category (access, suffixed, sequencing, or directional), then create a new category to hold issues of this type. For an existing issue, you will want to add the address of interest to the list of affected addresses, but you may not need to update the issue description, if it describes the issue sufficiently for the new address.</p>
+<p>The project file for the strategic plan map is at <code>O:/GISUserProjects/Departments/GIS_General/strategic_plan/addressing_strategic_plan/addressing_strategic_plan.aprx</code>. The schema for the addresses in this layer is identical to the addresses in our normal addressing layer, with the addition of some extra fields. This design is an intentional choice, to make appending new issues straightforward. Because all the fields in the address site points layer are present in the strategic plan layer, we can append rows from the former onto the latter. So when I have identified an address issue, I select the points of interest and export them to the project geodatabase. Then I merge the exported layer with the strategic plan layer, producing a new layer with the merged contents, including the new addresses. I then have to follow up by filling in the three missing fields that are not present on the original layer. These fields are:</p>
+<ul>
+<li>Current address</li>
+<li>Issue type</li>
+<li>Issue link</li>
+</ul>
+<p>The <em>current address</em> field contains the current state of the address, or the address at issue, and not the proposed change that would resolve the issue. When I merge new addresses into this layer, I copy the <em>address label</em> field into the <em>current address</em> field. The reason we copy the active address into this field is so that we can replace the values in the normal address component fields with a proposed new address that would resolve the existing issues. Once we have changed these fields to propose a new address, the <em>current address</em> field becomes the only field referencing the original address.</p>
+<p>The <em>issue type</em> field is a domain with values corresponding to the four issue categories identified in the strategic plan. We use this layer to drive symbology and labeling in the strategic plan map. The <em>issue link</em> contains a link to the strategic plan document hosted in the documentation repo on the City's GitHub repository.</p>
+<p>Why not just use an <em>MS Word</em> document? Isn't that how governments do it? The first motivation is to facilitate sharing. As a web book, we can link to each subheading in the document, so we can link to a subsection within a larger document and send readers to this exact section. We could potentially link to a Word document stored on one of our network drives, but we cannot link to individual sections within a Word document, and this makes it harder for users to find the content related to a specific issue. If staff are not on the city intranet, they will not even have access to the Word file, and if we decide to share the map with residents, the solution does not work at all. Sometimes agencies prefer using Word format because of the shared editing tools, but typically only a single member of the GIS division will be preparing and editing the strategic plan, so shared editing is not a motivating factor.</p>
+<h3 id="address-assignment"><a class="header" href="#address-assignment">Address Assignment</a></h3>
+<p>From 6.40.030:</p>
+<blockquote>
+<ul>
+<li>Address assignments shall adhere to the National Emergency Number Association (NENA) standard.</li>
+<li>Record-keeping practices of address assignments in the address database shall adhere to the Federal Geographic Data Committee (FGDC) standard.</li>
+</ul>
+</blockquote>
+<p><a href="https://www.nena.org/">NENA</a> is the organization that provides standards for 911 response in the US. There are two documents on their site relevant to GIS.</p>
+<p>The <a href="https://cdn.ymaws.com/www.nena.org/resource/resmgr/standards/nena-sta-006.2a_ng9-1-1_gis_.pdf">NENA GIS Data Model</a>:</p>
+<p>The NENA standard projection for 2D data is EPSG::4326, and for 3D data is EPSG::4979. This can be helpful to know when reading in ECSO data. This document provides definitions for address components that correspond to the FGDC elements. Each of the FGDC address elements have corresponding components in the NENA standard. However, NENA includes additional fields that capture a higher degree of specificity. These additional fields include <em>Building</em>, <em>Room</em> and <em>Seat</em>. Our responsibility as an address authority is to ensure that all address assignments include a sufficient level of specificity to meet the CLDXF standard. Some elements of the standard are intended for ECSO personnel to maintain, such as the NGUID or different agency response zones. Although we are not expected to provide these additional elements of NENA compliance, it is our responsibility to ensure that address assignments are complete and correctly categorized, such that the PSAP can bring the address into compliance without seeking any further information from our agency.</p>
+<p>The motivation for addressing individual rooms within hotels, suites within businesses, and apartments within multi-family residential is to provide the <em>Building</em> and <em>Room</em> fields for the CLDXF standard. Currently no addresses in Grants Pass use the <em>Seat</em> identifier. Examples from the document for seat identifiers include seat numbers within a stadium or theater.</p>
+<p>Table 4-4 shows field names, description, types and widths for the site address points layer. For field name length, we have used the FGDC recommended field lengths, as opposed to the NENA standard. However, variances may occur, and if the width of a field was insufficient, we have expanded it as needed. I have not run into an occasion where the length of individual data fields caused a data interoperability issue, but it is good to be aware of the expected size of individual fields when exporting and importing data. Restricting an abbreviated pre-directional to a length of 2 is reasonable, because the values are constrained to "NW", "SW", "NE", "SE", "N", "E", "S" and "W". But if the directionals are fully spelled out, the field width needs to accommodate up to nine characters. This will only create problems on import if the target field is not wide enough to fit in the incoming data, so wider data types are more accommodating. But if other agencies are exporting our data, they can encounter issues if our data is wider than expected.</p>
+<p>Both the FGDC and NENA standards offer recommendations for field names. I have not changed the field names in use on our address layer, but have added new fields to represent additional address components. Some field names are restricted, for example, Tyler ERP requires the address label field to be named <code>FULLADDRESS</code>. The important thing here is not to match the recommended field names, but rather to ensure all the component types referenced in the standard are present in our implementation, if they are fields that we could use for an address.</p>
+<p><a href="https://cdn.ymaws.com/www.nena.org/resource/resmgr/Standards/NENA-INF-014.1-2015_SSAP_INF.pdf">Development of Site/Structure Address Point GIS Data</a></p>
+<ul>
+<li>This is an informational document that discusses different methodologies for collecting site address point data. While this document does not present a set of regulations to follow, it offers an explanatory background for what we do and why.</li>
+<li>For address placement, we use the method "Placement of an Address Point Based on a Structure" (3.4.4) when the development includes buildings.
+<ul>
+<li>Staff have followed Option 3, where the address point corresponds to the primary entrance of the structure.</li>
+</ul>
+</li>
+<li>When there are no structures, we use the method "Placement of an Address Point on a Parcel" (3.4.2) with the Default option (the centroid of the parcel).</li>
+</ul>
+<p>The FGDC sets federal standards for geospatial data. The <a href="https://www.fgdc.gov/standards/projects/address-data/">address</a> thematic subcommittee focuses on postal addresses. By adhering to the federal standard, we hope to facilitate interagency use of our address data. From the perspective of our small city, the FGDC standard and the NENA standard require a very similar set of information. As mentioned above, the NENA standard includes additional fields for <em>Building</em>, <em>Room</em> and <em>Seat</em>. Each of the address components identified in FGDC standard have corresponding elements in the NENA standard. It may have been sufficient to adopt the NENA standard, but our staff have historically worked from the FGDC standard.</p>
+<p>In the municipal code, we specify that address assignments must adhere to the NENA standard, meaning they should include the address components specified in both standards, as well as <em>Building</em>, <em>Room</em> and <em>Seat</em> fields. Record-keeping practices in the GIS database refer to field names and widths of fields.</p>
+<p>Currently we are working from the document <a href="https://www.fgdc.gov/standards/projects/address-data/FGDC_endorsedAddressStandard.zip">FGDC-STD-016-2011</a>. In particular, Part 2: Address Data Content, provides descriptions of each address component, as well as examples and some explanatory remarks. Compared to the NENA documentation, the FGDC standard is more thorough and detailed, and will provide a better introduction to the subject matter for the new technician.</p>
+<p>If you have been clicking on these links, you are realizing that some of these documents are not short. The NENA GIS Data Model is 110 pages, and the informational companion document is 66 pages. Part 2 of the FGDC standard is 210 pages. And they are boring. Did I just tell you read these in their entirety? Yes. Please do.</p>
+<p>Our address training material would have to be substantially longer if I had to include all the relevant material from these documents. When you are reading through a portion that is less relevant, keep in mind that you are learning how addresses are made and organized on a national scale, and how your role in a local municipality fits into this bigger picture. The structure of our database, and the methods we use to track addresses, are based on the FGDC documentation, so it is best to familiarize yourself with this standard. The FGDC standard also describes testing and validation strategies, some of which we could benefit by implementing here.</p>
+<h3 id="directional-designation"><a class="header" href="#directional-designation">Directional Designation</a></h3>
+<blockquote>
+<p>The complete street address shall include any directional prefix assigned to the
+street name.</p>
+</blockquote>
+<p>The directional designation of the address should match the official street name. As mentioned previously, many of the streets developed since the 1950s should have been assigned a directional designation, but were not. We are developing a test to identify addresses where the directional designation does not match the street name. It is fairly straightforward to determine if a new address assignment receives a directional designation, because the designation will match the new or existing street name.</p>
+<h3 id="block-numbering"><a class="header" href="#block-numbering">Block Numbering</a></h3>
+<blockquote>
+<p>Address numbering shall increase by one hundred every city block. Numbers
+shall increase in increment heading away from the city center, as set by the
+divider streets or tracks that define the directional designation.</p>
+</blockquote>
+<blockquote>
+<ul>
+<li>For locations west of 6th Street or Williams Highway, street numbers shall
+increase as they proceed west of 6th Street or Williams Highway.</li>
+<li>For locations east of 6th Street or Williams Highway, street numbers shall
+increase as they proceed east of 6th Street or Williams Highway.</li>
+<li>For locations north of the main line of the Southern Pacific Railroad, street
+numbers shall increase as they proceed north of the main line.</li>
+<li>For locations south of the main line of the Southern Pacific Railroad, street
+numbers shall increase as they proceed south of the main line</li>
+</ul>
+</blockquote>
+<ul>
+<li>When assigning multiple units to a single tax parcel
+<ul>
+<li>Use unique address numbers when the units are detached from each other.</li>
+<li>Use unique unit identifiers when the units are attached.</li>
+</ul>
+</li>
+<li>Retain the parent address when assigning multiple units to a single address number.</li>
+</ul>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                            <a rel="prev" href="addressing_rules.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+
+                            <a rel="next prefetch" href="address_verification.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                    <a rel="prev" href="addressing_rules.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+
+                    <a rel="next prefetch" href="address_verification.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+            </nav>
+
+        </div>
+
+
+
+
+        <script>
+            window.playground_copyable = true;
+        </script>
+
+
+        <script src="elasticlunr.min.js"></script>
+        <script src="mark.min.js"></script>
+        <script src="searcher.js"></script>
+
+        <script src="clipboard.min.js"></script>
+        <script src="highlight.js"></script>
+        <script src="book.js"></script>
+
+        <!-- Custom JS scripts -->
+
+
+    </div>
+    </body>
+</html>

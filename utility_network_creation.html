@@ -1,0 +1,621 @@
+<!DOCTYPE HTML>
+<html lang="en" class="light" dir="ltr">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>Utility Network Creation - Grants Pass GIS Documentation</title>
+
+
+        <!-- Custom HTML head -->
+        
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff">
+
+        <link rel="icon" href="favicon.svg">
+        <link rel="shortcut icon" href="favicon.png">
+        <link rel="stylesheet" href="css/variables.css">
+        <link rel="stylesheet" href="css/general.css">
+        <link rel="stylesheet" href="css/chrome.css">
+        <link rel="stylesheet" href="css/print.css" media="print">
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="FontAwesome/css/font-awesome.css">
+        <link rel="stylesheet" href="fonts/fonts.css">
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" href="highlight.css">
+        <link rel="stylesheet" href="tomorrow-night.css">
+        <link rel="stylesheet" href="ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+
+    </head>
+    <body class="sidebar-visible no-js">
+    <div id="body-container">
+        <!-- Provide site root to javascript -->
+        <script>
+            var path_to_root = "";
+            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "navy" : "light";
+        </script>
+
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script>
+            try {
+                var theme = localStorage.getItem('mdbook-theme');
+                var sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script>
+            var theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            var html = document.querySelector('html');
+            html.classList.remove('light')
+            html.classList.add(theme);
+            var body = document.querySelector('body');
+            body.classList.remove('no-js')
+            body.classList.add('js');
+        </script>
+
+        <input type="checkbox" id="sidebar-toggle-anchor" class="hidden">
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script>
+            var body = document.querySelector('body');
+            var sidebar = null;
+            var sidebar_toggle = document.getElementById("sidebar-toggle-anchor");
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            } else {
+                sidebar = 'hidden';
+            }
+            sidebar_toggle.checked = sidebar === 'visible';
+            body.classList.remove('sidebar-visible');
+            body.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <div class="sidebar-scrollbox">
+                <ol class="chapter"><li class="chapter-item expanded "><a href="overview.html"><strong aria-hidden="true">1.</strong> Home</a></li><li class="chapter-item expanded "><a href="addressing.html"><strong aria-hidden="true">2.</strong> Addressing Manual</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="address_request.html"><strong aria-hidden="true">2.1.</strong> The Address Request Form</a></li><li class="chapter-item expanded "><a href="addressing_layer.html"><strong aria-hidden="true">2.2.</strong> The Addressing Layer</a></li><li class="chapter-item expanded "><a href="addressing_rules.html"><strong aria-hidden="true">2.3.</strong> Addressing Rules</a></li><li class="chapter-item expanded "><a href="addressing_policies.html"><strong aria-hidden="true">2.4.</strong> Addressing Policies</a></li><li class="chapter-item expanded "><a href="address_verification.html"><strong aria-hidden="true">2.5.</strong> Address Verification</a></li><li class="chapter-item expanded "><a href="address_strategic_plan.html"><strong aria-hidden="true">2.6.</strong> Address Strategic Plan</a></li><li class="chapter-item expanded "><a href="lexisnexis.html"><strong aria-hidden="true">2.7.</strong> LexisNexis Tables</a></li></ol></li><li class="chapter-item expanded "><a href="publishing_services.html"><strong aria-hidden="true">3.</strong> Services</a></li><li class="chapter-item expanded "><a href="layer_files.html"><strong aria-hidden="true">4.</strong> Layer Files</a></li><li class="chapter-item expanded "><a href="survey_points.html"><strong aria-hidden="true">5.</strong> Survey Points</a></li><li class="chapter-item expanded "><a href="packages_intro.html"><strong aria-hidden="true">6.</strong> Packages</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="github.html"><strong aria-hidden="true">6.1.</strong> Github Integration</a></li><li class="chapter-item expanded "><a href="using_git.html"><strong aria-hidden="true">6.2.</strong> Using git</a></li><li class="chapter-item expanded "><a href="git_workflow.html"><strong aria-hidden="true">6.3.</strong> Git Workflow</a></li><li class="chapter-item expanded "><a href="virtual_env.html"><strong aria-hidden="true">6.4.</strong> Using a Virtual Environment</a></li><li class="chapter-item expanded "><a href="web_services_update.html"><strong aria-hidden="true">6.5.</strong> Updating Web Services</a></li></ol></li><li class="chapter-item expanded "><a href="utility_editing.html"><strong aria-hidden="true">7.</strong> Utility Editing</a></li><li class="chapter-item expanded "><a href="utility_network_creation.html" class="active"><strong aria-hidden="true">8.</strong> Utility Network Creation</a></li><li class="chapter-item expanded "><a href="scripts_intro.html"><strong aria-hidden="true">9.</strong> Stand-Alone Scripts</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="missing_sidewalks.html"><strong aria-hidden="true">9.1.</strong> Missing Sidewalks</a></li></ol></li></ol>
+            </div>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle">
+                <div class="sidebar-resize-indicator"></div>
+            </div>
+        </nav>
+
+        <!-- Track and set sidebar scroll position -->
+        <script>
+            var sidebarScrollbox = document.querySelector('#sidebar .sidebar-scrollbox');
+            sidebarScrollbox.addEventListener('click', function(e) {
+                if (e.target.tagName === 'A') {
+                    sessionStorage.setItem('sidebar-scroll', sidebarScrollbox.scrollTop);
+                }
+            }, { passive: true });
+            var sidebarScrollTop = sessionStorage.getItem('sidebar-scroll');
+            sessionStorage.removeItem('sidebar-scroll');
+            if (sidebarScrollTop) {
+                // preserve sidebar scroll position when navigating via links within sidebar
+                sidebarScrollbox.scrollTop = sidebarScrollTop;
+            } else {
+                // scroll sidebar to current active section when navigating via "next/previous chapter" buttons
+                var activeSection = document.querySelector('#sidebar .active');
+                if (activeSection) {
+                    activeSection.scrollIntoView({ block: 'center' });
+                }
+            }
+        </script>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky">
+                    <div class="left-buttons">
+                        <label id="sidebar-toggle" class="icon-button" for="sidebar-toggle-anchor" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </label>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        </ul>
+                        <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                    </div>
+
+                    <h1 class="menu-title">Grants Pass GIS Documentation</h1>
+
+                    <div class="right-buttons">
+                        <a href="print.html" title="Print this book" aria-label="Print this book">
+                            <i id="print-button" class="fa fa-print"></i>
+                        </a>
+
+                    </div>
+                </div>
+
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script>
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <h1 id="utility-network-creation"><a class="header" href="#utility-network-creation">Utility Network Creation</a></h1>
+<h2 id="initial-setup"><a class="header" href="#initial-setup">Initial Setup</a></h2>
+<ul>
+<li>In the Project/Package Manager window, create a clone of the active environment if you have not already, and switch to the new environment (restart required to take effect).
+<ul>
+<li>Select "Add Packages", search for "untools" and install the package into your environment. This package includes the Data Loading Tools that we will be using to import the data from our old network into the new.</li>
+</ul>
+</li>
+<li>Start a new project in ArcGIS Pro, e.g. "stormwater_pilot".</li>
+<li>Download the latest version of the Stormwater Utility Network Foundation on the ESRI <a href="https://grantspassoregon.maps.arcgis.com/apps/solutions/index.html?searchTerm=stormwater%20utility%20network%20foundation&amp;sortField=relevance&amp;sortOrder=desc#home">Solutions</a> page and move the contents into the project folder.</li>
+<li>Create a new file GDB in the project folder to hold a local copy of the old network (e.g. "stormwater_gn").</li>
+<li>Export the old network to the file GDB.
+<ul>
+<li>Check the transfer fields and domain properties boxes in the environment dialogue to include domains.</li>
+<li>Check the box to keep Global IDs from the source layers.</li>
+<li>Change the spatial reference to OCRS Grants Pass (meters).</li>
+<li>Check that the domains on the FGDB match the GN, so the DLT can read the domains.</li>
+</ul>
+</li>
+</ul>
+<h3 id="keep-a-clean-backup-set-up-for-data-loading"><a class="header" href="#keep-a-clean-backup-set-up-for-data-loading">Keep a Clean Backup Set Up For Data Loading</a></h3>
+<ul>
+<li>Copy the foundation asset package (e.g. ./StormwaterUtilityNetworkFoundationV1_4/Stormwater_AssetPackage.gdb)
+<ul>
+<li>Run the "Change Asset Package Spatial Reference" to set the spatial reference as OCRS Grants Pass.
+<ul>
+<li>Running this tool creates a copy of the target, which I put in "./asset_package/clean_ocrs.gdb".</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Adjust the domains, such as Owner and Lifecycle, to include values from our data, such as City of Grants Pass.</li>
+</ul>
+<h3 id="set-the-service-territory"><a class="header" href="#set-the-service-territory">Set the Service Territory</a></h3>
+<ul>
+<li>The UN requires a service territory to be defined, which is a boundary that must contain all the assets to be added now and in the future. For a service territory, I use the watershed boundary that encompasses Grants Pass and Medford, so that the service territory is larger than we will need even if we grow exponentially during my lifetime. The easiest way to accomplish this is to open the asset package or UN for the stormwater migration and copy the Service Territory feature class from this project, then write over the existing ServiceTerritory feature class in the UtilityNetwork dataset within the asset package that you have just created.
+<ul>
+<li>Copy an existing Service Territory (from the wastewater or stormwater pilots) into the UN.
+<ul>
+<li>Do this after changing the spatial reference (my service territory got deleted by the change, so I had to add it again).</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="stormwater-valves"><a class="header" href="#stormwater-valves">Stormwater Valves</a></h3>
+<p>Our stormwater layer includes GPID assets that use valves for flow control. While valves are standard devices in water distribution, the stormwater utility network foundation does not include a valve among its default presets, so we must add the valve type manually to the utility network configuration.</p>
+<ul>
+<li>
+<p>Add an irrigation valve type to the clean_ocrs asset package, so the valve type is available on future transformations.</p>
+</li>
+<li>
+<p>From <a href="https://pro.arcgis.com/en/pro-app/latest/help/data/utility-network/configure-a-utility-network.htm">https://pro.arcgis.com/en/pro-app/latest/help/data/utility-network/configure-a-utility-network.htm</a></p>
+</li>
+<li>
+<p>Use the Add Subtype tool to create a new Asset Group type for Stormwater Device ("Valve").</p>
+</li>
+<li>
+<p>Create a Domain to represent the asset type.</p>
+<ul>
+<li>Include a 0 - Unknown option to satisfy the default value.</li>
+<li>Include an Irrigation Valve (I mapped it to 500 to avoid conflicts with other asset types).</li>
+</ul>
+</li>
+<li>
+<p>Use the Assign Domain to Field tool to associate the domain with the asset type for valves.</p>
+<ul>
+<li>Select Stormwater Device, and the asset type field.</li>
+<li>Check the valve subtype in the list of subtypes.
+_ Use the Add Terminal Configuration tool to create a directional terminal for the Valves type.</li>
+<li>from <a href="https://pro.arcgis.com/en/pro-app/3.3/help/data/utility-network/about-terminal-management.htm#GUID-40F2CF0E-130D-4A58-A927-18B959FB663C">https://pro.arcgis.com/en/pro-app/3.3/help/data/utility-network/about-terminal-management.htm#GUID-40F2CF0E-130D-4A58-A927-18B959FB663C</a></li>
+<li>Might be able to reuse the configuration for outlets instead (Directional Dual Terminal).</li>
+</ul>
+</li>
+<li>
+<p>Use the Set Terminal Configuration tool to assign the new terminal configuration to the Valves type.</p>
+</li>
+</ul>
+<p>Previous instructions from Robert Krishner:</p>
+<ol>
+<li>Add an integer field to the valve layer to represent the valve status.</li>
+</ol>
+<ul>
+<li>Use a short integer type.</li>
+</ul>
+<ol start="2">
+<li>Assign a domain to the device status field to represent the open/closed state.</li>
+</ol>
+<ul>
+<li>Our source data for stormwater valves includes a "CURROPEN" field indicating 1 for open and 0 for closed, but it is not set to a domain.</li>
+<li>Use Calculate Field to map the integer values in CURROPEN to domain values in the new field.</li>
+</ul>
+<ol start="3">
+<li>Add a new network attribute to the B_NetworkAttribute table.</li>
+</ol>
+<ul>
+<li>Use the Add Network Attribute tool in the Geoprocessing pane.</li>
+<li>Specify the stormwater utility network as the Input Utility Network.</li>
+<li>Choose a name for the valve attribute (e.g. "Valve").</li>
+<li>Choose a short integer for the Attribute Type.</li>
+</ul>
+<ol start="4">
+<li>Assign the new network attribute to the field using the B_NetworkAttribute_Assignment table</li>
+</ol>
+<ul>
+<li>Use the Set Network Attribute tool in the Geoprocessing pane.
+<ul>
+<li>Use the stormwater network for the Input Utility Network.</li>
+<li>For the Network Attribute, select Valve.</li>
+<li>Choose the Stormwater Domain Network and not the Structure network.</li>
+<li>For Input Table, select StormwaterDevice.</li>
+<li>For Field, select the field source for the subnetwork controller, in my case "valve_status".</li>
+</ul>
+</li>
+</ul>
+<ol start="5">
+<li>Teach your subnetworks to treat closed valves as barriers by adding a condition barrier to each tier of your network in the B_Subnetwork_ConditionBarriers table</li>
+</ol>
+<ul>
+<li>Set up the terminal connect for the valve:
+<ul>
+<li>Use the Add Terminal Configuration tool. (Can be skipped, just use the pre-existing Direction Dual Terminal configuration.)
+<ul>
+<li>Use the stormwater network for the Input Utility Network.</li>
+<li>Enter a controller name in the Name field.</li>
+<li>Specify Directional in the Directionality field, so the terminal can serve as a subnetwork controller.</li>
+<li>Specify two terminals, one representing an open valve and the other representing closed.</li>
+<li>Leave the Valid Paths fields empty, they are intended to disambiguate between three or more terminals.</li>
+<li>Leave the Default Path as All, meaning all terminal states are valid.</li>
+</ul>
+</li>
+<li>Use the Set Terminal Configuration tool to assign the terminal configuration to the stormwater valve type.
+<ul>
+<li>Use the stormwater network for the Input Utility Network.</li>
+<li>Select Stormwater for the Domain Network.</li>
+<li>For Input Table, select StormwaterDevice since valves were imported as Pipe Connections.</li>
+<li>For Asset Group, choose Connection.</li>
+<li>For Asset Type, select the valves, in my case titled Stormwater Valve.</li>
+<li>For Terminal Configuration, select the terminal just created for the Stormwater Valve.</li>
+</ul>
+</li>
+<li>Use the Set Network Category tool to categorize the valve as a subnetwork controller.
+<ul>
+<li>Use the stormwater network for the Input Utility Network.</li>
+<li>Select Stormwater for the Domain Network.</li>
+<li>For Input Table, select StormwaterDevice since valves were imported as Pipe Connections.</li>
+<li>For Asset Group, choose Connection.</li>
+<li>For Asset Type, select the valves, in my case titled Stormwater Valve.</li>
+<li>For the Categories section, in the first field select Subnetwork Controller.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Use the Set Subnetwork Definition tool to add the subnetwork controller to the subnetwork definition.
+<ul>
+<li>Specify the stormwater utility network as the Input Utility Network.</li>
+<li>Choose the Stormwater Domain Network and not the Structure network.</li>
+<li>For Tier Name, select the desired tier, in my case there is only one available.
+<ul>
+<li>Leave the Support Disjoint Subnetwork box checked.</li>
+</ul>
+</li>
+<li>In the Subnetwork Diagram Templates section, select the desired diagram template.
+<ul>
+<li>The help documentation recommends against using the default template options for subnetworks, so I created a custom template for valves.</li>
+</ul>
+</li>
+<li>Under Valid Features and Objects, in the section called Valid Device Subnetwork Controllers, add the Connection/Stormwater Valve type to the list of valid controllers.</li>
+<li>Under Condition Barriers, click the Add Another button.
+<ul>
+<li>For Name, select Valve, or the name you have assigned to the controller.</li>
+<li>For Operator, select "Is equal to".</li>
+<li>For Type, select "Specific Value".</li>
+<li>For Value, select 0 or Closed.</li>
+<li>For Combine Using, select Or.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Add rules to allow connectivity to the controller.
+<ul>
+<li>Use the Add Rule tool in the Geoprocessing pane.</li>
+<li>Example rule for gravity mains:
+<ul>
+<li>Set Input Utility Network to the Stormwater Network.</li>
+<li>Select Junction-edge connectivity for the Rule Type.</li>
+<li>Set the From Table to StormwaterDevice.</li>
+<li>Set the From Asset Group field to Connection.</li>
+<li>Set the From Asset Type field to Stormwater Valve (the name of the controller type)</li>
+<li>Set the From Terminal field to ALL, so the pipe can connect to either terminal.</li>
+<li>Set the To Table field to StormwaterLine.</li>
+<li>Set the To Asset Group field to Pipe.</li>
+<li>Set the To Asset Type field to Gravity Pipe.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="ss-catchbasin"><a class="header" href="#ss-catchbasin">SS Catchbasin</a></h3>
+<p>The wastewater network includes grease traps and oil water separators that feed from catchbasins. To distinguish these catchbasins from the many that participate in the stormwater network, we will make a catchbasin type unique to the wastewater network.</p>
+<ul>
+<li>Use the Add Subtype tool to create the Catchbasin type within the Sewer Device subtype layer.</li>
+<li>Create a domain to represent the subtypes of catchbasins:
+<ul>
+<li>0 = Unknown</li>
+<li>500 = Catchbasin
+<img src="images/add_subtype.png" alt="Add Subtype" /></li>
+</ul>
+</li>
+<li>Use the Assign Domain to Field tool to associate the domain with the subtype asset:
+<img src="images/assign_domain_to_field.png" alt="Assign Domain to Field" /></li>
+</ul>
+<h2 id="data-loading-tools"><a class="header" href="#data-loading-tools">Data Loading Tools</a></h2>
+<ul>
+<li>Run Create Data Loading Workspace from the DLT folder.
+<ul>
+<li>Select each layer in the GN for source layers.</li>
+<li>Select the appropriate analog in the asset package for the target.</li>
+<li>Creates a folder called "DataLoadingWorkspace".
+<img src="images/create_data_loading_workspace.png" alt="Create Data Loading Workspace" />
+Note that we read from the fitting layer for wastewater twice, once for SewerJunction assets and once for SewerDevice assets.</li>
+</ul>
+</li>
+<li>Update target domains.
+<ul>
+<li>Add missing domain variants to the asset package.</li>
+<li>Check field mapping and fix scrambled imports.</li>
+<li>Adjust maps from old domains to new domains (asset_owner, asset_status, data_source, etc.)</li>
+</ul>
+</li>
+<li>Add missing fields to the AP that you want to import from the GN.
+<ul>
+<li>Also add these fields to the correct asset worksheet</li>
+</ul>
+</li>
+<li>The Target column in DataReference.xslx specifies the asset package into which we are loading the data (e.g. "working_ap").</li>
+<li>Run "Load Data Using Workspace" from the DLT folder.
+<img src="images/load_data_using_workspace.png" alt="Load Data Using Workspace" /></li>
+</ul>
+<h2 id="convert-asset-package-to-geodatabase"><a class="header" href="#convert-asset-package-to-geodatabase">Convert Asset Package to Geodatabase</a></h2>
+<ul>
+<li>In the Geoprocessing pane, search for the tool "Asset Package to Geodatabase".
+<ul>
+<li>For "Asset Package", select the asset package modified by the "Load Data Using Workspace" tool.</li>
+<li>The "Service Territory Feature Class" field should populate with the ServiceTerritory polygon that you have added to the asset package, but you can navigate manually to this feature if it does not.</li>
+<li>The "Workspace Type" should be "File Geodatabase"</li>
+<li>The "Folder Location" specifies the directory where the newly created GDB will be stored.</li>
+<li>The "Geodatabase Name" field specifies the file name of the new GDB.</li>
+<li>The "Feature Dataset Name" is the name of the feature dataset containing the utility network within the GDB.</li>
+<li>The "Utility Network Name" will be the name of the utility network used by assets within the dataset.
+<ul>
+<li>Spaces in the name are replaced by underscores, and the string " Utility Network" is appended to the end of the name.
+So "Wastewater Network" becomes "Wastewater_Network Utility Network", and "Wastewater" becomes "Wastewater Utility Network".</li>
+</ul>
+</li>
+<li>Within "Asset Package Options", make sure the Post Process box is unchecked. Although it claims to be unchecked by default, I find that it is checked by default on my machine and needs to be unchecked manually before executing.
+<img src="images/asset_package_to_geodatabase.png" alt="Asset Package to Geodatabase" /></li>
+</ul>
+</li>
+</ul>
+<h2 id="clear-network-connectivity-errors"><a class="header" href="#clear-network-connectivity-errors">Clear Network Connectivity Errors</a></h2>
+<ul>
+<li>
+<p>In the Geoprocessing pane, search for the tool "Enable Network Topology" from the Utility Network toolset. Beware that there is an identically named tool in the Trace Network toolset that you <em>do not want</em>.</p>
+<ul>
+<li>CAUTION: You must check the box "Only generate errors". There are configuration changes that you can only make before Network Topology has been enabled, and often you won't know what those are until you start resolving connectivity errors, so you are going to run Enable Network Topology to generate the errors without actually enabling the network.</li>
+<li>The initial import may contain more than 10000 errors, so delete this number and leave the "Maximum number of errors" field blank, which will not put a cap on errors.
+<img src="images/enable_network_topology_errors.png" alt="Enable Network Topology Errors Only" /></li>
+</ul>
+</li>
+<li>
+<p>The network errors layer does not have a simple way to display errors. If you turn on labeling, the default errormessage field will give the integer code associated with an error, which will likely not be enough to go on, especially at first. So instead, I recommend copying the method employed in the online tutorial <a href="https://learn.arcgis.com/en/projects/fix-connectivity-errors-in-a-utility-network/">Fix connectivity errors in a utility network</a>.</p>
+<ul>
+<li>Download the <a href="https://www.arcgis.com/sharing/rest/content/items/fe8f6832bcd74bde9118e54afe18951d/data">tutorial project</a> and open it in ArcGIS Pro.</li>
+<li>In the Contents pane, expand the "Water Utility Network" category, right-click on "Dirty Areas" and select "Labeling Properties..." from the context menu.</li>
+<li>Copy the expression in the "Expression" field and paste it into the "Expression" field for the dirty areas labeling in your network import, and click apply.</li>
+</ul>
+</li>
+<li>
+<p>Add rule to connect manholes to lateral lines.</p>
+</li>
+</ul>
+<h2 id="export-asset-package"><a class="header" href="#export-asset-package">Export Asset Package</a></h2>
+<p>Now that we have created a fully-functional utility network, we are going to turn it back into an asset package that includes all our changes.</p>
+<ul>
+<li>Run the Export Asset Package tool.
+<img src="images/export_asset_package.png" alt="Export Asset Package" /></li>
+</ul>
+<h2 id="deploying-a-utility-network"><a class="header" href="#deploying-a-utility-network">Deploying a Utility Network</a></h2>
+<p>Here is a link to the <a href="https://mediaspace.esri.com/media/t/1_7afu0n8p/246131802">video</a>.</p>
+<ul>
+<li>The Pro project includes a Tasks folder. Select the Tasks folder from the Contents pane, and open the folder labeled "Deploy Solution to an Enterprise Environment"</li>
+<li>To create the network, your user permissions must be at least Creator (or GIS Professional), with publishing permissions. You must have the license for ArcGIS Utility Network.
+<ul>
+<li>You may want to create a headless user responsible for managing the UN, instead of creating it under your own personal user account.</li>
+</ul>
+</li>
+<li>Create an Enterprise Geodatabase
+<ul>
+<li>Instance is the machine name
+<ul>
+<li>Use SQL Management Studio to inspect the instance name (e.g. "OUTRIGGER\COGP_GIS")</li>
+</ul>
+</li>
+<li>Need database admin user and password
+<ul>
+<li>I created the database using my normal login (PACIFIC\erose), using operating system authentication.</li>
+</ul>
+</li>
+<li>Need ArcGIS Server license file</li>
+<li>The process reported failure, but the database got created.
+<img src="images/create_enterprise_geodatabase.png" alt="Create Enterprise Geodatabase" /></li>
+</ul>
+</li>
+<li>Create an Admin Database Connection
+<img src="images/create_database_connection_admin.png" alt="Create Database Connection Admin" />
+<ul>
+<li>Right-click on the connection file in the Catalog Pane and select Enable Enterprise Geodatabase.
+<img src="images/enable_enterprise_geodatabase.png" alt="Enable Enterprise Geodatabase" /></li>
+<li>Right-click on the connection file in the Catalog Pane and select Geodatabase Connection Properties.
+<ul>
+<li>Select Branch versioning and press OK.
+<img src="images/gdb_connection_props.png" alt="GDB Connection Properties" /></li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Create Database User
+<ul>
+<li>E.g. wastewater | stormwater
+<img src="images/create_database_user.png" alt="Create Database User" /></li>
+</ul>
+</li>
+<li>Create Network Owner Database Connection
+<ul>
+<li>You can change the password of the user in SQL Management Studio.</li>
+<li>Set the authentication to database (not OS), use the user name and password.</li>
+<li>Note the username and password for future reference.
+<img src="images/create_database_connection_user.png" alt="Create Database Connection User" /></li>
+</ul>
+</li>
+<li>Create the Utility Network
+<ul>
+<li>Run the Stage Utility Network tool.</li>
+<li>Use the UN Owner user, not the Admin
+<img src="images/stage_utility_network.png" alt="Stage Utility Network" /></li>
+</ul>
+</li>
+<li>Migrate the data using Data Loading Tools
+<ul>
+<li>Run the Apply Asset Package tool.
+<img src="images/apply_asset_package.png" alt="Apply Asset Package" /></li>
+<li>Set versioning for the utility network layers to Branch and enable replica tracking.
+<ul>
+<li>Refresh the database connection to see Validation layers, which also need replica tracking.</li>
+</ul>
+</li>
+<li>Enable Network Topology for the branched version.
+<img src="images/enable_network_topology.png" alt="Enable Network Topology" /></li>
+</ul>
+</li>
+<li>Publish the network as a feature service.
+<ul>
+<li>Drag the network layers into a map. Do not apply any symbology.</li>
+<li>Register the data source with the server.</li>
+</ul>
+</li>
+</ul>
+<h2 id="trace-configuration"><a class="header" href="#trace-configuration">Trace Configuration</a></h2>
+<ul>
+<li>Run the Add Trace Configuration tool to create Upstream and Downstream named traces for the network.
+<ul>
+<li>Use Digitized Direction</li>
+<li>Include containers</li>
+<li>Include Content</li>
+<li>Include Barrier Features</li>
+<li>Validate Consistency</li>
+<li>Allow Indeterminate Flow</li>
+</ul>
+</li>
+<li>Test the traces in the ArcPro project, adjust as needed. Network topology must be enabled to run traces.</li>
+<li>Activate Named Trace Configurations in the Network Options panel of the Share pane.
+<ul>
+<li>Ensure the UN layer is added to the map, not just the point and line layers associated with it.</li>
+<li>Select the Utility Network Ribbon and click the expansion button on the tools panel.</li>
+<li>Click the Sharing tab and check the named traces to add to the webmap.</li>
+</ul>
+</li>
+</ul>
+<h2 id="attribute-rules"><a class="header" href="#attribute-rules">Attribute Rules</a></h2>
+<ul>
+<li>Change the prefixes for asset types in the *-GenerateIDs family of attribute rules.</li>
+<li>Use the file utility_id_matrix.xslx to refer to the desired target prefixes.</li>
+</ul>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                            <a rel="prev" href="utility_editing.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+
+                            <a rel="next prefetch" href="scripts_intro.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                    <a rel="prev" href="utility_editing.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+
+                    <a rel="next prefetch" href="scripts_intro.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+            </nav>
+
+        </div>
+
+
+
+
+        <script>
+            window.playground_copyable = true;
+        </script>
+
+
+        <script src="elasticlunr.min.js"></script>
+        <script src="mark.min.js"></script>
+        <script src="searcher.js"></script>
+
+        <script src="clipboard.min.js"></script>
+        <script src="highlight.js"></script>
+        <script src="book.js"></script>
+
+        <!-- Custom JS scripts -->
+
+
+    </div>
+    </body>
+</html>

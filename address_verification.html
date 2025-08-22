@@ -1,0 +1,311 @@
+<!DOCTYPE HTML>
+<html lang="en" class="light" dir="ltr">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>Address Verification - Grants Pass GIS Documentation</title>
+
+
+        <!-- Custom HTML head -->
+        
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff">
+
+        <link rel="icon" href="favicon.svg">
+        <link rel="shortcut icon" href="favicon.png">
+        <link rel="stylesheet" href="css/variables.css">
+        <link rel="stylesheet" href="css/general.css">
+        <link rel="stylesheet" href="css/chrome.css">
+        <link rel="stylesheet" href="css/print.css" media="print">
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="FontAwesome/css/font-awesome.css">
+        <link rel="stylesheet" href="fonts/fonts.css">
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" href="highlight.css">
+        <link rel="stylesheet" href="tomorrow-night.css">
+        <link rel="stylesheet" href="ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+
+    </head>
+    <body class="sidebar-visible no-js">
+    <div id="body-container">
+        <!-- Provide site root to javascript -->
+        <script>
+            var path_to_root = "";
+            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "navy" : "light";
+        </script>
+
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script>
+            try {
+                var theme = localStorage.getItem('mdbook-theme');
+                var sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script>
+            var theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            var html = document.querySelector('html');
+            html.classList.remove('light')
+            html.classList.add(theme);
+            var body = document.querySelector('body');
+            body.classList.remove('no-js')
+            body.classList.add('js');
+        </script>
+
+        <input type="checkbox" id="sidebar-toggle-anchor" class="hidden">
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script>
+            var body = document.querySelector('body');
+            var sidebar = null;
+            var sidebar_toggle = document.getElementById("sidebar-toggle-anchor");
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            } else {
+                sidebar = 'hidden';
+            }
+            sidebar_toggle.checked = sidebar === 'visible';
+            body.classList.remove('sidebar-visible');
+            body.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <div class="sidebar-scrollbox">
+                <ol class="chapter"><li class="chapter-item expanded "><a href="overview.html"><strong aria-hidden="true">1.</strong> Home</a></li><li class="chapter-item expanded "><a href="addressing.html"><strong aria-hidden="true">2.</strong> Addressing Manual</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="address_request.html"><strong aria-hidden="true">2.1.</strong> The Address Request Form</a></li><li class="chapter-item expanded "><a href="addressing_layer.html"><strong aria-hidden="true">2.2.</strong> The Addressing Layer</a></li><li class="chapter-item expanded "><a href="addressing_rules.html"><strong aria-hidden="true">2.3.</strong> Addressing Rules</a></li><li class="chapter-item expanded "><a href="addressing_policies.html"><strong aria-hidden="true">2.4.</strong> Addressing Policies</a></li><li class="chapter-item expanded "><a href="address_verification.html" class="active"><strong aria-hidden="true">2.5.</strong> Address Verification</a></li><li class="chapter-item expanded "><a href="address_strategic_plan.html"><strong aria-hidden="true">2.6.</strong> Address Strategic Plan</a></li><li class="chapter-item expanded "><a href="lexisnexis.html"><strong aria-hidden="true">2.7.</strong> LexisNexis Tables</a></li></ol></li><li class="chapter-item expanded "><a href="publishing_services.html"><strong aria-hidden="true">3.</strong> Services</a></li><li class="chapter-item expanded "><a href="layer_files.html"><strong aria-hidden="true">4.</strong> Layer Files</a></li><li class="chapter-item expanded "><a href="survey_points.html"><strong aria-hidden="true">5.</strong> Survey Points</a></li><li class="chapter-item expanded "><a href="packages_intro.html"><strong aria-hidden="true">6.</strong> Packages</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="github.html"><strong aria-hidden="true">6.1.</strong> Github Integration</a></li><li class="chapter-item expanded "><a href="using_git.html"><strong aria-hidden="true">6.2.</strong> Using git</a></li><li class="chapter-item expanded "><a href="git_workflow.html"><strong aria-hidden="true">6.3.</strong> Git Workflow</a></li><li class="chapter-item expanded "><a href="virtual_env.html"><strong aria-hidden="true">6.4.</strong> Using a Virtual Environment</a></li><li class="chapter-item expanded "><a href="web_services_update.html"><strong aria-hidden="true">6.5.</strong> Updating Web Services</a></li></ol></li><li class="chapter-item expanded "><a href="utility_editing.html"><strong aria-hidden="true">7.</strong> Utility Editing</a></li><li class="chapter-item expanded "><a href="utility_network_creation.html"><strong aria-hidden="true">8.</strong> Utility Network Creation</a></li><li class="chapter-item expanded "><a href="scripts_intro.html"><strong aria-hidden="true">9.</strong> Stand-Alone Scripts</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="missing_sidewalks.html"><strong aria-hidden="true">9.1.</strong> Missing Sidewalks</a></li></ol></li></ol>
+            </div>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle">
+                <div class="sidebar-resize-indicator"></div>
+            </div>
+        </nav>
+
+        <!-- Track and set sidebar scroll position -->
+        <script>
+            var sidebarScrollbox = document.querySelector('#sidebar .sidebar-scrollbox');
+            sidebarScrollbox.addEventListener('click', function(e) {
+                if (e.target.tagName === 'A') {
+                    sessionStorage.setItem('sidebar-scroll', sidebarScrollbox.scrollTop);
+                }
+            }, { passive: true });
+            var sidebarScrollTop = sessionStorage.getItem('sidebar-scroll');
+            sessionStorage.removeItem('sidebar-scroll');
+            if (sidebarScrollTop) {
+                // preserve sidebar scroll position when navigating via links within sidebar
+                sidebarScrollbox.scrollTop = sidebarScrollTop;
+            } else {
+                // scroll sidebar to current active section when navigating via "next/previous chapter" buttons
+                var activeSection = document.querySelector('#sidebar .active');
+                if (activeSection) {
+                    activeSection.scrollIntoView({ block: 'center' });
+                }
+            }
+        </script>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky">
+                    <div class="left-buttons">
+                        <label id="sidebar-toggle" class="icon-button" for="sidebar-toggle-anchor" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </label>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        </ul>
+                        <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                    </div>
+
+                    <h1 class="menu-title">Grants Pass GIS Documentation</h1>
+
+                    <div class="right-buttons">
+                        <a href="print.html" title="Print this book" aria-label="Print this book">
+                            <i id="print-button" class="fa fa-print"></i>
+                        </a>
+
+                    </div>
+                </div>
+
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script>
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <h1 id="address-verification"><a class="header" href="#address-verification">Address Verification</a></h1>
+<p>Address verification refers to the process of ascertaining the <em>validity</em>, <em>accuracy</em> and <em>completeness</em> of our address database.</p>
+<h2 id="validity"><a class="header" href="#validity">Validity</a></h2>
+<blockquote>
+<p>Is the address part of an approved use for the property?</p>
+</blockquote>
+<p>When an address is for new development, the planner will approve the use of the property prior to requesting assignment. Establishing validity is more involved for older properties and existing addresses.
+Converting a pre-existing building to expand occupancy requires approval from a planner, and the presence of addresses in use that are missing from our address records can indicate the presence of addresses that were not properly permitted.
+For existing addresses, the planner will determine if the use is approved.
+It is acceptable to add an address approved in this manner to our records.
+When adding a pre-existing address to our records, we may waive the addressing fee in the interest of bringing our records up to date with existing conditions.</p>
+<h2 id="accuracy"><a class="header" href="#accuracy">Accuracy</a></h2>
+<blockquote>
+<p>Does the address record match the displayed identification of the address in daily use?</p>
+</blockquote>
+<p>Street imagery is the easiest way to verify the displayed identification on a structure. Google street view and Bing use independent imagery databases, so it can be helpful to check both when looking for identification. In addition to displayed identification, the following sources can serve as corollary identification:</p>
+<ul>
+<li>Mailboxes</li>
+<li>Waste/Recycling bin identifiers</li>
+<li>Curb numbers</li>
+</ul>
+<p>When address identification is not visible in street imagery, conduct a site visit to verify the assignment is correct.</p>
+<h2 id="completeness"><a class="header" href="#completeness">Completeness</a></h2>
+<blockquote>
+<p>Does the address database include all addresses in use within the area of interest?</p>
+</blockquote>
+<p>Over time, the NENA standard used to format addresses for emergency response has imposed increasingly strict standards on the specificity of address assignments.
+Where a single parent address may have been sufficient in prior years, today we record any subaddress identifiers associated with the parent address, including business suites, apartment units and even hotel rooms.
+Many existing addresses in our records contain subaddress units that are not included in our address records because they predate the NENA requirements related to subaddresses.
+These addresses sometimes appear in our business license database, at which point we may need to verify its presence and add the location to our records.</p>
+<h2 id="the-address-verification-map"><a class="header" href="#the-address-verification-map">The Address Verification Map</a></h2>
+<p>The Address Verification map is a tool for tracking the status of addresses during the verification process, and also serves as a host for institutional memory related to address assignment.</p>
+<p>Here are links to resources related to the address verification map:</p>
+<ul>
+<li>ArcPro project location: O:\GISUserProjects\Users\ErikRose\address_verification\address_verification.aprx</li>
+<li>Service portal item page: <a href="https://gisserver.grantspassoregon.gov/server/rest/services/Editing/address_verification/MapServer">View</a></li>
+<li>REST Service endpoint: <a href="https://gisserver.grantspassoregon.gov/server/rest/services/Editing/address_verification/MapServer">View</a></li>
+<li>Web map template: <a href="https://grantspassoregon.maps.arcgis.com/home/item.html?id=ee863ea743d94221abe0418b5162f6ef">View</a></li>
+<li>Web map: <a href="https://grantspassoregon.maps.arcgis.com/home/item.html?id=548d3528ceec4dd79a1c2af6afd16014">View</a></li>
+<li>Web app item page: <a href="https://grantspassoregon.maps.arcgis.com/home/item.html?id=1f740270187443f8adf5ab089bc22f6c">View</a></li>
+<li>Web app service endpoint: <a href="https://experience.arcgis.com/experience/1f740270187443f8adf5ab089bc22f6c">View</a></li>
+</ul>
+<p>As with other projects, we use the ArcPro project to publish a feature service to the internal portal.
+We use the internal portal to publish the feature layer as editable, so that we can make changes to the layer in the field.
+The web map <em>template</em> is a web map that contains the target formatting for the address verification layer.
+Refer to this template for formatting when using the <code>mapmakers</code> package to generate new web maps.
+The next <em>web map</em> item is a map generated from the template, used to populate the address verification web app.
+The web app is the platform we use to make adjustments to the address verification layer in the field.</p>
+<p>Since creating the map in February of 2023, we have added over 800 points to the address verification layer (as of September 2024).
+As we verify addresses, attaching photo evidence of the identification, the verification map becomes an increasingly valuable resource for querying the history of particular addresses.
+Often confusion over an address can spread to several agencies, and you will field the same questions about an address from different sources, months apart in time.
+Being able to refer back to the records in the address verification map can save you time, and possibly an unnecessary site visit.</p>
+<h2 id="using-the-verification-map"><a class="header" href="#using-the-verification-map">Using the Verification Map</a></h2>
+<p>The purpose of the browser-based <a href="https://experience.arcgis.com/experience/1f740270187443f8adf5ab089bc22f6c">web app</a> is to facilitate address verification in the field. To create a new entry, select the Edit widget from the widget controller panel:</p>
+<p><img src="./images/edit_widget.png" alt="Edit Widget" /></p>
+<p>Select the appropriate address point type, depending on your need:</p>
+<p><img src="./images/edit_verification.png" alt="Edit Verification" /></p>
+<p>When you create a new feature, the Edit window for the feature will open, allowing you to edit the values of the fields in the new feature.</p>
+<ul>
+<li>The <em>address_label</em> field contains the existing address that we are trying to verify, and serves as the label in the verification map.</li>
+<li>The <em>notes</em> field contains unstructured notes related to the verification.</li>
+<li>The <em>verify</em> field controls the symbology of the feature.
+<ul>
+<li><em>Verify</em> - The address needs to be verified.</li>
+<li><em>Verified</em> - The address has been verified by City staff, but not reconciled with the County.</li>
+<li><em>Reconciled</em> - The address has been verified by City staff, and added to the County records.</li>
+</ul>
+</li>
+<li>The <em>Attachments</em> field permits adding photographs of address identification as attachments to their corresponding address points.
+<ul>
+<li>While photos are the most time-consuming element to collect in the field, they are often invaluable when returning to examine the data at a later time, and thus are the preferred means of recording address verification.</li>
+</ul>
+</li>
+</ul>
+<p>The additional fields present (id, latitude, longitude) were used to create the initial layer from a spreadsheet.</p>
+<p>To change the field values of an existing verification point, use the Select tool. When the Select tool is active, a blue bar will appear on the left side:</p>
+<p><img src="./images/edit_select.png" alt="Edit Select" /></p>
+<h2 id="conclusion"><a class="header" href="#conclusion">Conclusion</a></h2>
+<p>The Address Verification Map serves as the primary tool of the GIS Division for verifying addresses, and its introduction has helped to streamline the verification process for our staff.</p>
+<p>Often, people will raise address issues in the course of other business, when we do not have time to follow up.
+In these circumstances, we can now open the address verification map, place a quick point on the problematic location, and return to the issue later when there is more time.
+After issuing a verification and making corrections to the City records, weeks or months may pass before ECSO will update their database.
+The address verification map allows us to track cases where County action is still required, and makes it easier to follow up on cases that in previous years would fall through the cracks.
+Finally, the address verification map serves as living memory, allowing us to revisit locations months or years later without the need of an actual site visit.</p>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                            <a rel="prev" href="addressing_policies.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+
+                            <a rel="next prefetch" href="address_strategic_plan.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                    <a rel="prev" href="addressing_policies.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+
+                    <a rel="next prefetch" href="address_strategic_plan.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+            </nav>
+
+        </div>
+
+
+
+
+        <script>
+            window.playground_copyable = true;
+        </script>
+
+
+        <script src="elasticlunr.min.js"></script>
+        <script src="mark.min.js"></script>
+        <script src="searcher.js"></script>
+
+        <script src="clipboard.min.js"></script>
+        <script src="highlight.js"></script>
+        <script src="book.js"></script>
+
+        <!-- Custom JS scripts -->
+
+
+    </div>
+    </body>
+</html>
